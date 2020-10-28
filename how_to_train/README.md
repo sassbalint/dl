@@ -73,10 +73,18 @@ Running time: 75 min.
 
 ## testing
 
-To test the model by masked examples from stdin,
-e.g. _"Ez egy \<mask\> könyv."_
+The model can be tested by masked examples from stdin,
+e.g. _"Ez egy\<mask\> könyv"_
+
+You can obtain _best guesses_ for `<mask>`:
 
 ```bash
 make LANGUAGE=hu test_model
+```
+
+or _iteratively_ continue text according to the language model:
+
+```bash
+make LANGUAGE=hu test_model_iterative
 ```
 

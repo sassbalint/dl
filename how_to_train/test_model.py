@@ -1,13 +1,17 @@
 # -*- coding: utf-8 -*-
 """
 Test a model created by model_from_scratch.py
-Provide a test sentence on stdin with a <mask> token
+Provide test text on stdin with a <mask> token
 at position you want to guess.
 """
 
 
 import argparse
 import sys
+
+
+MASK_TOKEN = '<mask>'
+SPACE_CHAR = 'Ġ' # RoBERTa space char
 
 
 # handle command line arguments
@@ -20,7 +24,15 @@ parser.add_argument(
     choices=['eo', 'hu'],
     help='select language',
     type=str,
-    default='eo')
+    default='eo'
+)
+parser.add_argument(
+    '--iterative', '-i',
+    help='iteratively predict next n words, instead of providing best guesses',
+    type=int,
+    default=1
+)
+
 args = parser.parse_args()
 
 
@@ -43,6 +55,7 @@ print(f'outdir = {OUTDIR}')
 print()
 
 from transformers import pipeline
+from transformers.pipelines import PipelineException
 
 print('Loading model...')
 fill_mask = pipeline(
@@ -53,8 +66,39 @@ fill_mask = pipeline(
 print('Ready.')
 print()
 
-for sentence in sys.stdin:
-    print(fill_mask(sentence))
-    for guess in fill_mask(sentence):
-        print(sentence.replace('<mask>', guess['token_str']))
+
+def replace_and_print(text, predicted, numbering=False):
+    replacer = predicted['token_str'].replace(SPACE_CHAR, ' ')
+    text = text.replace(MASK_TOKEN, replacer)
+    number = f'{i} ' if numbering else ''
+    print(f'{number}[{text}]')
+    return text
+
+
+for text in sys.stdin:
+
+    if args.iterative != 1: # iteration
+        print(f' *** {args.iterative} iterative continuations:')
+    else: # best guesses
+        print(f' *** best guesses:')
+
+    for i in range(args.iterative):
+        try:
+            predicteds = fill_mask(text)
+        except PipelineException:
+            print(f'Error in input. A {MASK_TOKEN} token is mandatory.')
+            continue
+
+        replacer = ''
+        if args.iterative != 1: # iteration
+            text = replace_and_print(text, predicteds[0], numbering=True)
+        else: # best guesses
+            print(predicteds)
+            for predicted in predicteds:
+                replace_and_print(text, predicted)
+
+        # extend text with a MASK_TOKEN at the end for --iterative
+        text += f'{MASK_TOKEN}'
+
+    print()
 
