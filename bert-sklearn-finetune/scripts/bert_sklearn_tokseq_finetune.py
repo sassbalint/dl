@@ -226,7 +226,10 @@ def main():
         "Jól működik ez a program.",
         "A gyerekeim nagyon okosak és szépek.",
         "Bevertem a kezemet a szekrénybe.",
-        "Igen, csak az a baj, hogy igaz."
+        "Igen, csak az a baj, hogy igaz.",
+        "12 óra alatt 5 cm-t megh aladó f riss hó hul lhat.",
+        "Jó, most már ké rem a tablet et.",
+        "Maradjat ok csönd ben, mert Anya als zik.",
     ]
 
     for text in TEXTS:
