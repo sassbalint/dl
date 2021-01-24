@@ -19,8 +19,8 @@ parser = argparse.ArgumentParser(
 )
 parser.add_argument(
     '--language', '-l',
-    choices=['eo', 'hu'],
-    help='select language',
+    choices=['eo', 'hu', 'hu-short_h'],
+    help='select config',
     type=str,
     default='eo')
 args = parser.parse_args()
@@ -32,20 +32,26 @@ LANGUAGE = args.language
 CORPUS = "EsperBERTo/oscar.eo.400000.txt"
 OUTDIR = "EsperBERTo"
 EXAMPLE_SENTENCES = [
-    "La suno <mask>.",
-    "Jen la komenco de bela <mask>."
+    "La suno<mask>.",
+    "Jen la komenco de bela<mask>."
+]
+
+EXAMPLE_SENTENCES_HU = [
+    "Ez egy<mask>.",
+    "Most kell<mask>.",
+    "Nem fog<mask>.",
+    "Ez egy<mask> könyv."
 ]
 
 # Hungarian data -- 1_000_000 sentences
 if LANGUAGE == 'hu':
     CORPUS = "/data/language/hungarian/corp/test/BL/mini/train_mini.txt"
     OUTDIR = "huBERTo"
-    EXAMPLE_SENTENCES = [
-        "Ez egy <mask>.",
-        "Most kell <mask>.",
-        "Nem fog <mask>.",
-        "Ez egy <mask> könyv."
-    ]
+    EXAMPLE_SENTENCES = EXAMPLE_SENTENCES_HU
+elif LANGUAGE == 'hu-short_h':
+    CORPUS = "/data/language/hungarian/corp/test/BL/short_h/train_short_h.txt"
+    OUTDIR = "huBERTo-short_h"
+    EXAMPLE_SENTENCES = EXAMPLE_SENTENCES_HU
 
 print()
 print('*** CONFIG ***')
