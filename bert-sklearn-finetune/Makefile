@@ -24,11 +24,12 @@ prepare: install getdata
 # MNSZ2 POS data
 DATASOURCE=http://corpus.nytud.hu/people/joker/mnsz2_330000_POS_
 getdata:
+	mkdir -p $D
 	cd $D ; rm -rf mnsz2_pos ; mkdir -p mnsz2_pos ; cd mnsz2_pos ; wget $(DATASOURCE)train.txt ; wget $(DATASOURCE)dev.txt ; wget $(DATASOURCE)test.txt
 
 # torch max. verzió: 1.4
 install:
-	conda activate torch1.4
+	#conda activate torch1.4 -- KÉZZEL KELL!
 	nvidia-smi
 	rm -rf bert-sklearn
 	git clone -b master https://github.com/charles9n/bert-sklearn
