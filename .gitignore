@@ -1,10 +1,17 @@
 
 .*swp
 
-how_to_train/INFO
+# -----
 
+bert-sklearn-finetune/bert-sklearn
+bert-sklearn-finetune/data
+bert-sklearn-finetune/bert_sklearn.log
+bert-sklearn-finetune/*_model.bin
+
+# -----
+
+how_to_train/INFO
 how_to_train/EsperBERTo
 how_to_train/huBERTo
-
 how_to_train/01_how_to_train*
 
