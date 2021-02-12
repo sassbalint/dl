@@ -12,3 +12,5 @@ according to https://huggingface.co/blog/how-to-train
 
 see [`how_to_train`](https://github.com/sassbalint/dl/tree/main/how_to_train)
 
+:arrow_right: [traditional machine learning stuff](https://github.com/sassbalint/ml)
+
