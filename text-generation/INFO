@@ -1,9 +1,19 @@
 
+ XXX ezt az egészet -> ml-dl.INFO -ba! XXX
+
  * 2021.12.15.
    i lényeg: seq2seq szerű BERT-es generálós izét szeretnék 
-     (korpuszjavításra...)
+     korpuszjavításra: ékezetesítésre, OCR-javításra...
+     -- töredezettség-mentesítésre asszem kiváló a sima BERT!
+
+   !   _két lehetséges irány van most:_ 
+     [1] generáló modellt csinálni vhogy
+         és ékezetesítésre kipróbálni! (mire még? POS?)
+     [2] bert-sklearn-ból áttelepíteni dolgokat,
+         és ennek révén kipróbálni huBERT-tel! (ugye jobb lesz?)
 
    ! BERTGeneration -- ez izgi lehet = 2 BERT-ből oldja meg!
+     = és akkor elég a magyarításhoz a huBERT!
      @ https://huggingface.co/docs/transformers/model_doc/bertgeneration
      ? 
      ? bele lehet esetleg simán tenni a huBERT-et és kész? (?)  _ITT_T
@@ -13,21 +23,40 @@
      - [./encoderdecoder.py] XXX
      x 
      ! aszondja, hogy "You should probably TRAIN..."
-       -> akkor nézzük, hogyan kell finetune-olni, hátha segít itt is! (!)
+       kitaláltam, hogyan kell (sentence class-ra) finetune-olni,
+       (ld. "howto finetune")
+       most abban bízom, hogy az segít itt! (!!!) XXX
+     x 
+     e esetleg idetartozhat az alábbi:
+       dl1:~/tmp/simpletransformers/scriptsi/minimal_encoder_decoder.py
+
+   ! a BART eleve ilyen, hogy tud generálni -- próbálgatom!
+     @ https://huggingface.co/docs/transformers/model_doc/bart
+     + [./bart_maskfilling.py] = mask filling :)
+     ! 
+     ! itt van csomó hasznos példa -- nézzem végig! (!) XXX :)  _ITT_T
+     ! 
+     ? hogy magyarítsuk? Gy modelljével? (?) XXX :)
 
    +  _howto finetune_ 
      @ https://huggingface.co/docs/transformers/training (!)
        -- plusz: https://huggingface.co/course/chapter3/3?fw=pt / predict
      -> jobbra-fent: open in colab ->
      + [./training.py] --  _kiválóan működik!_  :)
+     i ez sentence classification,
+       hogyan lehet token classification-t csinálni? (?)
+       -> ld. az "érdemes elolvasni" részt :)
+     ! ezt lehetne próbálgatni a régi bert-sklearn dolgokkal,
+       csak itt mostmár huBERT-tel is mennie kéne! (!) XXX :)
 
-   ! a BART ilyeni, hogy tud generálni -- próbálgatom!
-     @ https://huggingface.co/docs/transformers/model_doc/bart
-     + [./bart_maskfilling.py] = mask filling :)
-     ! 
-     ! itt van csomó hasznos példa -- nézzem végig! (!) XXX :)  _ITT_T
-     ! 
-     ? hogy magyarítsuk? Győző modelljével? (?) XXX :)
+   i érdemes elolvasni
+     @ https://huggingface.co/docs/transformers/notebooks (!)
+     ! hú, itt  _mindenféle feladatra van külön notebook! (!) XXX :)
+     ! ez az alábbi kettő nagyon jól néz ki, részletes,  _olvassam:
+       @ https://colab.research.google.com/github/huggingface/notebooks/blob/master/examples/text_classification.ipynb
+       @ https://colab.research.google.com/github/huggingface/notebooks/blob/master/examples/token_classification.ipynb
+     ! ez is érdekes lehet,  _olvassam:
+       @ https://github.com/huggingface/transformers/tree/master/examples/pytorch
 
    i BART / paraphrase
      + [./bart_paraphrase.py]
