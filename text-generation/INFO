@@ -1,0 +1,35 @@
+
+ * 2021.12.15.
+   i lényeg: seq2seq szerű BERT-es generálós izét szeretnék 
+     (korpuszjavításra...)
+
+   ! BERTGeneration -- ez izgi lehet = 2 BERT-ből oldja meg!
+     @ https://huggingface.co/docs/transformers/model_doc/bertgeneration
+     ? 
+     ? bele lehet esetleg simán tenni a huBERT-et és kész? (?)  _ITT_T
+     ? 
+     x 
+     - [./bertgeneration.py] XXX
+     - [./encoderdecoder.py] XXX
+     x 
+     ! aszondja, hogy "You should probably TRAIN..."
+       -> akkor nézzük, hogyan kell finetune-olni, hátha segít itt is! (!)
+
+   +  _howto finetune_ 
+     @ https://huggingface.co/docs/transformers/training (!)
+       -- plusz: https://huggingface.co/course/chapter3/3?fw=pt / predict
+     -> jobbra-fent: open in colab ->
+     + [./training.py] --  _kiválóan működik!_  :)
+
+   ! a BART ilyeni, hogy tud generálni -- próbálgatom!
+     @ https://huggingface.co/docs/transformers/model_doc/bart
+     + [./bart_maskfilling.py] = mask filling :)
+     ! 
+     ! itt van csomó hasznos példa -- nézzem végig! (!) XXX :)  _ITT_T
+     ! 
+     ? hogy magyarítsuk? Győző modelljével? (?) XXX :)
+
+   i BART / paraphrase
+     + [./bart_paraphrase.py]
+       kb. ua script -- csak finetune-olva parafrázisolásra
+ 

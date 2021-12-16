@@ -1,6 +1,10 @@
 # deep learning of deep learning
 
-## How to finetune BERT conveniently in scikit-learn?
+## How to finetune? How to do text generation?
+
+see [`text-generation`](https://github.com/sassbalint/dl/tree/main/text-generation)
+
+## How to finetune BERT conveniently (?) in scikit-learn?
 
 according to https://github.com/charles9n/bert-sklearn
 
