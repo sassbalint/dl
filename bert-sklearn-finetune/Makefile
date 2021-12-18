@@ -10,10 +10,13 @@ D=data
 
 # ===== MAIN STUFF
 
-
+# MNSZ2 accent data
+DATAFILE=mnsz2_660000_accent
+#
 # MNSZ2 frag data
-DATAFILE=mnsz2_660000_frag
+#DATAFILE=mnsz2_660000_frag
 #DATAFILE=mnsz2_330000_frag
+#
 # MNSZ2 POS data
 #DATAFILE=mnsz2_330000_POS
 

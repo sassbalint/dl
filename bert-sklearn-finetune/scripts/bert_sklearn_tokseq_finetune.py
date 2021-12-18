@@ -121,7 +121,7 @@ def main():
     # --- define BERT token sequence classification model
     print('\n--- define BERT token sequence classification model')
 
-    BERT_MODEL = 'bert-base-multilingual-cased' # XXX magyar esetleg? :)
+    BERT_MODEL = 'bert-base-multilingual-cased'
     EPOCHS = 3
     LEARNING_RATE = 2e-5
     BATCH_SIZE = 64 # XXX alapból 16 volt!
@@ -221,15 +221,27 @@ def main():
     # --- check result on some new text
     print('\n--- check result on some new text')
 
+#    # XXX for 'frag'
+#    TEXTS = [
+#        "Ez egy vastag könyv.",
+#        "Jól működik ez a program.",
+#        "A gyerekeim nagyon okosak és szépek.",
+#        "Bevertem a kezemet a szekrénybe.",
+#        "Igen, csak az a baj, hogy igaz.",
+#        "12 óra alatt 5 cm-t megh aladó f riss hó hul lhat.",
+#        "Jó, most már ké rem a tablet et.",
+#        "Maradjat ok csönd ben, mert Anya als zik.",
+#    ]
+    # XXX for 'accent'
     TEXTS = [
         "Ez egy vastag könyv.",
-        "Jól működik ez a program.",
+        "Jól mukodik ez a program.",
         "A gyerekeim nagyon okosak és szépek.",
-        "Bevertem a kezemet a szekrénybe.",
+        "Bevertem a kezemet a szekrenybe.",
         "Igen, csak az a baj, hogy igaz.",
-        "12 óra alatt 5 cm-t megh aladó f riss hó hul lhat.",
-        "Jó, most már ké rem a tablet et.",
-        "Maradjat ok csönd ben, mert Anya als zik.",
+        "12 óra alatt 5 cm-t meghaladó friss ho hullhat.",
+        "Jó, most már kerem a tabletet.",
+        "Maradjatok csöndben, mert Anya alszik.",
     ]
 
     for text in TEXTS:
@@ -238,10 +250,10 @@ def main():
         #prob_predicts = model.tag_text_proba(text)
 
 
-    # --- save model
-    print('\n--- save model')
-     
-    model.save('bert_sklearn_tokseqcls_model.bin')
+#    # --- save model
+#    print('\n--- save model')
+#     
+#    model.save('bert_sklearn_tokseqcls_model.bin')
 
 
 def get_args():
