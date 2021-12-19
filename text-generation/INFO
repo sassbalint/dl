@@ -6,11 +6,15 @@
      korpuszjavításra: ékezetesítésre, OCR-javításra...
      -- töredezettség-mentesítésre asszem kiváló a sima BERT!
 
-   !   _két lehetséges irány van most:_ 
-     [1] generáló modellt csinálni vhogy
-         és ékezetesítésre kipróbálni! (mire még? POS?)
-     [2] bert-sklearn-ból áttelepíteni dolgokat,
-         és ennek révén kipróbálni huBERT-tel! (ugye jobb lesz?)
+   !   _lehetséges irányok:_ 
+     [0] seqclass pipa (= training_seqclass.py)
+         -> kitalálni a tokclass howto-t (alább!)
+     [1] bert-sklearn-ból áttelepíteni dolgokat,
+         és ennek révén kipróbálni huBERT-tel
+         az ottani tokclass dolgokat! -- ugye jobb lesz? :)
+     [2] generáló modellt (seq2seq, BART, EncoderDecoder)
+         csinálni vhogy és ékezetesítésre kipróbálni!
+         -- mire még? POS?
 
    ! BERTGeneration -- ez izgi lehet = 2 BERT-ből oldja meg!
      = és akkor elég a magyarításhoz a huBERT!
@@ -26,6 +30,11 @@
        kitaláltam, hogyan kell (sentence class-ra) finetune-olni,
        (ld. "howto finetune")
        most abban bízom, hogy az segít itt! (!!!) XXX
+     ! lényegében tuti: Seq2SepTrainer kell! (!!!) XXX XXX XXX
+       @ https://medium.com/analytics-vidhya/fine-tune-a-roberta-encoder-decoder-model-trained-on-mlm-for-text-generation-23da5f3c1858
+         -> van a végén link a notebook-ra! (!) XXX :)
+       izé, nem is annyira:
+       @ https://discuss.huggingface.co/t/trainer-vs-seq2seqtrainer/3145
      x 
      e esetleg idetartozhat az alábbi:
        dl1:~/tmp/simpletransformers/scriptsi/minimal_encoder_decoder.py
@@ -42,8 +51,8 @@
      @ https://huggingface.co/docs/transformers/training (!)
        -- plusz: https://huggingface.co/course/chapter3/3?fw=pt / predict
      -> jobbra-fent: open in colab ->
-     + [./training.py] --  _kiválóan működik!_  :)
-     i ez sentence classification,
+     + [./training_seqclass.py] --  _kiválóan működik!_  :)
+     i ez sequence classification,
        hogyan lehet token classification-t csinálni? (?)
        -> ld. az "érdemes elolvasni" részt :)
      ! ezt lehetne próbálgatni a régi bert-sklearn dolgokkal,
@@ -54,7 +63,24 @@
      ! hú, itt  _mindenféle feladatra van külön notebook! (!) XXX :)
      ! ez az alábbi kettő nagyon jól néz ki, részletes,  _olvassam:
        @ https://colab.research.google.com/github/huggingface/notebooks/blob/master/examples/text_classification.ipynb
+         = [./seqclass.py]
+         = ez igaziból kb. a [./training_seqclass.py], kicsit másképp
+           -- az eredeti notebookban részletes magyarázat van!
+         +1] futtatni a [./seqclass.py] -t
+           + push_to_hub -hoz kell hf access token -- kiszedtem
+         +2] összevetni: [./training_seqclass.py] vs [./seqclass.py]
+           + mindkettőből áttettem a másikba az értelmes új dolgokat
+             most mindkét script kb. ua felépítésű,
+             és mindkettő kiválóan fut! (!) XXX :)
+          _ITT_T [1]
+         [3] átcsinálni a tokclass.py-t a seqclass.py szerint
+           ! sztem ennek az align a lényege,
+             amit a bert-sklearn lehet, hogy auto megcsinál! (!)
+         [4] kipróbálni a tokclass, ahogy van -> fenti [0]
+         [5] kipróbálni a tokclass-t a saját adataimon -> fenti [1]
        @ https://colab.research.google.com/github/huggingface/notebooks/blob/master/examples/token_classification.ipynb
+         = [./tokclass.py]
+         ! ha ez megvan, akkor megvan a token-class
      ! ez is érdekes lehet,  _olvassam:
        @ https://github.com/huggingface/transformers/tree/master/examples/pytorch
 
@@ -62,3 +88,9 @@
      + [./bart_paraphrase.py]
        kb. ua script -- csak finetune-olva parafrázisolásra
  
+   i nem vili, hogy mikor kell a .to(device) cucc ahhoz,
+     hogy hajlandó legyen a GPU-n számolni XXX
+     x kell: bart_maskfilling.py, bart_paraphrase.py, encoderdecoder.py
+     + nem kell: training_seqclass.py
+     ? talán a Trainer teszi GPU-ra automatice? (?)
+
