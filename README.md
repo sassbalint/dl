@@ -10,7 +10,7 @@ according to https://github.com/charles9n/bert-sklearn
 
 see [`bert-sklearn-finetune`](https://github.com/sassbalint/dl/tree/main/bert-sklearn-finetune)
 
-## How to train a RoBERTa model?
+## How to pretrain a RoBERTa model _from scratch?_
 
 according to https://huggingface.co/blog/how-to-train
 

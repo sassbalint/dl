@@ -1,4 +1,4 @@
-# how to train a new language model from scratch
+# how to pretrain a new language model from scratch
 
 # basics
 
