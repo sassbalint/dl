@@ -7,7 +7,7 @@
      -- töredezettség-mentesítésre asszem kiváló a sima BERT!
 
    !   _lehetséges irányok:_ 
-     [0] seqclass pipa (= training_seqclass.py)
+     +0] seqclass pipa (= training_seqclass.py)
          -> kitalálni a tokclass howto-t (alább!)
      [1] bert-sklearn-ból áttelepíteni dolgokat,
          és ennek révén kipróbálni huBERT-tel
@@ -72,11 +72,15 @@
            + mindkettőből áttettem a másikba az értelmes új dolgokat
              most mindkét script kb. ua felépítésű,
              és mindkettő kiválóan fut! (!) XXX :)
+         +3] átcsinálni a tokclass.py-t a seqclass.py szerint
+           + ennek az align a lényege!
+             (amit a bert-sklearn biztos auto megcsinál...)
+         +4] kipróbálni a tokclass, ahogy van -> fenti [0]
           _ITT_T [1]
-         [3] átcsinálni a tokclass.py-t a seqclass.py szerint
-           ! sztem ennek az align a lényege,
-             amit a bert-sklearn lehet, hogy auto megcsinál! (!)
-         [4] kipróbálni a tokclass, ahogy van -> fenti [0]
+         ! [cos]/[ref] terv:
+           -- legyen a tokclass-ban is olyan szép bemutató a végén,
+              mint a seqclass-ban (!) XXX :)
+           -- tokclass: ne legyen 2x az IGNORED dolog kiszámolva!
          [5] kipróbálni a tokclass-t a saját adataimon -> fenti [1]
        @ https://colab.research.google.com/github/huggingface/notebooks/blob/master/examples/token_classification.ipynb
          = [./tokclass.py]

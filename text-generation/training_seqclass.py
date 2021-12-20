@@ -54,7 +54,7 @@ msg("metric")
 metric = load_metric("accuracy")
 
 def logits2preds(logits):
-    return np.argmax(logits, axis=-1)
+    return np.argmax(logits, axis=-1) # last dimension
 
 # XXX how to compute many metrics (P, R, F1...)?
 def compute_metrics(eval_pred):
