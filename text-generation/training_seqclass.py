@@ -44,9 +44,10 @@ model = AutoModelForSequenceClassification.from_pretrained(MODEL, num_labels=2)
 
 args = TrainingArguments(
     "test_trainer",
-    #evaluation_strategy="epoch",
+    evaluation_strategy="epoch",
     per_device_train_batch_size=BATCH_SIZE,
     per_device_eval_batch_size=BATCH_SIZE,
+    num_train_epochs=5,
 )
 # van még kb. 1000 paraméter...
 

@@ -124,7 +124,7 @@ section("data collator")
 data_collator = DataCollatorForTokenClassification(tokenizer)
 
 section("metric")
-METRIC = ('seqeval')
+METRIC = ('seqeval',)
 metric = load_metric(*METRIC)
 
 fake_labels = [[LABEL_LIST[i] for i in example[LABELCOLUMN]]] # not exactly fake :)
@@ -188,7 +188,6 @@ for prediction, label in zip(pre_predictions, pre_labels):
             ls.append(LABEL_LIST[l])
     predictions.append(ps)
     labels.append(ls)
-
 results = metric.compute(predictions=predictions, references=labels)
 msg('prediction results', results)
 

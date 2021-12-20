@@ -1,0 +1,164 @@
+
+>> load dataset <<
+
+DatasetDict({
+    train: Dataset({
+        features: ['text', 'label'],
+        num_rows: 25000
+    })
+    test: Dataset({
+        features: ['text', 'label'],
+        num_rows: 25000
+    })
+    unsupervised: Dataset({
+        features: ['text', 'label'],
+        num_rows: 50000
+    })
+})
+{'text': 'I rented I AM CURIOUS-YELLOW from my video store because of all the controversy that surrounded it when it was first released in 1967. I also heard that at first it was seized by U.S. customs if it ever tried to enter this country, therefore being a fan of films considered "controversial" I really had to see this for myself.<br /><br />The plot is centered around a young Swedish drama student named Lena who wants to learn everything she can about life. In particular she wants to focus her attentions to making some sort of documentary on what the average Swede thought about certain political issues such as the Vietnam War and race issues in the United States. In between asking politicians and ordinary denizens of Stockholm about their opinions on politics, she has sex with her drama teacher, classmates, and married men.<br /><br />What kills me about I AM CURIOUS-YELLOW is that 40 years ago, this was considered pornographic. Really, the sex and nudity scenes are few and far between, even then it\'s not shot like some cheaply made porno. While my countrymen mind find it shocking, in reality sex and nudity are a major staple in Swedish cinema. Even Ingmar Bergman, arguably their answer to good old boy John Ford, had sex scenes in his films.<br /><br />I do commend the filmmakers for the fact that any sex shown in the film is shown for artistic purposes rather than just to shock people and make money to be shown in pornographic theaters in America. I AM CURIOUS-YELLOW is a good film for anyone wanting to study the meat and potatoes (no pun intended) of Swedish cinema. But really, this film doesn\'t have much of a plot.', 'label': 0}
+
+>> tokenize dataset <<
+
+101 [CLS]
+146 I
+12765 rented
+146 I
+6586 AM
+140 C
+19556 ##UR
+19368 ##IO
+13329 ##US
+118 -
+162 Y
+21678 ##EL
+2162 ##L
+17056 ##OW
+1121 from
+1139 my
+1888 video
+2984 store
+1272 because
+1104 of
+
+>> load model <<
+
+
+>> metric <<
+
+
+>> finetune <<
+
+{'eval_loss': 0.6874958276748657, 'eval_accuracy': 0.52, 'eval_runtime': 0.8488, 'eval_samples_per_second': 117.818, 'eval_steps_per_second': 8.247, 'epoch': 1.0}
+{'eval_loss': 0.6821641325950623, 'eval_accuracy': 0.55, 'eval_runtime': 0.8469, 'eval_samples_per_second': 118.082, 'eval_steps_per_second': 8.266, 'epoch': 2.0}
+{'eval_loss': 0.6747490167617798, 'eval_accuracy': 0.57, 'eval_runtime': 0.8838, 'eval_samples_per_second': 113.145, 'eval_steps_per_second': 7.92, 'epoch': 3.0}
+{'eval_loss': 0.6672965884208679, 'eval_accuracy': 0.6, 'eval_runtime': 0.8837, 'eval_samples_per_second': 113.155, 'eval_steps_per_second': 7.921, 'epoch': 4.0}
+{'eval_loss': 0.688173234462738, 'eval_accuracy': 0.6, 'eval_runtime': 0.8544, 'eval_samples_per_second': 117.043, 'eval_steps_per_second': 8.193, 'epoch': 5.0}
+{'train_runtime': 22.8095, 'train_samples_per_second': 21.921, 'train_steps_per_second': 1.534, 'train_loss': 0.5724388122558594, 'epoch': 5.0}
+
+>> predict <<
+
+    0 <br /><br />When I unsuspectedly rented  1 0 *
+    1 This is the latest entry in the long ser 1 1 
+    2 This movie was so frustrating. Everythin 0 1 *
+    3 I was truly and wonderfully surprised at 1 1 
+    4 This movie spends most of its time preac 0 1 *
+    5 After a very long time Marathi cinema ha 1 1 
+    6 This is a really sad, and touching movie 1 1 
+    7 Don't pay any attention to the rave revi 0 0 
+    8 Porn legend Gregory Dark directs this ch 0 0 
+    9 This was a great movie. Something not on 1 1 
+   10 If you're a fan of Turkish and Middle Ea 1 1 
+   11 OK, it was a "risky" move to rent this f 0 1 *
+   12 These days, writers, directors and produ 0 0 
+   13 Teenager Tamara (Jenna Dewan) has it rou 0 0 
+   14 Dirty Harry goes to Atlanta is what Burt 1 0 *
+   15 I'm 15, usually not kids my age usually  1 1 
+   16 The story is: a turn-of-the-century trou 0 0 
+   17 A holiday on a boat, a married couple, a 0 0 
+   18 Definitely a movie for people who ask on 1 0 *
+   19 If Hollywood had the wellbeing of the au 1 1 
+   20 I was expecting a lot more of this film  0 1 *
+   21 Coming from Kiarostami, this art-house v 0 0 
+   22 In the early 00's, production companies  0 0 
+   23 I was so happy to learn that Hari Om wil 1 1 
+   24 The gates of Hell opened up and spit out 0 0 
+   25 "In Love and War" is a simple feel-good  1 1 
+   26 Not much to say other than plenty of Wir 0 0 
+   27 It could be easy to complain about the q 1 0 *
+   28 I have always loved old movies but this  1 1 
+   29 I absolutely loved this movie. Great, re 1 1 
+   30 Intended as light entertainment, this fi 0 1 *
+   31 This is just one of those films which ca 0 1 *
+   32 It's really too bad that nobody knows ab 1 1 
+   33 Unlike Terms of Endearment and Steel Mag 0 1 *
+   34 "An astronaut (Michael Emmet) dies while 0 0 
+   35 I recently rented this video after seein 1 1 
+   36 Lovely music. Beautiful photography, som 0 1 *
+   37 As everyone knows, nobody can play Scarl 0 0 
+   38 A very sensitive topic--15 y/o girl aban 0 0 
+   39 This is about some vampires (who can run 0 0 
+   40 This film is bad. It's filled with glari 0 1 *
+   41 This movie is so bad that it actually ge 0 0 
+   42 Well, where to start describing this cel 0 0 
+   43 I really liked the movie 'The Emporer's  0 1 *
+   44 This thing, directed by french sensation 0 1 *
+   45 I have done a lot of international trave 1 0 *
+   46 Late night on BBC1, was on my way to bed 1 0 *
+   47 Absolute grabber of a movie, and given i 1 0 *
+   48 I saw Le Conseguenze Dell'Amore on the 2 1 0 *
+   49 A not so good action thriller because it 0 1 *
+   50 Fantastic Chaplin movie with many memora 1 0 *
+   51 It is to typical of people complaining a 1 0 *
+   52 This series takes a classic story and ma 0 1 *
+   53 There's a good running bit about the pri 1 1 
+   54 I especially liked the ending of this mo 1 1 
+   55 I remember seeing this film in the mid 8 1 0 *
+   56 I wasn't able to last ten minutes on the 0 0 
+   57 At first I didn't think that the perform 1 1 
+   58 I'd like to point out these excellent po 1 0 *
+   59 Sex, drugs, racism and of course you ABC 1 0 *
+   60 Just above the box i am typing in now, i 0 0 
+   61 NBC should be ashamed. I wouldn't allow  0 1 *
+   62 Film critics of the world, I apologize.  0 0 
+   63 There are certain scenes in this film (l 0 1 *
+   64 this movie makes me laugh by even just t 1 1 
+   65 This movie is really bad, trying to crea 0 0 
+   66 some would argue this is better mainly b 0 0 
+   67 Just a short comment! I want to say that 1 1 
+   68 When I was young, I was a big fan of the 1 0 *
+   69 Seeing the names of the starring actors  0 0 
+   70 I used to always love the bill because o 0 0 
+   71 I am a regular reader of Kathy Reichs' T 0 0 
+   72 I saw this movie on the strength of the  0 0 
+   73 This movie is an amazing comedy.. the sc 1 1 
+   74 I saw this movie, and I do like horror m 0 0 
+   75 A truly masterful piece of filmmaking. I 0 1 *
+   76 This is going to be my first review on I 0 0 
+   77 As far as I know this was my first exper 1 0 *
+   78 All I can do is echo the sentiment alrea 0 1 *
+   79 First, the positives: an excellent job a 1 1 
+   80 Now and again, a film comes around purel 0 0 
+   81 What an awesome mini-series. The origina 1 0 *
+   82 It has a bit of that indie queer edge th 0 1 *
+   83 I watched Pola X because Scott Walker co 1 1 
+   84 You can tell that this is the first offe 1 1 
+   85 This film was incredible! Looked high bu 1 1 
+   86 I viewed my videotape last night, for th 1 1 
+   87 Heart of Darkness was terrible. The nove 0 1 *
+   88 i was having a horrid day but this movie 1 0 *
+   89 "Two Hands" is an entertaining, funny st 1 1 
+   90 Just watched this today on TCM, where th 0 0 
+   91 Mr Baseball was a fun video rental with  1 0 *
+   92 "Opposing Force [1986]" wasn't as good a 0 0 
+   93 Crackerjack is another classic Aussie fi 1 1 
+   94 Clearly this film was made for a newer g 0 0 
+   95 I've seen some terrible book-to-film ada 0 1 *
+   96 I see that C. Thomas Howell has appeared 0 0 
+   97 Wow! What a movie if you want to blow yo 0 1 *
+   98 There are few films that deal with thing 1 0 *
+   99 One of the best! As being a fan of the c 1 1 
+0.6
+
+>> eval <<
+
+RESULT=[{'eval_loss': 0.688173234462738, 'eval_accuracy': 0.6, 'eval_runtime': 0.8883, 'eval_samples_per_second': 112.579, 'eval_steps_per_second': 7.881, 'epoch': 5.0}]

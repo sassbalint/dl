@@ -1,0 +1,1131 @@
+
+>> load dataset <<
+
+** raw datasets
+DatasetDict({
+    train: Dataset({
+        features: ['sentence', 'label', 'idx'],
+        num_rows: 8551
+    })
+    validation: Dataset({
+        features: ['sentence', 'label', 'idx'],
+        num_rows: 1043
+    })
+    test: Dataset({
+        features: ['sentence', 'label', 'idx'],
+        num_rows: 1063
+    })
+})
+
+** raw/train/0
+{'sentence': "Our friends won't buy this analysis, let alone the next one we propose.", 'label': 1, 'idx': 0}
+
+
+>> tokenize dataset <<
+
+** ex
+{'sentence': 'Day by day the facts are getting murkier.', 'label': 1, 'idx': 4}
+
+** ex/subwords
+['[CLS]', 'day', 'by', 'day', 'the', 'facts', 'are', 'getting', 'mu', '##rk', '##ier', '.', '[SEP]']
+
+** tokenized
+{'input_ids': [[101, 2256, 2814, 2180, 1005, 1056, 4965, 2023, 4106, 1010, 2292, 2894, 1996, 2279, 2028, 2057, 16599, 1012, 102], [101, 2028, 2062, 18404, 2236, 3989, 1998, 1045, 1005, 1049, 3228, 2039, 1012, 102], [101, 2028, 2062, 18404, 2236, 3989, 2030, 1045, 1005, 1049, 3228, 2039, 1012, 102], [101, 1996, 2062, 2057, 2817, 16025, 1010, 1996, 13675, 16103, 2121, 2027, 2131, 1012, 102], [101, 2154, 2011, 2154, 1996, 8866, 2024, 2893, 14163, 8024, 3771, 1012, 102]], 'attention_mask': [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]}
+
+** tokenized datasets
+DatasetDict({
+    train: Dataset({
+        features: ['attention_mask', 'idx', 'input_ids', 'label', 'sentence'],
+        num_rows: 8551
+    })
+    validation: Dataset({
+        features: ['attention_mask', 'idx', 'input_ids', 'label', 'sentence'],
+        num_rows: 1043
+    })
+    test: Dataset({
+        features: ['attention_mask', 'idx', 'input_ids', 'label', 'sentence'],
+        num_rows: 1063
+    })
+})
+
+
+>> load model <<
+
+
+>> metric <<
+
+** fake labels
+[1 1 0 0 1 0 1 0 1 0 0 0 0 1 1 0 0 1 0 0 1 1 0 0 1 0 1 1 1 0 1 0 1 0 0 1 1
+ 0 1 1 1 0 1 0 0 1 0 0 1 0 1 1 1 0 1 0 1 1 0 0 1 0 0 0]
+
+** fake preds
+[0 1 1 0 1 0 1 0 1 0 1 0 1 1 0 1 0 1 1 1 1 1 0 1 1 0 0 0 1 0 1 0 1 1 0 0 0
+ 1 0 0 0 0 0 1 0 1 0 1 1 1 1 1 0 1 0 0 1 0 1 1 1 0 1 1]
+
+** example `('glue', 'cola')` metric calculation
+{'matthews_correlation': 0.0657512425947884}
+
+
+>> finetune <<
+
+{'eval_loss': 0.5252300500869751, 'eval_matthews_correlation': 0.39178448431197893, 'eval_runtime': 0.4728, 'eval_samples_per_second': 2205.953, 'eval_steps_per_second': 19.035, 'epoch': 1.0}
+{'eval_loss': 0.47951486706733704, 'eval_matthews_correlation': 0.4680511526127468, 'eval_runtime': 0.4742, 'eval_samples_per_second': 2199.322, 'eval_steps_per_second': 18.978, 'epoch': 2.0}
+{'eval_loss': 0.502042293548584, 'eval_matthews_correlation': 0.4952437657124396, 'eval_runtime': 0.4745, 'eval_samples_per_second': 2198.095, 'eval_steps_per_second': 18.967, 'epoch': 3.0}
+{'eval_loss': 0.5435916185379028, 'eval_matthews_correlation': 0.48380345391488866, 'eval_runtime': 0.4765, 'eval_samples_per_second': 2188.84, 'eval_steps_per_second': 18.887, 'epoch': 4.0}
+{'eval_loss': 0.5462181568145752, 'eval_matthews_correlation': 0.47730754074783155, 'eval_runtime': 0.48, 'eval_samples_per_second': 2172.966, 'eval_steps_per_second': 18.75, 'epoch': 5.0}
+{'train_runtime': 53.6289, 'train_samples_per_second': 797.237, 'train_steps_per_second': 6.247, 'train_loss': 0.38755406621676775, 'epoch': 5.0}
+
+>> predict <<
+
+    0 The sailors rode the breeze clear of the 1 1 
+    1 The weights made the rope stretch over t 1 1 
+    2 The mechanical doll wriggled itself loos 1 1 
+    3 If you had eaten more, you would want le 1 1 
+    4 As you eat the most, you want the least. 0 1 *
+    5 The more you would want, the less you wo 0 1 *
+    6 I demand that the more John eat, the mor 0 1 *
+    7 Mary listens to the Grateful Dead, she g 1 1 
+    8 The angrier Mary got, the more she looke 1 1 
+    9 The higher the stakes, the lower his exp 1 1 
+   10 The more Fred is obnoxious, the less att 1 1 
+   11 John was lots more obnoxious than Fred.  1 1 
+   12 The more people you give beer to, the mo 1 1 
+   13 The more does Bill smoke, the more Susan 0 1 *
+   14 The more pictures of him that appear in  1 1 
+   15 Every senator seems to become more corru 1 1 
+   16 Who does John visit Sally because he lik 0 0 
+   17 Marianne did not leave.                  1 1 
+   18 He could not] have been working.         1 1 
+   19 He can not have been working.            1 1 
+   20 You will believe Bob.                    1 1 
+   21 John has not kissed Mary.                1 1 
+   22 I said that never in my life had I seen  1 1 
+   23 Mickey looked up it.                     0 1 *
+   24 There tended to be a lot of discussion.  1 1 
+   25 John tried to be a good boy.             1 1 
+   26 John is eager.                           1 1 
+   27 We want John to win.                     1 1 
+   28 The box contained the ball from the tree 0 1 *
+   29 The tube was escaped by gas.             0 1 *
+   30 Water bubbled up out of the kettle.      1 1 
+   31 The tub leaked water.                    1 1 
+   32 What the water did to the bottle was fil 0 1 *
+   33 What the water did to the whole bottle w 0 1 *
+   34 The tank leaked the fluid free.          1 1 
+   35 John lay the ball in the box.            1 1 
+   36 John owns the book.                      1 1 
+   37 We persuaded Mary to leave and Sue to st 1 1 
+   38 Most people probably consider, even thou 1 0 *
+   39 Mary beautifully plays the violin.       0 1 *
+   40 Clearly, John probably will immediately  1 1 
+   41 Sue gave to Bill a book.                 0 1 *
+   42 The men will all leave.                  1 1 
+   43 John went home.                          1 1 
+   44 They represented seriously to the dean M 0 0 
+   45 Us love they.                            0 0 
+   46 It is nice to go abroad.                 1 1 
+   47 Mary intended John to go abroad.         0 1 *
+   48 I remembered having kissed Mary.         1 1 
+   49 I can't believe Fred won't, either.      1 1 
+   50 John wants to read Fred's story, and I a 1 1 
+   51 We wanted to invite someone, but we coul 0 1 *
+   52 Mary will read Fred's story, and Joe wil 1 1 
+   53 Mary claimed that eating cabbage, Holly  1 1 
+   54 Mary came to be introduced by the barten 0 0 
+   55 If I can, I will work on it.             1 1 
+   56 Joe's neuroses bother his patrons, and S 1 1 
+   57 I know which book José didn't read for c 0 1 *
+   58 This is the book which Bob reviewed, and 0 1 *
+   59 I know which book Mag read, and which bo 1 0 *
+   60 I know which book Mag read, and which bo 0 0 
+   61 I'm sure I would like him to eat fruit m 1 1 
+   62 Rusty talked about himself only after Ma 1 1 
+   63 Fred talked about everything before Rust 1 1 
+   64 John often meets Mary.                   1 1 
+   65 The problem perceives easily.            0 0 
+   66 A hundred men surrounded the fort.       1 1 
+   67 We elected me.                           1 0 *
+   68 Which report that John was incompetent d 0 1 *
+   69 Mary has always preferred lemons to lime 1 1 
+   70 He let the cats which were whining out.  1 1 
+   71 What did Bill buy?                       1 1 
+   72 Mary saw the boy walking toward the rail 1 1 
+   73 A proof that the claim had been. made wa 0 0 
+   74 He attributed to a short circuit which w 1 0 *
+   75 The mayor regarded as being absurd the p 0 0 
+   76 I want that Bill left to remain a secret 0 1 *
+   77 I know a man who Tom drives as drives.   0 0 
+   78 Drowning cats, which is against the law, 0 1 *
+   79 Muriel said nothing else than that she h 1 1 
+   80 Himself is understood by Rutherford.     0 0 
+   81 I feel that Arch will show up.           1 1 
+   82 The proof this set is recursive is diffi 0 1 *
+   83 The madrigals which Henry plays the lute 0 0 
+   84 Tom picked these grapes, and I washed so 1 1 
+   85 Where did you go and who ate what?       1 0 *
+   86 Which boy's did we elect guardian's empl 0 0 
+   87 How sane is Peter?                       1 1 
+   88 I live at the place where Route 150 cros 1 1 
+   89 I live at the place where Route 150 cros 0 1 *
+   90 Who is she trying to make up to now?     1 1 
+   91 Wind was gotten of a plot to negotiate a 0 0 
+   92 Mike talked about politics yesterday to  1 1 
+   93 It was expected by the reporters that th 1 1 
+   94 Which hat did Mike quip that she never w 0 1 *
+   95 Which girl did Mike quip never wore this 0 1 *
+   96 We donated wire for the convicts to buil 1 0 *
+   97 I won't have some money.                 0 1 *
+   98 Do you believe the claim that somebody w 1 1 
+   99 I won't ask you to believe that he tried 1 1 
+  100 That Sam sometimes didn't sleep must hav 1 1 
+  101 I talked to Winston about himself.       1 0 *
+  102 That the fuzz wanted him worried John, b 1 1 
+  103 I'll work on it if Sam will be working o 1 1 
+  104 I'll work on it if I can.                1 1 
+  105 Here's a knife with which for you to cut 0 1 *
+  106 Fluffy is sick, which not everybody know 1 1 
+  107 Maxwell is quite a doctor.               1 1 
+  108 The younger woman might have been tall a 0 1 *
+  109 Sally is tall, and may be blond, and She 1 0 *
+  110 I have to try to finish grading some pap 1 1 
+  111 The socks are ready for for you to put o 0 0 
+  112 It is easy to play sonatas on this violi 1 1 
+  113 This violin is difficult to play sonatas 1 1 
+  114 My mother is easy to please my father an 0 0 
+  115 Poor Bill, it had started to rain and he 1 1 
+  116 That the cops spoke to the janitor about 0 1 *
+  117 Every student, and he wears socks, is a  0 0 
+  118 That girl was given my binoculars by him 1 1 
+  119 Bill didn't allege that Roger had eaten  1 1 
+  120 Nobody who hates to eat anything should  1 1 
+  121 Everybody around here who ever buys anyt 1 1 
+  122 I can't remember the name of somebody wh 0 1 *
+  123 No writer, and no playwright, meets in V 0 1 *
+  124 No writer, nor any playwright, meets in  0 1 *
+  125 That you will marry any student is not c 1 1 
+  126 Felicia kicked the ball off the bench.   1 1 
+  127 I sent the package halfway around the wo 1 1 
+  128 Sam gave the ball out of the basket.     0 0 
+  129 Sam offered the ball out of the basket.  0 0 
+  130 Park Square has a festive air.           1 1 
+  131 The worker will have a job.              1 1 
+  132 No one can forgive that comment to you.  0 1 *
+  133 We launched the rocket to the moon, but  1 1 
+  134 Sarah promised Catherine her old car, bu 1 1 
+  135 I lent the book partway to Tony.         0 0 
+  136 The farmer loaded the cart with apples.  1 1 
+  137 The farmer dumped the cart with apples.  0 1 *
+  138 Martha carved the baby a toy out of wood 1 1 
+  139 The bread cuts easily.                   1 1 
+  140 Janet broke Bill on the finger.          0 1 *
+  141 Janet broke the cup.                     1 1 
+  142 The visitor rang the bell.               1 1 
+  143 We pulled free.                          1 1 
+  144 That movie always shocks people.         1 1 
+  145 That movie always shocks.                1 1 
+  146 Sharon came the room.                    0 0 
+  147 Bill sent a package to Tom.              1 1 
+  148 That acorn will grow into an oak tree.   1 1 
+  149 He turned into a frog.                   1 1 
+  150 I mixed the sugar into the butter.       1 1 
+  151 Brian threw the fence with the stick.    0 1 *
+  152 Mira condemned Terry for the accident.   1 1 
+  153 We investigated the area for bombs.      1 0 *
+  154 I sensed his eagerness.                  1 1 
+  155 They praised the dedication in the volun 0 0 
+  156 The earth was believed to be round.      1 1 
+  157 Sarah smiled a charming smile.           1 1 
+  158 Sandra beamed a cheerful welcome.        1 1 
+  159 You've really lived it up.               1 1 
+  160 Paperback books lift onto the table easi 0 1 *
+  161 The books lifted onto the table.         0 1 *
+  162 Jessica loaded boxes under the wagon.    1 1 
+  163 Jessica loaded boxes on the wagon.       1 1 
+  164 Jessica crammed boxes at the truck.      0 0 
+  165 Lora buttered at the toast.              0 0 
+  166 Carla shoveled the walk.                 1 1 
+  167 Nora sent the book.                      1 1 
+  168 Nora sent Peter the book.                1 1 
+  169 Carla slid the book.                     1 1 
+  170 Carla slid at the book.                  0 0 
+  171 Amanda carried the package to Pamela.    1 1 
+  172 Packages drive easily to New York.       0 0 
+  173 The chair pushed.                        0 1 *
+  174 We offered a job to her.                 1 1 
+  175 A job offered.                           0 0 
+  176 Brown presented a plaque to Jones.       1 1 
+  177 Carmen bought Mary a dress.              1 1 
+  178 Carmen obtained the spare part at the ha 1 1 
+  179 Michelle kept the desk with the papers.  0 0 
+  180 Frances hid the presents in the drawer.  1 1 
+  181 The needle poked the cloth.              1 1 
+  182 Carrie touched that cat.                 1 1 
+  183 Herman whipped the sugar and the cream.  0 0 
+  184 Linda taped the picture to the wall.     1 1 
+  185 Linda taped the picture onto the wall.   1 1 
+  186 The child and her mother clung together. 1 1 
+  187 This flyer and that flyer differ.        1 1 
+  188 This flyer and that flyer differ apart.  0 0 
+  189 The jeweller scribbled the contract with 0 1 *
+  190 The gardener grew that acorn into an oak 1 0 *
+  191 I shaped a loaf.                         0 0 
+  192 The children amused.                     0 1 *
+  193 Susan whispered the news.                1 1 
+  194 Susan whispered at Rachel.               1 0 *
+  195 Ellen said that melons were selling well 1 1 
+  196 Ellen said about the present conditions. 0 1 *
+  197 Ellen warned Helen against skating on th 1 1 
+  198 Cynthia nibbled on the carrot .          1 1 
+  199 Cynthia chewed.                          0 1 *
+  200 Paul laughed at Mary.                    1 1 
+  201 Linda winked her lip.                    0 1 *
+  202 My heart is pounding me.                 0 0 
+  203 Sharon fainted from hunger.              1 1 
+  204 The witch poisoned the children.         1 1 
+  205 A grandfather clock ticked in the hallwa 1 1 
+  206 I squeaked the door.                     0 1 *
+  207 Over the fire there bubbled a fragrant s 1 1 
+  208 Soaring temperatures are predicted for t 1 1 
+  209 The fort fluttered with many flags.      0 0 
+  210 The voices echoed in the hall.           1 1 
+  211 The stream twists through the valley.    1 1 
+  212 There presented itself a wonderful oppor 0 1 *
+  213 A wonderful opportunity presented itself 1 1 
+  214 Out of the box jumped a little white rab 1 1 
+  215 Penny skated around the rink.            1 1 
+  216 Jackie accompanied Rose.                 1 1 
+  217 many information was provided.           0 0 
+  218 John offers many advice.                 0 1 *
+  219 The cake that Jones got was more delicio 1 1 
+  220 We recommend to eat less cake and pastry 1 1 
+  221 I saw that gas can explode.              1 1 
+  222 He washed her.                           1 1 
+  223 Wash you!                                0 1 *
+  224 They have no in.                         0 0 
+  225 Some my jobs are in jeopardy.            0 0 
+  226 It was the policeman met that several yo 0 0 
+  227 did the policeman meet in the park?      1 1 
+  228 John put old books in the box.           1 1 
+  229 The monkeys proud of their leader.       0 0 
+  230 John sounded very.                       0 0 
+  231 I don't know if I should agree.          1 1 
+  232 John bought a book on the table.         1 1 
+  233 John called the president a fool.        1 1 
+  234 I forgot how good beer tastes.           1 1 
+  235 This teacher is a genius.                1 1 
+  236 A good friend is remained to me by him.  0 0 
+  237 John ate his noodle quietly.             1 1 
+  238 A smith hammered the metal.              1 1 
+  239 Sandy removed her ballet shoes.          1 1 
+  240 This week will be a difficult one for us 1 1 
+  241 Benny worked in a shoe factory when he w 1 1 
+  242 Everyone hoped that she would sing.      1 1 
+  243 This proved a decisive factor.           1 1 
+  244 The crocodile devoured the doughnut.     1 1 
+  245 John is afraid of Bill.                  1 1 
+  246 John put under the bathtub.              0 0 
+  247 John placed Kim behind the garage.       1 1 
+  248 Kim depends for Sandy.                   0 1 *
+  249 John put the book in the box.            1 1 
+  250 John taught English Syntax to new studen 1 1 
+  251 John regards Bill as a good friend.      1 1 
+  252 Kim put in the box.                      0 0 
+  253 The chickens seem fond of the farmer.    1 1 
+  254 The rules require that the executives be 1 1 
+  255 That Fred was unpopular nominated Bill.  0 0 
+  256 They were taking a hard look at possible 1 1 
+  257 John paid me against the book.           0 0 
+  258 The committee will study the feasibility 1 1 
+  259 We made them be rude.                    1 1 
+  260 After reading the pamphlet, Judy threw i 1 1 
+  261 Students studying English reads Conrad's 0 1 *
+  262 I read some of the book.                 1 1 
+  263 Most of the fruit is rotten.             1 1 
+  264 Neither of students failed.              0 1 *
+  265 I drank some of water.                   0 1 *
+  266 It is a golden hair.                     1 0 *
+  267 The boy in the doorway waved to his fath 1 1 
+  268 That dog is so ferocious, it even tried  1 1 
+  269 He washed yourself.                      0 0 
+  270 John is easy to please Kim.              0 1 *
+  271 There seemed to be intelligent.          0 0 
+  272 John tried to please Stephen.            1 1 
+  273 We believed John to be a fountain in the 0 0 
+  274 It tries to leave the country.           0 0 
+  275 John tries to leave the country.         1 1 
+  276 Under the bed seems to be a fun place to 1 1 
+  277 There is believed to be sheep in the par 0 1 *
+  278 I hope to would study in France.         0 0 
+  279 John can kick the ball.                  1 1 
+  280 John will rain tomorrow.                 0 1 *
+  281 We expect there to will rain.            0 0 
+  282 John was found in the office.            1 1 
+  283 Did the child be in the school?          0 1 *
+  284 It did not rain.                         1 1 
+  285 John wants not to leave the town.        1 1 
+  286 Mary likes to tour art galleries, but Bi 1 1 
+  287 They needn't take this exam.             1 1 
+  288 Ann may spend her vacation in Italy.     1 1 
+  289 They love to play golf, but I do not.    1 1 
+  290 George has spent a lot of money, hasn't  1 1 
+  291 As a statesman, scarcely could he do any 1 1 
+  292 We never found any of the unicorns.      1 1 
+  293 One of Korea's most famous poets wrote t 1 1 
+  294 Somebody apparently struck the unidentif 1 1 
+  295 The car was driven.                      1 1 
+  296 Ricky can be relied on.                  1 1 
+  297 The bed was slept in.                    1 0 *
+  298 A pound was weighed by the book.         0 0 
+  299 Who do you think Tom saw?                1 1 
+  300 he had spent five thousand dollars.      1 1 
+  301 Fed knows which politician her to vote f 0 0 
+  302 How did you guess that he fixed the comp 1 1 
+  303 The committee knows whose efforts to ach 1 1 
+  304 Which house does your friend live?       0 1 *
+  305 the baker from whom I bought these bagel 1 1 
+  306 I found the place where we can relax.    1 1 
+  307 Jack is the person with whom Jenny fell  0 1 *
+  308 There is a bench to sit on.              1 1 
+  309 I met the man who grows peaches.         1 1 
+  310 Which topic did you choose without getti 1 1 
+  311 Which topic did you get bored because Ma 0 1 *
+  312 That is the reason why he resigned.      1 1 
+  313 It bothers me that John coughs.          1 1 
+  314 To please John is easy.                  1 1 
+  315 Kim is eager to please Tom.              1 1 
+  316 That we invaded Iraq really bites.       1 1 
+  317 It annoys me that Fido barks.            1 1 
+  318 Who achieved the best result was Angela. 0 1 *
+  319 It was the peasant girl who got it.      1 1 
+  320 That kind of person is hard to find anyo 1 1 
+  321 A sick owl doesn't hunt mice.            1 1 
+  322 Each candidate who has interest in seman 1 1 
+  323 Each author whose contribution is writte 1 1 
+  324 I'm sure we even got these tickets!      1 1 
+  325 I'm even sure we got these tickets!      1 1 
+  326 It's not because I have any sympathy for 1 1 
+  327 It isn't because Sue said anything bad a 1 1 
+  328 That he was hungry, John whined.         0 1 *
+  329 1 gave Mary after the party a book.      0 0 
+  330 Because she's so pleasant, as for Mary I 0 1 *
+  331 Though he may hate those that criticize  1 1 
+  332 With no job would John be happy.         1 1 
+  333 I have much of the manuscript left to ty 1 1 
+  334 He's a more reliable man.                1 0 *
+  335 Any trouble is what I don't want.        0 1 *
+  336 They may grow as high as bamboo.         1 1 
+  337 Some of them made as many errors as 20.  1 1 
+  338 Sally kissed himself.                    0 1 *
+  339 Drew believes I think Rosie loves magazi 1 1 
+  340 Dave, Dan, Erin, Jaime, and Alina left.  1 1 
+  341 Hopefully, we'll make it through the win 1 1 
+  342 Blue leather shows herself that Betsy is 0 0 
+  343 Gwen hit the baseball.                   1 1 
+  344 I hit that you knew the answer.          0 0 
+  345 I've lost my wallet or I've lost my mind 1 1 
+  346 It was a brand new car that he bought.   1 1 
+  347 He likes cookies and he hates crumb cake 1 1 
+  348 They chased the man with the car.        1 1 
+  349 I didn't have a red cent.                1 1 
+  350 the book of poems and from Blackwell tak 0 0 
+  351 the one with a red cover takes a very lo 1 1 
+  352 John has a fear of dogs.                 1 1 
+  353 The building's the roof is leaking.      0 0 
+  354 the panther's the coat is dark black.    0 0 
+  355 Colin asked if they could get a mortgage 1 1 
+  356 The man I saw get into the cab robbed th 1 1 
+  357 I know you eat asparagus.                1 1 
+  358 John's drum will always bother me.       1 1 
+  359 An evil thought struck Dave.             1 1 
+  360 In the classroom John put the book on th 1 1 
+  361 Phillip gave the medal to the soldier.   1 1 
+  362 Heidi thinks that Andy to eat salmon fla 0 0 
+  363 Heidi thinks that Andy should eat salmon 1 1 
+  364 He danced.                               1 1 
+  365 Did Calvin his homework?                 0 1 *
+  366 Sylvia was slapping Jeff upside the head 1 1 
+  367 If I am a rich man, I'd buy a diamond ri 0 1 *
+  368 If he were a rich man, he'd buy a diamon 1 1 
+  369 John is likely to leave.                 1 1 
+  370 The manager laughed.                     1 1 
+  371 Was sunk.                                0 1 *
+  372 Who did you think kissed the gorilla?    1 1 
+  373 Have you seen my model airplane collecti 1 1 
+  374 It seems that Lucy was mugged.           1 1 
+  375 I ate a salad that was filled with lima  1 1 
+  376 There were four men arriving at the stat 1 1 
+  377 Jean is reluctant to dance.              1 1 
+  378 I want her to dance.                     1 1 
+  379 Jean persuaded Robert.                   1 1 
+  380 Jean wants Bill to do the Macarena.      1 1 
+  381 The children admire their mother.        1 1 
+  382 Who has Peter talked with?               1 1 
+  383 Heidi likes her violin.                  1 1 
+  384 John thinks that Mary loves himself.     0 1 *
+  385 Which pictures of himself does John like 1 1 
+  386 Any owl hunts mice.                      1 1 
+  387 Any man didn't eat dinner.               0 1 *
+  388 A pilot could be flying this plane.      1 1 
+  389 Everybody who attended last week's huge  1 1 
+  390 Anybody who attended last week's huge ra 1 1 
+  391 Any tiger has orange fur, marked with bl 1 1 
+  392 Any albino tiger has orange fur, marked  1 1 
+  393 You must pick any flower you see.        1 1 
+  394 Any pilot on duty today could be flying  1 1 
+  395 You may pick every flower, but leave a f 0 1 *
+  396 The Dodgers beat the Red Sox and were be 1 1 
+  397 In which car was the man seen?           1 1 
+  398 The man who Mary loves and Sally hates c 1 0 *
+  399 The kennel which Mary made and Fido slee 0 1 *
+  400 Tom said he would and Bill actually did  1 1 
+  401 The wealthy young man bought that piano  1 1 
+  402 The dog stole the turkey.                1 1 
+  403 a tall building.                         1 1 
+  404 This building is tall.                   1 1 
+  405 I like the book which you gave me.       1 1 
+  406 Captain Wentworth wrote a letter to Anne 1 1 
+  407 She asked was Alison coming to the party 1 0 *
+  408 They realised that never had Sir Thomas  1 1 
+  409 Fanny regretted having to talk to Aunt N 1 1 
+  410 Knowing the country well, he took a shor 1 1 
+  411 He left the train with somebody else's w 1 1 
+  412 Magnus went to Ireland.                  1 1 
+  413 Who did John send the book?              1 1 
+  414 The idea dismayed the Prime Minister tha 1 1 
+  415 Came right in he did without so much as  1 0 *
+  416 Harriet admired Mr Knightley.            1 1 
+  417 The book is boring.                      1 1 
+  418 Ethel wishes to ask you some awkward que 1 1 
+  419 Emma made Harriet some food.             1 1 
+  420 The window was broken with a hammer.     1 1 
+  421 The fugitive lay motionless in order to  1 1 
+  422 The guard marched the prisoners round th 1 1 
+  423 Frank Churchill crossed the street.      1 1 
+  424 Emma and Harriet were attacked yesterday 1 1 
+  425 Fiona might be here by 5 o'clock.        1 1 
+  426 I am both expecting to get the job and o 1 1 
+  427 Pat was awarded the Golden Fleece Award  1 1 
+  428 Kim alienated cats and beating his dog.  0 0 
+  429 They knew that pictures of each other wo 1 1 
+  430 Which article did Terry file papers with 0 1 *
+  431 I want to try and buy some whiskey.      1 1 
+  432 She goes and buying some whiskey.        0 0 
+  433 Kim and Terry is happy.                  0 1 *
+  434 Kim gave a dollar to Bobbie and a dime t 1 1 
+  435 This girl in the red coat will put a pic 1 1 
+  436 Put a picture of Bill on your desk befor 0 0 
+  437 Picture of Bill, this girl in the red co 0 0 
+  438 Ann bought a first edition of Richard II 1 1 
+  439 John became deadly afraid of flying.     1 0 *
+  440 What John promised is to be gentle.      1 1 
+  441 Henri wants to buy which books about coo 1 1 
+  442 I will fix the computer for Carol.       1 1 
+  443 Smith loaned a valuable collection of ma 1 1 
+  444 The paper is cut by Mary.                1 1 
+  445 It was from six to nine or it took place 1 1 
+  446 Suddenly, there arrived two inspectors f 1 1 
+  447 The soup cooks, thickens.                1 1 
+  448 I gave money to the charity.             1 1 
+  449 John asked.                              1 1 
+  450 I saw even the student.                  1 1 
+  451 John whispered Mary left.                0 0 
+  452 Mary wonders that Bill will come.        0 1 *
+  453 Sophie will theater.                     0 0 
+  454 John finished the cake and drank the lem 1 1 
+  455 Herself likes Mary's mother.             0 0 
+  456 Each of the boys fought with some of the 1 1 
+  457 John's mother likes himself.             0 0 
+  458 Mary revealed himself to John.           0 1 *
+  459 Mary believes that Bill saw himself.     1 1 
+  460 John heard that they criticized themselv 0 0 
+  461 Mary thinks that she is smart.           1 1 
+  462 Henry found that Bill is sad.            1 1 
+  463 John considers himself proud of Mary.    1 1 
+  464 You should sit before there.             0 0 
+  465 There is a nurse available.              1 1 
+  466 Everyone hopes everyone to sleep.        0 0 
+  467 Everyone hopes that he will sleep.       1 1 
+  468 Only Churchill remembered Churchill givi 0 1 *
+  469 John promise Mary to shave himself.      1 0 *
+  470 John convinced Bill that Mary should sle 1 1 
+  471 I saw Bill while you did so Mary.        0 0 
+  472 What Mary did Bill was give a book.      0 0 
+  473 The bears sniffed                        1 0 *
+  474 to steal talismans from witches is dange 1 1 
+  475 Anson demonized                          0 1 *
+  476 You kicked yourselves                    1 1 
+  477 The book that I said that I'd never read 1 1 
+  478 Anson demonized up the Khyber            0 0 
+  479 It is not true that I might be going to  1 1 
+  480 Kick you!                                0 1 *
+  481 Jason persuaded the doctor to treat Mede 1 1 
+  482 Who did you get an accurate description  1 1 
+  483 The Peter we all like was at the party   1 1 
+  484 The government's imposition of a fine.   1 1 
+  485 Did Athena help us?                      1 1 
+  486 You wanted to meet the man I saw.        1 1 
+  487 Anson demonized David every day          1 1 
+  488 There is a programme about Euripides on  1 1 
+  489 Medea denied poisoning the phoenix.      1 1 
+  490 The elixir was hidden in a hole in the g 1 1 
+  491 Extremely frantically, Anson danced at T 1 0 *
+  492 What did you ask who Medea gave?         0 1 *
+  493 It's Anson that I like                   1 1 
+  494 Medea tried the nurse to poison her chil 0 0 
+  495 I felt that I know you.                  1 0 *
+  496 Will he can do it?                       1 1 
+  497 I ate that she was happy                 0 0 
+  498 Anson believed himself to be handsome.   1 1 
+  499 We arrived about six o'clock             1 1 
+  500 Gilgamesh is having fought the dragon.   0 0 
+  501 Anson thought that himself was happy.    0 0 
+  502 Fortunately Hermione passed biology      1 1 
+  503 I might be not going to the party but wa 1 1 
+  504 I thought he liked myself                0 0 
+  505 The butler sent the poison to Dinah.     1 1 
+  506 Jason happens to appear to seem to be si 1 1 
+  507 What did you ask who saw?                0 1 *
+  508 We linguists love to argue               1 1 
+  509 He can will go                           0 0 
+  510 How fierce the battle?                   0 1 *
+  511 Which king did you ask which city invade 0 1 *
+  512 It is some disgruntled old pigs in those 1 1 
+  513 That banana is eating the monkey.        1 1 
+  514 Burn them!                               1 1 
+  515 It stinks that Aphrodite is omnipotent.  1 1 
+  516 Agamemnon seems to be a maniac           1 1 
+  517 Will Anson come to the party?            1 1 
+  518 I wondered who Medea had poisoned.       1 1 
+  519 I inquired when could we leave.          0 1 *
+  520 They kicked them                         1 1 
+  521 The monkey is ate the banana             0 0 
+  522 I would like to could swim               1 0 *
+  523 I kicked myself                          1 1 
+  524 The bookcase ran                         0 0 
+  525 I shaved myself.                         1 0 *
+  526 Anson became a muscle bound.             1 1 
+  527 Somebody just left - guess who.          1 1 
+  528 They claimed they had settled on somethi 1 1 
+  529 If Sam was going, Sally would know where 1 1 
+  530 They're going to serve the guests someth 1 1 
+  531 She's reading. I can't imagine what.     1 1 
+  532 John said Joan saw someone from her grad 1 1 
+  533 John ate dinner but I don't know who.    0 1 *
+  534 She mailed John a letter, but I don't kn 0 1 *
+  535 I served leek soup to my guests.         1 1 
+  536 I served my guests.                      1 1 
+  537 She was bathing, but I couldn't make out 0 1 *
+  538 She knew French for Tom.                 0 1 *
+  539 John is tall on several occasions.       0 1 *
+  540 The ship sank, but I don't know with wha 0 0 
+  541 They noticed the painting, but I don't k 0 1 *
+  542 John was tall, but I don't know on what  0 1 *
+  543 Joan ate dinner with someone but I don't 1 1 
+  544 Joan ate dinner with someone but I don't 1 0 *
+  545 I know that Meg's attracted to Harry, bu 0 1 *
+  546 Since Jill said Joe had invited Sue, we  0 1 *
+  547 I know that Meg's attracted to Harry, bu 1 1 
+  548 She said she had spoken to everybody, bu 0 1 *
+  549 Each of the performers came in, but were 0 1 *
+  550 She didn't talk to one student.          1 1 
+  551 She doesn't meet anyone for dinner, but  0 1 *
+  552 Everyone relies on someone. It's unclear 1 1 
+  553 Each student wrote a paper on a Mayan la 1 1 
+  554 The newspaper has reported that they are 1 1 
+  555 The newspaper has reported that they are 1 1 
+  556 Most columnists claim that a senior Whit 1 1 
+  557 Most columnists claim that a senior Whit 1 1 
+  558 Bill wondered how many papers Sandy had  1 1 
+  559 I never know which papers Sandy has read 1 1 
+  560 Sandy had read how many papers?!         1 1 
+  561 Everybody gets on well with a certain re 1 1 
+  562 Which book did each author recommend?    1 1 
+  563 His or her least known work.             1 1 
+  564 They were going to meet sometime on Sund 1 1 
+  565 John likes some students, but I don't kn 1 1 
+  566 I don't know who John likes.             1 1 
+  567 John likes some students, but I don't kn 0 1 *
+  568 Joan said she talked to the students, bu 0 1 *
+  569 He announced he had eaten the asparagus, 0 1 *
+  570 She was reading the books under the tabl 1 0 *
+  571 He announced he would marry the woman he 1 1 
+  572 She talked to John or Mary but I don't k 1 1 
+  573 She talked to John or Mary but I don't k 1 1 
+  574 She talked to Harry, but I don't know wh 1 1 
+  575 I will see them, but I don't know how ma 1 1 
+  576 Everyone who knows either Susan or Laura 1 1 
+  577 She said she talked to three students bu 0 1 *
+  578 She said she talked to those students bu 0 1 *
+  579 He shouted again, but I don't know who t 1 1 
+  580 She was dancing with somebody, but I don 1 0 *
+  581 Several firefighters were injured, but i 1 1 
+  582 Meg is attracted to Harry, but they don' 1 1 
+  583 Sandy was trying to work out which stude 1 1 
+  584 Sandy was trying to work out which stude 0 1 *
+  585 John and someone were dancing together,  0 1 *
+  586 The TA's have been arguing about whether 1 1 
+  587 It has been determined that somebody wil 0 1 *
+  588 Sally asked if somebody was going to fai 0 1 *
+  589 The TA's have been arguing about whether 0 1 *
+  590 Sandy is very anxious to see if the stud 1 1 
+  591 Sandy is very anxious to see if the stud 1 1 
+  592 Clinton is anxious to find out which bud 1 1 
+  593 Sandy is wondering whether there will be 1 1 
+  594 In which way is Sandy very anxious to se 0 1 *
+  595 In which way is Clinton anxious to find  0 1 *
+  596 I know how many assignments I've graded, 1 1 
+  597 What did you leave before they did?      0 1 *
+  598 What did you leave before they started p 0 1 *
+  599 Sandy was trying to work out which stude 1 1 
+  600 The administration has issued a statemen 1 1 
+  601 Sandy was trying to work out which stude 1 1 
+  602 The administration has issued a statemen 1 1 
+  603 The administration has issued a statemen 1 1 
+  604 I think Agnes said that Bill would speak 1 0 *
+  605 Agnes wondered how John could eat but it 0 1 *
+  606 Tony sent Mo a picture that he painted,  0 1 *
+  607 She's been dancing but we don't know wit 1 1 
+  608 Who did they see someone?                0 0 
+  609 It was believed by everybody that Mary w 1 1 
+  610 That professor is feared by all students 1 1 
+  611 Mary was respected by John.              1 1 
+  612 Ted was bitten by the spider.            1 1 
+  613 The book was by John written.            0 0 
+  614 The argument was summed by the coach up. 0 0 
+  615 The paper was written up by John.        1 1 
+  616 The paper was written by John up.        0 1 *
+  617 John was spoken to by Mary.              1 1 
+  618 John was spoken by Mary to.              0 0 
+  619 The book was seen by Mary.               1 0 *
+  620 John was seen the book.                  0 0 
+  621 The book was written.                    1 0 *
+  622 John was spoke by Mary to.               0 0 
+  623 The table was wiped clean by John.       1 1 
+  624 The table was wiped by John clean.       0 0 
+  625 Mary was given by John the book.         0 0 
+  626 John was believed to be telling the trut 1 1 
+  627 John was believed by Mary to be telling  1 1 
+  628 The car was driven by John to Maine.     1 1 
+  629 It was believed by the students that the 1 1 
+  630 The magazines were sent to herself by Ma 0 1 *
+  631 Chocolate eggs were hidden from each oth 0 1 *
+  632 The magazines were sent by Mary to herse 1 1 
+  633 Chocolate eggs were hidden from no child 1 1 
+  634 Tabs were kept on each agent by the othe 1 1 
+  635 Chocolate eggs were hidden from every ch 1 1 
+  636 Books were taken from no student and giv 1 1 
+  637 Books were taken from no student and giv 0 0 
+  638 Books were taken from each student by th 1 1 
+  639 Books were taken from each student and g 1 1 
+  640 Books were taken from each student and g 0 1 *
+  641 Jack hates Sue and is loved by Mary.     1 1 
+  642 Vera sent a baby alligator to Max and a  1 1 
+  643 Either Sam plays the bassoon or Jekyll t 1 1 
+  644 Sam doesn't play bassoon, nor Medusa obo 1 1 
+  645 Bill ate the peaches, but Harry the grap 0 1 *
+  646 I no more could have stolen that steak t 1 1 
+  647 Bill ate more peaches than Harry did gra 1 1 
+  648 Bill ate the peaches and Harry did the g 0 1 *
+  649 Tom will smoke the grass, and Reuben has 0 1 *
+  650 If the ants were called elephants and el 1 1 
+  651 Simon quickly dropped the gold, and Jack 1 0 *
+  652 Bob tried to wash himself, and Mary to r 1 0 *
+  653 Harry told Sue that Albania is a lovely  1 1 
+  654 Harry told Sue that Albania is a lovely  1 0 *
+  655 Max seemed to be trying to begin to love 1 1 
+  656 Max seemed to be trying to force Ted to  1 0 *
+  657 Max seemed to be trying to force Ted to  0 1 *
+  658 Arizona elected Goldwater Senator, and M 0 1 *
+  659 Millie will send the President an obscen 0 1 *
+  660 Maytag will give a brand-new dryer to th 0 1 *
+  661 Bill didn't eat the peaches, nor Harry.  0 1 *
+  662 Bill ate the peaches, and Harry did, too 1 1 
+  663 Bill must quickly eat the peaches, and H 0 1 *
+  664 Whenever Russia has made a major politic 1 1 
+  665 Bill's story about Sue and Max's about K 1 1 
+  666 I bought three quarts of wine and two of 1 1 
+  667 Scientists at the South Hanoi Institute  1 1 
+  668 Bill's story about Sue may be amazing, b 1 1 
+  669 I like Bill's yellow shirt, but not Max' 1 1 
+  670 Bill's funny story about Sue and Max's b 1 1 
+  671 Bill's wine from France and Ted's from C 1 1 
+  672 As a teacher, you have to deal simultane 0 1 *
+  673 Neither Von Karajan's recording of Beeth 1 1 
+  674 Gould's performance of Bach on the piano 0 1 *
+  675 Tom's dog with one eye attacked Frank's  0 1 *
+  676 Because Steve's of a spider's eye had be 0 0 
+  677 Neither von Karajan's recording of Beeth 1 1 
+  678 Tom's dog with one eye attacked Fred's.  1 1 
+  679 I borrowed Fred's diagram of a snake's e 1 1 
+  680 Jerry attempted to blow up the Pentagon. 1 1 
+  681 So fast did he run that nobody could cat 1 1 
+  682 Bill bought a red house, and Max bought  1 1 
+  683 Who always drinks milk?                  1 1 
+  684 The book which inspired them was very lo 1 0 *
+  685 The book what inspired them was very lon 0 0 
+  686 I know the person whose mother died.     1 1 
+  687 The person whose mother's dog we were al 1 1 
+  688 I wonder whose mother died.              1 1 
+  689 I wonder whose mother's dog died.        1 1 
+  690 I wonder to whom they dedicated the buil 1 1 
+  691 Give me the phone number of the person w 1 1 
+  692 This is the senator to whose mother's fr 1 0 *
+  693 I want goes to the store.                0 0 
+  694 I wonder what to be a clown on the cover 0 0 
+  695 Bother you that Kim left!                0 0 
+  696 A student who to talk to us just walked  0 1 *
+  697 Whose bagels do you like?                1 1 
+  698 I wonder in whom to place my trust.      1 1 
+  699 There were several old rocks songs that  1 1 
+  700 It was to to amuse us that Kim was singi 0 0 
+  701 What they feared most was to be no one a 0 1 *
+  702 We tried to amuse them that Kim was sing 0 1 *
+  703 Mary asked me if, in St. Louis, John cou 1 1 
+  704 Mary arranged for, in St. Louis, John to 0 0 
+  705 It would be unwise for there to be no fi 1 1 
+  706 I believe there to be no way out.        1 1 
+  707 I wonder in whom them to place their tru 0 0 
+  708 I wonder whom us to trust.               0 0 
+  709 I wonder who for us to trust.            0 0 
+  710 I wonder who to place my trust in.       1 0 *
+  711 I know the people that voted in the elec 1 1 
+  712 I threw away a book that Sandy thought w 1 1 
+  713 I thought that you were sick.            1 1 
+  714 I dislike the people in who we placed ou 0 1 *
+  715 I dislike the company in which we placed 1 1 
+  716 I dislike the people in whose house we s 1 1 
+  717 I dislike the person with whom we were t 1 1 
+  718 Jones, that we were talking to last nigh 0 1 *
+  719 A letter was received that Jones would b 1 1 
+  720 A letter was received Jones would be ups 0 0 
+  721 I saw someone yesterday I hadn't seen fo 1 1 
+  722 Something happened I couldn't really tal 1 1 
+  723 The only person that I like whose kids D 1 1 
+  724 The book that I like which everyone else 1 1 
+  725 The only person whose kids Dana is willi 0 1 *
+  726 The book that I like - everyone else in  0 1 *
+  727 The only person whose kids Dana is willi 1 1 
+  728 Which book's, author did you meet?       1 0 *
+  729 Which boy's, mother, did you meet who yo 0 0 
+  730 Which book's, author did you meet who yo 0 0 
+  731 Which boy's, mother, did you meet?       1 0 *
+  732 All who lost money in the scam are eligi 1 1 
+  733 Who for Sandy to talk to is still enroll 0 0 
+  734 Who who you like does Sandy also like?   1 1 
+  735 Everything you like is on the table.     1 1 
+  736 The bills passed by the House yesterday  1 1 
+  737 The only people being added to our group 1 1 
+  738 We like ourselves.                       1 1 
+  739 Nobody likes us.                         1 1 
+  740 Leslie likes ourselves.                  0 0 
+  741 Ourselves like ourselves.                0 0 
+  742 She voted for herself.                   1 1 
+  743 We gave us presents.                     0 1 *
+  744 We gave ourselves presents.              1 1 
+  745 We gave presents to ourselves.           1 1 
+  746 We gave us to the cause.                 0 1 *
+  747 We gave ourselves to the cause.          1 1 
+  748 Leslie told us about us.                 0 1 *
+  749 Leslie told ourselves about us.          0 0 
+  750 We think that Leslie likes us.           1 1 
+  751 We think that Leslie likes ourselves.    0 1 *
+  752 Our friends like us.                     1 1 
+  753 Those pictures of us offended us.        1 1 
+  754 We found your letter to ourselves in the 0 1 *
+  755 Vote for you!                            0 1 *
+  756 Vote for yourself!                       1 1 
+  757 We appeared to them to vote for themselv 0 1 *
+  758 We admired the pictures of us in the alb 1 1 
+  759 We admired the pictures of ourselves in  1 1 
+  760 Leslie used a pen.                       1 1 
+  761 We put the pigs in a pen.                1 1 
+  762 We need to pen the pigs to keep them fro 1 1 
+  763 They should pen the letter quickly.      1 1 
+  764 The car won't run.                       1 1 
+  765 This dye will run.                       1 1 
+  766 She can run an accelerator.              1 1 
+  767 These stockings will run.                1 1 
+  768 We need another run to win.              1 1 
+  769 Lee saw the student with a telescope.    1 1 
+  770 I forgot how good beer tastes.           1 1 
+  771 Visiting relatives can be boring.        1 1 
+  772 If only Superman would stop flying plane 1 1 
+  773 That's a new car dealership.             1 1 
+  774 I know you like the back of my hand.     1 1 
+  775 Max is on the phone now.                 1 1 
+  776 I saw her duck.                          1 1 
+  777 I'm creating a committee. Kim – you're i 1 1 
+  778 Lights go out at ten. There will be no t 1 1 
+  779 They found the book on the atom.         1 0 *
+  780 Which experts testified against defendan 1 1 
+  781 List all experts for the defendant who r 1 0 *
+  782 List associates of each defendant who sp 1 0 *
+  783 They lost themselves' books.             0 0 
+  784 Some sentences go on and on and on.      1 1 
+  785 Sentences some go on and on and on and o 0 1 *
+  786 That surprised me.                       1 1 
+  787 I noticed the.                           0 0 
+  788 They were interested in his.             1 1 
+  789 This is my favorite.                     1 1 
+  790 A large dog chased a small cat.          1 1 
+  791 Some people yell at noisy dogs in my nei 1 1 
+  792 Some people yell at the dogs in my neigh 1 1 
+  793 Some people yell at the dogs.            1 1 
+  794 Some people yell at noisy dogs.          1 1 
+  795 Some people yell at dogs.                1 1 
+  796 Some people consider the noisy dogs dang 1 1 
+  797 Some people consider the dogs in my neig 1 1 
+  798 Some people consider noisy dogs in my ne 1 1 
+  799 Some people consider the dogs dangerous. 1 1 
+  800 Some people consider noisy dogs dangerou 1 1 
+  801 Some people consider dogs in my neighbor 1 1 
+  802 Some people consider dogs dangerous.     1 1 
+  803 People with children who use drugs shoul 1 1 
+  804 This disease gave Leslie a fever in Rome 1 1 
+  805 The love of my life and mother of my chi 1 1 
+  806 Most elections are quickly forgotten, bu 1 1 
+  807 It is painting by Klee or drawing by Mir 0 0 
+  808 The defendant denied the accusation.     1 1 
+  809 The teacher disappeared the problem.     0 0 
+  810 The teacher handed the student.          0 0 
+  811 The bird sings.                          1 1 
+  812 The bird sing.                           0 0 
+  813 Birds sings.                             0 1 *
+  814 The birds give the worm a tug.           1 1 
+  815 The bird give the worm a tug.            0 0 
+  816 The birds gives the worm a tug.          0 0 
+  817 Terry delighted in my pain.              1 1 
+  818 Terry delighted.                         0 1 *
+  819 Terry delighted my pain.                 0 0 
+  820 Kerry remarked it was late.              1 1 
+  821 What additional categories and rules wou 1 1 
+  822 We created a monster.                    1 1 
+  823 I was already aware of fact.             0 0 
+  824 The defendant deny the allegation.       0 1 *
+  825 The defendants denies the allegation.    0 1 *
+  826 The defendant walks.                     1 1 
+  827 The defendant walk.                      0 0 
+  828 The defendants walks.                    0 0 
+  829 How many feature structures categories c 1 1 
+  830 The child put the toy on the table.      1 1 
+  831 The teacher became angry with the studen 1 1 
+  832 The teacher became.                      0 0 
+  833 The jury believed the defendant lied.    1 1 
+  834 The guests dined.                        1 1 
+  835 We relied on Leslie.                     1 1 
+  836 We relied above Leslie.                  0 0 
+  837 We celebrated in the streets.            1 0 *
+  838 We celebrated in the streets in the rain 1 1 
+  839 The children are happy of ice cream.     0 0 
+  840 The children are fond with the ice cream 0 0 
+  841 The children are fond that they have ice 0 0 
+  842 A magazine appeared on the newsstands.   1 1 
+  843 A magazine about crime appeared on the n 1 1 
+  844 Newsweek appeared on the newsstands.     1 1 
+  845 Newsweek about crime appeared on the new 0 1 *
+  846 The report that crime was declining surp 1 1 
+  847 The book surprised many people.          1 1 
+  848 The book that crime was declining surpri 0 0 
+  849 The storm arrived after the picnic.      1 0 *
+  850 The storm arrived while the picnic.      0 0 
+  851 The storm arrived while we ate lunch.    1 1 
+  852 This dogs barked.                        0 0 
+  853 These dogs barked.                       1 1 
+  854 A chair was broken.                      1 1 
+  855 They want them arrested.                 1 1 
+  856 They preferred them arrested.            1 0 *
+  857 We preferred them on our team.           1 1 
+  858 With my parents as supportive as they ar 1 1 
+  859 We walks.                                0 0 
+  860 Few dog barked.                          0 0 
+  861 The dogs barked.                         1 1 
+  862 I walk and Dana runs.                    1 1 
+  863 They like us.                            1 1 
+  864 Us like them.                            0 1 *
+  865 Kim likes dogs.                          1 1 
+  866 Dogs like Kim.                           1 1 
+  867 The person responsible confessed.        1 1 
+  868 The person confessed responsible.        0 0 
+  869 The cat slept soundly and furry.         0 1 *
+  870 The soundly and furry cat slept.         0 1 *
+  871 Chris walks, Pat eats broccoli, and Sand 1 1 
+  872 There was some particular dog who saved  1 1 
+  873 Susan frightens her.                     1 1 
+  874 Susan told her a story.                  1 1 
+  875 Susan told a story to her.               1 1 
+  876 Susan devoted herself to linguistics.    1 1 
+  877 Nobody told Susan about herself.         1 0 *
+  878 That picture of Susan offended her.      1 1 
+  879 He offended Sandy.                       1 1 
+  880 I enjoy yourself.                        0 1 *
+  881 They talk to themselves.                 1 1 
+  882 Nobody told Susan.                       1 1 
+  883 Protect yourself!                        1 1 
+  884 Protect you!                             0 1 *
+  885 I met the person who left.               1 1 
+  886 Leslie slept.                            1 1 
+  887 Chris handed Bo.                         0 1 *
+  888 Dana walked and Leslie ran.              1 1 
+  889 Dana walking and Leslie ran.             0 0 
+  890 Dana walking and Leslie running.         0 0 
+  891 the putter of books left.                0 1 *
+  892 Kris donated a book to the library.      1 1 
+  893 The police sprayed the protesters with w 1 1 
+  894 The police sprayed water on the proteste 1 1 
+  895 The students drove cars.                 1 1 
+  896 These cars drive easily.                 1 1 
+  897 The horse kicked me black and blue.      1 1 
+  898 They yelled.                             1 1 
+  899 The horse raced past the barn fell.      1 0 *
+  900 The horse that was raced past the barn f 1 0 *
+  901 The boat seen down the river sank.       1 1 
+  902 The evidence assembled by the prosecutio 1 1 
+  903 Lou forgot the umbrella.                 1 1 
+  904 Lou forgot the umbrella in the closet.   1 1 
+  905 Lou hoped the umbrella was broken.       1 1 
+  906 Lou hoped the umbrella in the closet.    0 0 
+  907 Lou put the umbrella was broken.         0 0 
+  908 Lou put the umbrella in the closet.      1 1 
+  909 The artist drew the child with a pencil. 1 1 
+  910 The dog bit the cat.                     1 1 
+  911 The cat was bitten the mouse.            0 0 
+  912 The cat was bitten the mouse by the dog. 0 0 
+  913 Chris was handed Sandy a note by Pat.    0 1 *
+  914 Chris was handed a note.                 1 1 
+  915 Chris was handed Sandy a note.           0 1 *
+  916 TV puts dumb ideas in children's heads.  1 1 
+  917 Dumb ideas are put in children's heads b 1 1 
+  918 Dumb ideas are put in children's heads.  1 1 
+  919 Dumb ideas are put notions in children's 0 0 
+  920 The patient died.                        1 1 
+  921 The patient was died.                    0 0 
+  922 Chris was handed.                        0 0 
+  923 TV puts dumb ideas.                      0 1 *
+  924 He was arrested by the police.           1 1 
+  925 The cat got bitten.                      1 1 
+  926 The cat were bitten by the dog.          0 1 *
+  927 There is a monster in Loch Ness.         1 1 
+  928 It is obvious that Pat is lying.         1 1 
+  929 Pat is the captain of the team.          1 1 
+  930 Pat is hate Chris.                       0 0 
+  931 There is a unicorn in the garden.        1 1 
+  932 There was a felon elected to the city co 1 1 
+  933 There is a seat available.               1 1 
+  934 A seat available was in the last row.    0 0 
+  935 Many people were fond of Pat.            1 1 
+  936 People are looking through the window.   1 1 
+  937 A felon was elected to the city council. 1 1 
+  938 There loved Sandy.                       0 0 
+  939 We talked to them about there.           0 0 
+  940 It mattered that the Giants had lost.    1 1 
+  941 That dogs bark annoys people.            1 1 
+  942 It annoys people that dogs bark.         1 1 
+  943 That Chris knew the answer occurred to P 1 1 
+  944 It never occurred to Pat that Chris knew 1 1 
+  945 That the Cardinal won the game gave Sand 1 1 
+  946 It gave Sandy a thrill that the Cardinal 1 0 *
+  947 That Sandy had lied suggested.           0 0 
+  948 It loved Sandy.                          0 1 *
+  949 Cohen proved the independence of the con 1 1 
+  950 Cohen proved that the continuum hypothes 1 1 
+  951 We forgot our invitations.               1 1 
+  952 Nobody saw Pat.                          1 1 
+  953 That Fido barks annoys me.               1 1 
+  954 Fido barks.                              1 1 
+  955 Chris dreads the bucket.                 1 1 
+  956 The candidates bring advantage to the vo 1 1 
+  957 Tabs are kept on suspected drug dealers  1 1 
+  958 Advantage is taken of every opportunity  1 1 
+  959 The bucket was kicked by Pat.            1 1 
+  960 John is sad.                             1 1 
+  961 John loaded the wagon full with hay.     1 1 
+  962 John loaded the wagon with hay green.    0 0 
+  963 I presented John with it dead.           0 0 
+  964 Of whom are you thinking?                1 1 
+  965 John became rich.                        1 1 
+  966 I gave John gold apples.                 1 1 
+  967 how silly is Bill considered?            1 1 
+  968 how mad was Bill made?                   1 1 
+  969 John is sick.                            1 1 
+  970 John left singing.                       1 1 
+  971 John is near Larry.                      1 1 
+  972 John gave Bill the dog dead.             1 1 
+  973 Bill was struck by John as stupid.       0 0 
+  974 John was struck as sick.                 0 1 *
+  975 John was struck by Bill's idiocy.        1 1 
+  976 John promised Bill to leave.             1 1 
+  977 John tried to leave.                     1 1 
+  978 To leave would be a pleasure.            1 1 
+  979 John was struck by Bill as pompous.      0 0 
+  980 John was promised by Bill to leave.      0 1 *
+  981 They make good cooks.                    1 1 
+  982 there is nothing to do.                  1 1 
+  983 John has something for Bill to do.       1 1 
+  984 I am counting on Bill to incriminate him 1 1 
+  985 On whom are you counting to incriminate  1 1 
+  986 I am counting on Bill to get there on ti 1 1 
+  987 I would prefer to leave.                 1 1 
+  988 I would hate for John to leave.          1 1 
+  989 I would prefer for John to leave.        1 1 
+  990 It was hated for John to leave.          0 0 
+  991 John decided for Bill to get the prize.  0 0 
+  992 John decided Bill to get the prize.      0 0 
+  993 to die is no fun.                        1 1 
+  994 John wants to leave.                     1 1 
+  995 John counted on Bill to get there on tim 1 1 
+  996 I bought Bill a book to read.            1 1 
+  997 John told Mary that it would be importan 1 1 
+  998 John told Mary that it was important to  1 1 
+  999 John, told Mary that it would be appropr 1 1 
+ 1000 the election of John president surprised 0 1 *
+ 1001 John's arriving dead surprised me.       1 0 *
+ 1002 the attempt by John to leave surprised m 1 1 
+ 1003 John left orders to follow Pete.         1 1 
+ 1004 John left us orders to follow Pete.      1 1 
+ 1005 John left orders not to be disturbed.    1 1 
+ 1006 That he is here is clear.                1 1 
+ 1007 It is a problem that he is here.         1 0 *
+ 1008 It bothers me that he is here.           1 1 
+ 1009 John regretted it that Bill had a good t 1 0 *
+ 1010 John believes it that Bill is here.      0 0 
+ 1011 John believes it sincerely that Bill is  0 1 *
+ 1012 John is aware of it that Bill is here.   0 0 
+ 1013 John felt it that Bill was tardy.        0 0 
+ 1014 John believed it that Bill was tardy.    0 0 
+ 1015 It was believed that Bill was tardy.     1 1 
+ 1016 That John is reluctant seems.            0 0 
+ 1017 It is the problem that he is here.       0 1 *
+ 1018 That he is here is the problem.          1 1 
+ 1019 The problem we are discussing is George. 1 0 *
+ 1020 It is to give up to leave.               0 0 
+ 1021 It would prove our theory to be untenabl 1 1 
+ 1022 It was believed to be illegal by them to 0 1 *
+ 1023 John grudgingly accepted judgments of hi 1 1 
+ 1024 It was to John that I gave the book.     1 1 
+ 1025 I bought it to read.                     1 1 
+ 1026 I bought it to give to Pete.             1 1 
+ 1027 I gave it to Pete to take to the fair.   1 1 
+ 1028 I gave Pete the book to impress.         0 1 *
+ 1029 I wrote to Bill.                         1 1 
+ 1030 I presented it to Bill to read.          1 1 
+ 1031 I presented Bill with it to read.        0 0 
+ 1032 I gave a book to Bill to read.           1 1 
+ 1033 John thinks it would upset himself to di 1 1 
+ 1034 John made Bill mad at himself.           1 1 
+ 1035 John made Bill master of himself.        1 1 
+ 1036 The correspondence school made Bill a go 1 1 
+ 1037 The correspondence school sent Bill a go 1 1 
+ 1038 John considers Bill silly.               1 1 
+ 1039 John considers Bill to be silly.         1 1 
+ 1040 John bought a dog for himself to play wi 0 1 *
+ 1041 John arranged for himself to get the pri 1 1 
+ 1042 John talked to Bill about himself.       1 0 *
+** .
+0.7909875359539789
+
+
+>> eval <<
+
+** RESULT
+{'eval_loss': 0.5462181568145752, 'eval_matthews_correlation': 0.47730754074783155, 'eval_runtime': 0.4745, 'eval_samples_per_second': 2198.055, 'eval_steps_per_second': 18.967, 'epoch': 5.0}
+
