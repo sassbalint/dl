@@ -76,12 +76,13 @@
            + ennek az align a lényege!
              (amit a bert-sklearn biztos auto megcsinál...)
          +4] kipróbálni a tokclass, ahogy van -> fenti [0]
+         +5] [./training_seqclass.py] és [./seqclass.py] teljesen egységes
           _ITT_T [1]
-         ! [cos]/[ref] terv:
+         [6] [cos]/[ref] terv:
            -- legyen a tokclass-ban is olyan szép bemutató a végén,
               mint a seqclass-ban (!) XXX :)
            -- tokclass: ne legyen 2x az IGNORED dolog kiszámolva!
-         [5] kipróbálni a tokclass-t a saját adataimon -> fenti [1]
+         [7] kipróbálni a tokclass-t a saját adataimon -> fenti [1]
        @ https://colab.research.google.com/github/huggingface/notebooks/blob/master/examples/token_classification.ipynb
          = [./tokclass.py]
          ! ha ez megvan, akkor megvan a token-class

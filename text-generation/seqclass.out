@@ -32,6 +32,25 @@ DatasetDict({
 ** tokenized
 {'input_ids': [[101, 2256, 2814, 2180, 1005, 1056, 4965, 2023, 4106, 1010, 2292, 2894, 1996, 2279, 2028, 2057, 16599, 1012, 102], [101, 2028, 2062, 18404, 2236, 3989, 1998, 1045, 1005, 1049, 3228, 2039, 1012, 102], [101, 2028, 2062, 18404, 2236, 3989, 2030, 1045, 1005, 1049, 3228, 2039, 1012, 102], [101, 1996, 2062, 2057, 2817, 16025, 1010, 1996, 13675, 16103, 2121, 2027, 2131, 1012, 102], [101, 2154, 2011, 2154, 1996, 8866, 2024, 2893, 14163, 8024, 3771, 1012, 102]], 'attention_mask': [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]}
 
+101 [CLS]
+2256 our
+2814 friends
+2180 won
+1005 '
+1056 t
+4965 buy
+2023 this
+4106 analysis
+1010 ,
+2292 let
+2894 alone
+1996 the
+2279 next
+2028 one
+2057 we
+16599 propose
+1012 .
+102 [SEP]
 ** tokenized datasets
 DatasetDict({
     train: Dataset({
@@ -55,25 +74,25 @@ DatasetDict({
 >> metric <<
 
 ** fake labels
-[1 1 0 0 1 0 1 0 1 0 0 0 0 1 1 0 0 1 0 0 1 1 0 0 1 0 1 1 1 0 1 0 1 0 0 1 1
- 0 1 1 1 0 1 0 0 1 0 0 1 0 1 1 1 0 1 0 1 1 0 0 1 0 0 0]
+[0 0 0 0 0 0 0 1 1 0 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 0 1 1 0 0 1 0 1 0 1 0
+ 1 1 0 1 0 1 0 0 1 0 0 0 1 1 1 1 1 0 0 1 0 0 1 1 0 1 0]
 
 ** fake preds
-[0 1 1 0 1 0 1 0 1 0 1 0 1 1 0 1 0 1 1 1 1 1 0 1 1 0 0 0 1 0 1 0 1 1 0 0 0
- 1 0 0 0 0 0 1 0 1 0 1 1 1 1 1 0 1 0 0 1 0 1 1 1 0 1 1]
+[0 0 0 1 1 0 1 1 1 0 1 0 1 1 0 1 0 1 0 1 0 0 0 0 1 0 0 1 0 1 1 0 1 1 0 1 1
+ 1 0 0 1 1 0 1 0 0 1 1 0 1 1 1 0 1 1 0 0 1 1 0 0 1 1 0]
 
 ** example `('glue', 'cola')` metric calculation
-{'matthews_correlation': 0.0657512425947884}
+{'matthews_correlation': 0.007889684472185849}
 
 
 >> finetune <<
 
-{'eval_loss': 0.5252300500869751, 'eval_matthews_correlation': 0.39178448431197893, 'eval_runtime': 0.4728, 'eval_samples_per_second': 2205.953, 'eval_steps_per_second': 19.035, 'epoch': 1.0}
-{'eval_loss': 0.47951486706733704, 'eval_matthews_correlation': 0.4680511526127468, 'eval_runtime': 0.4742, 'eval_samples_per_second': 2199.322, 'eval_steps_per_second': 18.978, 'epoch': 2.0}
-{'eval_loss': 0.502042293548584, 'eval_matthews_correlation': 0.4952437657124396, 'eval_runtime': 0.4745, 'eval_samples_per_second': 2198.095, 'eval_steps_per_second': 18.967, 'epoch': 3.0}
-{'eval_loss': 0.5435916185379028, 'eval_matthews_correlation': 0.48380345391488866, 'eval_runtime': 0.4765, 'eval_samples_per_second': 2188.84, 'eval_steps_per_second': 18.887, 'epoch': 4.0}
-{'eval_loss': 0.5462181568145752, 'eval_matthews_correlation': 0.47730754074783155, 'eval_runtime': 0.48, 'eval_samples_per_second': 2172.966, 'eval_steps_per_second': 18.75, 'epoch': 5.0}
-{'train_runtime': 53.6289, 'train_samples_per_second': 797.237, 'train_steps_per_second': 6.247, 'train_loss': 0.38755406621676775, 'epoch': 5.0}
+{'eval_loss': 0.5171593427658081, 'eval_matthews_correlation': 0.3768849092974155, 'eval_runtime': 1.2015, 'eval_samples_per_second': 868.059, 'eval_steps_per_second': 7.49, 'epoch': 1.0}
+{'eval_loss': 0.4805269241333008, 'eval_matthews_correlation': 0.45286217246735105, 'eval_runtime': 1.1811, 'eval_samples_per_second': 883.054, 'eval_steps_per_second': 7.62, 'epoch': 2.0}
+{'eval_loss': 0.503508985042572, 'eval_matthews_correlation': 0.4700719675330965, 'eval_runtime': 1.144, 'eval_samples_per_second': 911.717, 'eval_steps_per_second': 7.867, 'epoch': 3.0}
+{'eval_loss': 0.5429630279541016, 'eval_matthews_correlation': 0.48848785650378773, 'eval_runtime': 1.2534, 'eval_samples_per_second': 832.169, 'eval_steps_per_second': 7.181, 'epoch': 4.0}
+{'eval_loss': 0.5427433252334595, 'eval_matthews_correlation': 0.4821946236605807, 'eval_runtime': 1.2231, 'eval_samples_per_second': 852.726, 'eval_steps_per_second': 7.358, 'epoch': 5.0}
+{'train_runtime': 139.2468, 'train_samples_per_second': 307.045, 'train_steps_per_second': 2.406, 'train_loss': 0.38196579662721547, 'epoch': 5.0}
 
 >> predict <<
 
@@ -147,7 +166,7 @@ DatasetDict({
    67 We elected me.                           1 0 *
    68 Which report that John was incompetent d 0 1 *
    69 Mary has always preferred lemons to lime 1 1 
-   70 He let the cats which were whining out.  1 1 
+   70 He let the cats which were whining out.  1 0 *
    71 What did Bill buy?                       1 1 
    72 Mary saw the boy walking toward the rail 1 1 
    73 A proof that the claim had been. made wa 0 0 
@@ -172,7 +191,7 @@ DatasetDict({
    92 Mike talked about politics yesterday to  1 1 
    93 It was expected by the reporters that th 1 1 
    94 Which hat did Mike quip that she never w 0 1 *
-   95 Which girl did Mike quip never wore this 0 1 *
+   95 Which girl did Mike quip never wore this 0 0 
    96 We donated wire for the convicts to buil 1 0 *
    97 I won't have some money.                 0 1 *
    98 Do you believe the claim that somebody w 1 1 
@@ -193,7 +212,7 @@ DatasetDict({
   113 This violin is difficult to play sonatas 1 1 
   114 My mother is easy to please my father an 0 0 
   115 Poor Bill, it had started to rain and he 1 1 
-  116 That the cops spoke to the janitor about 0 1 *
+  116 That the cops spoke to the janitor about 0 0 
   117 Every student, and he wears socks, is a  0 0 
   118 That girl was given my binoculars by him 1 1 
   119 Bill didn't allege that Roger had eaten  1 1 
@@ -217,7 +236,7 @@ DatasetDict({
   137 The farmer dumped the cart with apples.  0 1 *
   138 Martha carved the baby a toy out of wood 1 1 
   139 The bread cuts easily.                   1 1 
-  140 Janet broke Bill on the finger.          0 1 *
+  140 Janet broke Bill on the finger.          0 0 
   141 Janet broke the cup.                     1 1 
   142 The visitor rang the bell.               1 1 
   143 We pulled free.                          1 1 
@@ -260,18 +279,18 @@ DatasetDict({
   180 Frances hid the presents in the drawer.  1 1 
   181 The needle poked the cloth.              1 1 
   182 Carrie touched that cat.                 1 1 
-  183 Herman whipped the sugar and the cream.  0 0 
+  183 Herman whipped the sugar and the cream.  0 1 *
   184 Linda taped the picture to the wall.     1 1 
   185 Linda taped the picture onto the wall.   1 1 
   186 The child and her mother clung together. 1 1 
   187 This flyer and that flyer differ.        1 1 
-  188 This flyer and that flyer differ apart.  0 0 
+  188 This flyer and that flyer differ apart.  0 1 *
   189 The jeweller scribbled the contract with 0 1 *
   190 The gardener grew that acorn into an oak 1 0 *
   191 I shaped a loaf.                         0 0 
   192 The children amused.                     0 1 *
   193 Susan whispered the news.                1 1 
-  194 Susan whispered at Rachel.               1 0 *
+  194 Susan whispered at Rachel.               1 1 
   195 Ellen said that melons were selling well 1 1 
   196 Ellen said about the present conditions. 0 1 *
   197 Ellen warned Helen against skating on th 1 1 
@@ -347,7 +366,7 @@ DatasetDict({
   267 The boy in the doorway waved to his fath 1 1 
   268 That dog is so ferocious, it even tried  1 1 
   269 He washed yourself.                      0 0 
-  270 John is easy to please Kim.              0 1 *
+  270 John is easy to please Kim.              0 0 
   271 There seemed to be intelligent.          0 0 
   272 John tried to please Stephen.            1 1 
   273 We believed John to be a fountain in the 0 0 
@@ -442,7 +461,7 @@ DatasetDict({
   362 Heidi thinks that Andy to eat salmon fla 0 0 
   363 Heidi thinks that Andy should eat salmon 1 1 
   364 He danced.                               1 1 
-  365 Did Calvin his homework?                 0 1 *
+  365 Did Calvin his homework?                 0 0 
   366 Sylvia was slapping Jeff upside the head 1 1 
   367 If I am a rich man, I'd buy a diamond ri 0 1 *
   368 If he were a rich man, he'd buy a diamon 1 1 
@@ -464,7 +483,7 @@ DatasetDict({
   384 John thinks that Mary loves himself.     0 1 *
   385 Which pictures of himself does John like 1 1 
   386 Any owl hunts mice.                      1 1 
-  387 Any man didn't eat dinner.               0 1 *
+  387 Any man didn't eat dinner.               0 0 
   388 A pilot could be flying this plane.      1 1 
   389 Everybody who attended last week's huge  1 1 
   390 Anybody who attended last week's huge ra 1 1 
@@ -516,7 +535,7 @@ DatasetDict({
   436 Put a picture of Bill on your desk befor 0 0 
   437 Picture of Bill, this girl in the red co 0 0 
   438 Ann bought a first edition of Richard II 1 1 
-  439 John became deadly afraid of flying.     1 0 *
+  439 John became deadly afraid of flying.     1 1 
   440 What John promised is to be gentle.      1 1 
   441 Henri wants to buy which books about coo 1 1 
   442 I will fix the computer for Carol.       1 1 
@@ -550,10 +569,10 @@ DatasetDict({
   470 John convinced Bill that Mary should sle 1 1 
   471 I saw Bill while you did so Mary.        0 0 
   472 What Mary did Bill was give a book.      0 0 
-  473 The bears sniffed                        1 0 *
+  473 The bears sniffed                        1 1 
   474 to steal talismans from witches is dange 1 1 
   475 Anson demonized                          0 1 *
-  476 You kicked yourselves                    1 1 
+  476 You kicked yourselves                    1 0 *
   477 The book that I said that I'd never read 1 1 
   478 Anson demonized up the Khyber            0 0 
   479 It is not true that I might be going to  1 1 
@@ -568,7 +587,7 @@ DatasetDict({
   488 There is a programme about Euripides on  1 1 
   489 Medea denied poisoning the phoenix.      1 1 
   490 The elixir was hidden in a hole in the g 1 1 
-  491 Extremely frantically, Anson danced at T 1 0 *
+  491 Extremely frantically, Anson danced at T 1 1 
   492 What did you ask who Medea gave?         0 1 *
   493 It's Anson that I like                   1 1 
   494 Medea tried the nurse to poison her chil 0 0 
@@ -601,7 +620,7 @@ DatasetDict({
   521 The monkey is ate the banana             0 0 
   522 I would like to could swim               1 0 *
   523 I kicked myself                          1 1 
-  524 The bookcase ran                         0 0 
+  524 The bookcase ran                         0 1 *
   525 I shaved myself.                         1 0 *
   526 Anson became a muscle bound.             1 1 
   527 Somebody just left - guess who.          1 1 
@@ -619,7 +638,7 @@ DatasetDict({
   539 John is tall on several occasions.       0 1 *
   540 The ship sank, but I don't know with wha 0 0 
   541 They noticed the painting, but I don't k 0 1 *
-  542 John was tall, but I don't know on what  0 1 *
+  542 John was tall, but I don't know on what  0 0 
   543 Joan ate dinner with someone but I don't 1 1 
   544 Joan ate dinner with someone but I don't 1 0 *
   545 I know that Meg's attracted to Harry, bu 0 1 *
@@ -656,7 +675,7 @@ DatasetDict({
   576 Everyone who knows either Susan or Laura 1 1 
   577 She said she talked to three students bu 0 1 *
   578 She said she talked to those students bu 0 1 *
-  579 He shouted again, but I don't know who t 1 1 
+  579 He shouted again, but I don't know who t 1 0 *
   580 She was dancing with somebody, but I don 1 0 *
   581 Several firefighters were injured, but i 1 1 
   582 Meg is attracted to Harry, but they don' 1 1 
@@ -684,7 +703,7 @@ DatasetDict({
   604 I think Agnes said that Bill would speak 1 0 *
   605 Agnes wondered how John could eat but it 0 1 *
   606 Tony sent Mo a picture that he painted,  0 1 *
-  607 She's been dancing but we don't know wit 1 1 
+  607 She's been dancing but we don't know wit 1 0 *
   608 Who did they see someone?                0 0 
   609 It was believed by everybody that Mary w 1 1 
   610 That professor is feared by all students 1 1 
@@ -714,7 +733,7 @@ DatasetDict({
   634 Tabs were kept on each agent by the othe 1 1 
   635 Chocolate eggs were hidden from every ch 1 1 
   636 Books were taken from no student and giv 1 1 
-  637 Books were taken from no student and giv 0 0 
+  637 Books were taken from no student and giv 0 1 *
   638 Books were taken from each student by th 1 1 
   639 Books were taken from each student and g 1 1 
   640 Books were taken from each student and g 0 1 *
@@ -773,7 +792,7 @@ DatasetDict({
   693 I want goes to the store.                0 0 
   694 I wonder what to be a clown on the cover 0 0 
   695 Bother you that Kim left!                0 0 
-  696 A student who to talk to us just walked  0 1 *
+  696 A student who to talk to us just walked  0 0 
   697 Whose bagels do you like?                1 1 
   698 I wonder in whom to place my trust.      1 1 
   699 There were several old rocks songs that  1 1 
@@ -781,13 +800,13 @@ DatasetDict({
   701 What they feared most was to be no one a 0 1 *
   702 We tried to amuse them that Kim was sing 0 1 *
   703 Mary asked me if, in St. Louis, John cou 1 1 
-  704 Mary arranged for, in St. Louis, John to 0 0 
+  704 Mary arranged for, in St. Louis, John to 0 1 *
   705 It would be unwise for there to be no fi 1 1 
   706 I believe there to be no way out.        1 1 
   707 I wonder in whom them to place their tru 0 0 
   708 I wonder whom us to trust.               0 0 
   709 I wonder who for us to trust.            0 0 
-  710 I wonder who to place my trust in.       1 0 *
+  710 I wonder who to place my trust in.       1 1 
   711 I know the people that voted in the elec 1 1 
   712 I threw away a book that Sandy thought w 1 1 
   713 I thought that you were sick.            1 1 
@@ -818,7 +837,7 @@ DatasetDict({
   738 We like ourselves.                       1 1 
   739 Nobody likes us.                         1 1 
   740 Leslie likes ourselves.                  0 0 
-  741 Ourselves like ourselves.                0 0 
+  741 Ourselves like ourselves.                0 1 *
   742 She voted for herself.                   1 1 
   743 We gave us presents.                     0 1 *
   744 We gave ourselves presents.              1 1 
@@ -858,7 +877,7 @@ DatasetDict({
   778 Lights go out at ten. There will be no t 1 1 
   779 They found the book on the atom.         1 0 *
   780 Which experts testified against defendan 1 1 
-  781 List all experts for the defendant who r 1 0 *
+  781 List all experts for the defendant who r 1 1 
   782 List associates of each defendant who sp 1 0 *
   783 They lost themselves' books.             0 0 
   784 Some sentences go on and on and on.      1 1 
@@ -977,8 +996,8 @@ DatasetDict({
   897 The horse kicked me black and blue.      1 1 
   898 They yelled.                             1 1 
   899 The horse raced past the barn fell.      1 0 *
-  900 The horse that was raced past the barn f 1 0 *
-  901 The boat seen down the river sank.       1 1 
+  900 The horse that was raced past the barn f 1 1 
+  901 The boat seen down the river sank.       1 0 *
   902 The evidence assembled by the prosecutio 1 1 
   903 Lou forgot the umbrella.                 1 1 
   904 Lou forgot the umbrella in the closet.   1 1 
@@ -1023,7 +1042,7 @@ DatasetDict({
   943 That Chris knew the answer occurred to P 1 1 
   944 It never occurred to Pat that Chris knew 1 1 
   945 That the Cardinal won the game gave Sand 1 1 
-  946 It gave Sandy a thrill that the Cardinal 1 0 *
+  946 It gave Sandy a thrill that the Cardinal 1 1 
   947 That Sandy had lied suggested.           0 0 
   948 It loved Sandy.                          0 1 *
   949 Cohen proved the independence of the con 1 1 
@@ -1043,7 +1062,7 @@ DatasetDict({
   963 I presented John with it dead.           0 0 
   964 Of whom are you thinking?                1 1 
   965 John became rich.                        1 1 
-  966 I gave John gold apples.                 1 1 
+  966 I gave John gold apples.                 1 0 *
   967 how silly is Bill considered?            1 1 
   968 how mad was Bill made?                   1 1 
   969 John is sick.                            1 1 
@@ -1056,7 +1075,7 @@ DatasetDict({
   976 John promised Bill to leave.             1 1 
   977 John tried to leave.                     1 1 
   978 To leave would be a pleasure.            1 1 
-  979 John was struck by Bill as pompous.      0 0 
+  979 John was struck by Bill as pompous.      0 1 *
   980 John was promised by Bill to leave.      0 1 *
   981 They make good cooks.                    1 1 
   982 there is nothing to do.                  1 1 
@@ -1067,7 +1086,7 @@ DatasetDict({
   987 I would prefer to leave.                 1 1 
   988 I would hate for John to leave.          1 1 
   989 I would prefer for John to leave.        1 1 
-  990 It was hated for John to leave.          0 0 
+  990 It was hated for John to leave.          0 1 *
   991 John decided for Bill to get the prize.  0 0 
   992 John decided Bill to get the prize.      0 0 
   993 to die is no fun.                        1 1 
@@ -1084,7 +1103,7 @@ DatasetDict({
  1004 John left us orders to follow Pete.      1 1 
  1005 John left orders not to be disturbed.    1 1 
  1006 That he is here is clear.                1 1 
- 1007 It is a problem that he is here.         1 0 *
+ 1007 It is a problem that he is here.         1 1 
  1008 It bothers me that he is here.           1 1 
  1009 John regretted it that Bill had a good t 1 0 *
  1010 John believes it that Bill is here.      0 0 
@@ -1102,7 +1121,7 @@ DatasetDict({
  1022 It was believed to be illegal by them to 0 1 *
  1023 John grudgingly accepted judgments of hi 1 1 
  1024 It was to John that I gave the book.     1 1 
- 1025 I bought it to read.                     1 1 
+ 1025 I bought it to read.                     1 0 *
  1026 I bought it to give to Pete.             1 1 
  1027 I gave it to Pete to take to the fair.   1 1 
  1028 I gave Pete the book to impress.         0 1 *
@@ -1121,11 +1140,11 @@ DatasetDict({
  1041 John arranged for himself to get the pri 1 1 
  1042 John talked to Bill about himself.       1 0 *
 ** .
-0.7909875359539789
+0.7929050814956855
 
 
 >> eval <<
 
 ** RESULT
-{'eval_loss': 0.5462181568145752, 'eval_matthews_correlation': 0.47730754074783155, 'eval_runtime': 0.4745, 'eval_samples_per_second': 2198.055, 'eval_steps_per_second': 18.967, 'epoch': 5.0}
+{'eval_loss': 0.5427433252334595, 'eval_matthews_correlation': 0.4821946236605807, 'eval_runtime': 1.1665, 'eval_samples_per_second': 894.101, 'eval_steps_per_second': 7.715, 'epoch': 5.0}
 

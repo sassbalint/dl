@@ -1,17 +1,24 @@
 """
-https://colab.research.google.com/github/huggingface/notebooks/blob/master/examples/text_classification.ipynb
+Finetune for text classification.
 """
-
-# pip install transformers datasets
 
 from datasets import load_dataset, load_metric
 from transformers import AutoTokenizer, TrainingArguments, Trainer
 from transformers import AutoModelForSequenceClassification
 import numpy as np
 
+# https://colab.research.google.com/github/huggingface/notebooks/blob/master/examples/text_classification.ipynb
 MODEL = "distilbert-base-uncased"
-TASK = "cola" # GLUE' CoLA task = grammatical or not?
-              # see other GLUE tasks in original notebook
+TASK = ("glue", "cola") # GLUE's CoLA task = grammatical or not?
+# keys: 'idx', 'label', 'sentence'
+DATACOLUMN = "sentence"
+# new keys after tok: 'attention_mask', 'input_ids'
+TRAIN = "train"
+EVAL = "validation"
+METRIC = TASK
+SAVE_DIR = f'{MODEL.split("/")[-1]}-finetuned-{"-".join(TASK)}'
+
+DATASET_SIZE = 0 # 0 means all data
 BATCH_SIZE = 32 # based on gpustat -cupF
 
 def section(s): print(f'\n>> {s} <<\n')
@@ -20,16 +27,14 @@ def msg(msg, obj, inline=False):
     print(f'** {msg}{sep}{obj}\n')
 
 section("load dataset")
-raw_datasets = load_dataset("glue", TASK) # 'idx', 'label', 'sentence'
-DATACOLUMN = "sentence"
-#LABELCOLUMN = "label" # XXX whyever not needed
+raw_datasets = load_dataset(*TASK)
 msg('raw datasets', raw_datasets)
-msg('raw/train/0', raw_datasets["train"][0])
+msg('raw/train/0', raw_datasets[TRAIN][0])
 
 section("tokenize dataset")
 tokenizer = AutoTokenizer.from_pretrained(MODEL) # use_fast=True
 
-example = raw_datasets["train"][4]
+example = raw_datasets[TRAIN][4]
 tokenized_example = tokenizer(example[DATACOLUMN])
 tokens = tokenizer.convert_ids_to_tokens(tokenized_example["input_ids"])
 msg('ex', example)
@@ -41,39 +46,39 @@ def tokenize_function(examples):
 msg('tokenized', tokenize_function(raw_datasets['train'][:5]))
 
 tokenized_datasets = raw_datasets.map(tokenize_function, batched=True)
-# új kulcsok: 'attention_mask', 'input_ids'
+
+# az első 20 subword-ID a neki megfelelő ("dekódolt") stringgel
+for t in tokenized_datasets['train'][0]['input_ids'][:20]:
+    print(t, tokenizer.decode(t))
 
 msg('tokenized datasets', tokenized_datasets)
 
-train_dataset = tokenized_datasets["train"]
-eval_dataset = tokenized_datasets["validation"]
-# ha kisebb kell...
-# train_dataset = tokenized_datasets["train"].shard(index=1, num_shards=10) 
+if DATASET_SIZE > 0:
+    train_dataset = tokenized_datasets[TRAIN].shuffle(seed=42).select(range(DATASET_SIZE))
+    eval_dataset = tokenized_datasets[EVAL].shuffle(seed=42).select(range(DATASET_SIZE))
+else:
+    train_dataset = tokenized_datasets[TRAIN]
+    eval_dataset = tokenized_datasets[EVAL]
 
 section("load model")
 num_labels = 2
 model = AutoModelForSequenceClassification.from_pretrained(MODEL, num_labels=num_labels)
 
 args = TrainingArguments(
-    f'{MODEL.split("/")[-1]}-finetuned-{TASK}',
-    evaluation_strategy = "epoch",
-    learning_rate=2e-5,
+    SAVE_DIR,
+    evaluation_strategy="epoch",
     per_device_train_batch_size=BATCH_SIZE,
     per_device_eval_batch_size=BATCH_SIZE,
-    num_train_epochs=5,
+    learning_rate=2e-5,
     weight_decay=0.01,
+    num_train_epochs=5,
 
-    # needed for `load_best_model_at_end`
     #save_strategy = "epoch",
     #load_best_model_at_end=True,
-    #metric_for_best_model="matthews_correlation",
-
-    # a hf access token is needed to do this
-    #push_to_hub=True,
+    #metric_for_best_model="...",
 )
 
 section("metric")
-METRIC = ('glue', TASK)
 metric = load_metric(*METRIC)
 
 import random
@@ -100,7 +105,7 @@ trainer = Trainer(
     args=args,
     train_dataset=train_dataset,
     eval_dataset=eval_dataset,
-    tokenizer=tokenizer, # to use default data collator (?)
+    tokenizer=tokenizer, # needed? for a default data collator?
     compute_metrics=compute_metrics,
 )
 trainer.train()
@@ -109,9 +114,6 @@ trainer.train()
 # -> https://huggingface.co/course/chapter3/3?fw=pt / predict
 section("predict")
 preds, labels, _ = trainer.predict(eval_dataset)
-# ha jól látom: eval_dataset['label'] == labels
-# -> azaz predict() kimenetében az eredeti címkék vannak a .label_ids -ben
-#    a predikciók a .predictions -ban vannak -- logit-ként!
 ok = 0
 for i, (et, pp, pl) in enumerate(zip(eval_dataset[DATACOLUMN], preds, labels)):
     pred = logits2preds(pp)
@@ -128,36 +130,4 @@ msg('.', ok/len(labels))
 section("eval")
 result = trainer.evaluate()
 msg('RESULT', result)
-
-# -----
-
-## Hyperparameter search
-#
-# pip install optuna OR pip install ray[tune] is needed to do this!
-#
-# így kell, mert többször kell :)
-#def model_init():
-#    return AutoModelForSequenceClassification.from_pretrained(MODEL, num_labels=num_labels)
-#
-#trainer = Trainer(
-#    model_init=model_init,
-#    args=args,
-#    train_dataset=tokenized_datasets["train"],
-#    eval_dataset=tokenized_datasets["validation"],
-#    tokenizer=tokenizer,
-#    compute_metrics=compute_metrics
-#)
-#
-## can take a long time!!! -- try with smaller data
-#best_run = trainer.hyperparameter_search(n_trials=10, direction="maximize")
-#
-#print(best_run)
-#
-## To reproduce the best training,
-## just set the hyperparameters in your `TrainingArgument`
-## before creating a `Trainer`
-#for n, v in best_run.hyperparameters.items():
-#    setattr(trainer.args, n, v)
-#
-#trainer.train()
 
