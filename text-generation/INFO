@@ -78,18 +78,24 @@
          +4] kipróbálni a tokclass, ahogy van -> fenti [0]
          +5] [./training_seqclass.py] és [./seqclass.py] teljesen egységes
          +6] [./training_seqclass.py] és [./seqclass.py] összeolvasztani 
-          _ITT_T [1]
          [7] tokclass [cos]/[ref] terv:
-           -- formátuma legyen a seqclass-é <- ezen már ne változtassak! (!) XXX :)
-           -- legyen a tokclass-ban is olyan szép bemutató a végén,
+           + formátuma legyen a seqclass-é <- ezen már ne változtassak! (!) XXX :)
+           + tokclass: ne legyen 2x az IGNORED dolog kiszámolva!
+            _ITT_T [1]
+           - legyen a tokclass-ban is olyan szép bemutató a végén,
               mint a seqclass-ban (!) XXX :)
-           -- tokclass: ne legyen 2x az IGNORED dolog kiszámolva!
          [8] kipróbálni a tokclass-t a saját adataimon -> fenti [1]
+         [9] 2-3 elemből álló adatok ellenőrizni,
+             hogy helyes a kiértékelés! (!) XXX :)
        @ https://colab.research.google.com/github/huggingface/notebooks/blob/master/examples/token_classification.ipynb
          = [./tokclass.py]
          ! ha ez megvan, akkor megvan a token-class
      ! ez is érdekes lehet,  _olvassam:
        @ https://github.com/huggingface/transformers/tree/master/examples/pytorch
+     * preprocessing
+       @ https://huggingface.co/transformers/preprocessing.html
+     * big table of models
+       @ https://huggingface.co/transformers/index.html#bigtable
 
    i BART / paraphrase
      + [./bart_paraphrase.py]

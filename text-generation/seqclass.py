@@ -4,6 +4,7 @@ Finetune for text classification.
 
 from datasets import load_dataset, load_metric
 from transformers import AutoTokenizer, TrainingArguments, Trainer
+from transformers import AutoModelForSequenceClassification
 import numpy as np
 
 import sys
@@ -15,8 +16,6 @@ if not(len(sys.argv) >= 2 and sys.argv[1] in {'glue-cola', 'imdb'}):
 if sys.argv[1] == 'glue-cola':
 
     # https://colab.research.google.com/github/huggingface/notebooks/blob/master/examples/text_classification.ipynb
-    from transformers import AutoModelForSequenceClassification
-
     MODEL = "distilbert-base-uncased"
     TASK = ("glue", "cola") # GLUE's CoLA task = grammatical or not?
     # keys: 'idx', 'label', 'sentence'
@@ -33,8 +32,6 @@ if sys.argv[1] == 'glue-cola':
 elif sys.argv[1] == 'imdb':
 
     # https://huggingface.co/docs/transformers/training / COLAB notebook
-    from transformers import AutoModelForSequenceClassification
-
     MODEL = "bert-base-cased"
     TASK = ("imdb",) # sentiment on movie reviews
     # keys: 'text', 'label'
@@ -48,6 +45,9 @@ elif sys.argv[1] == 'imdb':
     DATASET_SIZE = 500 # 0 means all data
     BATCH_SIZE = 4 # based on gpustat -cupF
 
+EXAMPLE = 4 # index of example taken from data
+EXAMPLES = EXAMPLE + 1 # to define range 0..EXAMPLES
+
 
 def section(s): print(f'\n>> {s} <<\n')
 def msg(msg, obj, inline=False):
@@ -57,12 +57,14 @@ def msg(msg, obj, inline=False):
 section("load dataset")
 raw_datasets = load_dataset(*TASK)
 msg('raw datasets', raw_datasets)
-msg('raw/train/0', raw_datasets[TRAIN][0])
+msg(f'raw/train/{EXAMPLE}', raw_datasets[TRAIN][EXAMPLE])
 
 section("tokenize dataset")
-tokenizer = AutoTokenizer.from_pretrained(MODEL) # use_fast=True
+tokenizer = AutoTokenizer.from_pretrained(MODEL, use_fast=True)
+# You can check whether the used model have a FastTokenizer here:
+# https://huggingface.co/transformers/index.html#bigtable
 
-example = raw_datasets[TRAIN][4]
+example = raw_datasets[TRAIN][EXAMPLE]
 tokenized_example = tokenizer(example[DATACOLUMN])
 tokens = tokenizer.convert_ids_to_tokens(tokenized_example["input_ids"])
 msg('ex', example)
@@ -71,12 +73,12 @@ msg('ex/subwords', tokens)
 def tokenize_function(examples):
     return tokenizer(examples[DATACOLUMN], truncation=True)
 
-msg('tokenized', tokenize_function(raw_datasets['train'][:5]))
+msg('tokenized', tokenize_function(raw_datasets[TRAIN][:EXAMPLES]))
 
 tokenized_datasets = raw_datasets.map(tokenize_function, batched=True)
 
 # az első 20 subword-ID a neki megfelelő ("dekódolt") stringgel
-for t in tokenized_datasets['train'][0]['input_ids'][:20]:
+for t in tokenized_datasets[TRAIN][EXAMPLE]['input_ids'][:20]:
     print(t, tokenizer.decode(t))
 
 msg('tokenized datasets', tokenized_datasets)
@@ -104,6 +106,9 @@ args = TrainingArguments(
     #save_strategy = "epoch",
     #load_best_model_at_end=True,
     #metric_for_best_model="...",
+
+    # a hf access token is needed to do this
+    #push_to_hub=True,
 )
 
 section("metric")

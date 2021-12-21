@@ -17,8 +17,8 @@ DatasetDict({
     })
 })
 
-** raw/train/0
-{'text': 'I rented I AM CURIOUS-YELLOW from my video store because of all the controversy that surrounded it when it was first released in 1967. I also heard that at first it was seized by U.S. customs if it ever tried to enter this country, therefore being a fan of films considered "controversial" I really had to see this for myself.<br /><br />The plot is centered around a young Swedish drama student named Lena who wants to learn everything she can about life. In particular she wants to focus her attentions to making some sort of documentary on what the average Swede thought about certain political issues such as the Vietnam War and race issues in the United States. In between asking politicians and ordinary denizens of Stockholm about their opinions on politics, she has sex with her drama teacher, classmates, and married men.<br /><br />What kills me about I AM CURIOUS-YELLOW is that 40 years ago, this was considered pornographic. Really, the sex and nudity scenes are few and far between, even then it\'s not shot like some cheaply made porno. While my countrymen mind find it shocking, in reality sex and nudity are a major staple in Swedish cinema. Even Ingmar Bergman, arguably their answer to good old boy John Ford, had sex scenes in his films.<br /><br />I do commend the filmmakers for the fact that any sex shown in the film is shown for artistic purposes rather than just to shock people and make money to be shown in pornographic theaters in America. I AM CURIOUS-YELLOW is a good film for anyone wanting to study the meat and potatoes (no pun intended) of Swedish cinema. But really, this film doesn\'t have much of a plot.', 'label': 0}
+** raw/train/4
+{'text': 'Oh, brother...after hearing about this ridiculous film for umpteen years all I can think of is that old Peggy Lee song..<br /><br />"Is that all there is??" ...I was just an early teen when this smoked fish hit the U.S. I was too young to get in the theater (although I did manage to sneak into "Goodbye Columbus"). Then a screening at a local film museum beckoned - Finally I could see this film, except now I was as old as my parents were when they schlepped to see it!!<br /><br />The ONLY reason this film was not condemned to the anonymous sands of time was because of the obscenity case sparked by its U.S. release. MILLIONS of people flocked to this stinker, thinking they were going to see a sex film...Instead, they got lots of closeups of gnarly, repulsive Swedes, on-street interviews in bland shopping malls, asinie political pretension...and feeble who-cares simulated sex scenes with saggy, pale actors.<br /><br />Cultural icon, holy grail, historic artifact..whatever this thing was, shred it, burn it, then stuff the ashes in a lead box!<br /><br />Elite esthetes still scrape to find value in its boring pseudo revolutionary political spewings..But if it weren\'t for the censorship scandal, it would have been ignored, then forgotten.<br /><br />Instead, the "I Am Blank, Blank" rhythymed title was repeated endlessly for years as a titilation for porno films (I am Curious, Lavender - for gay films, I Am Curious, Black - for blaxploitation films, etc..) and every ten years or so the thing rises from the dead, to be viewed by a new generation of suckers who want to see that "naughty sex film" that "revolutionized the film industry"...<br /><br />Yeesh, avoid like the plague..Or if you MUST see it - rent the video and fast forward to the "dirty" parts, just to get it over with.<br /><br />', 'label': 0}
 
 
 >> tokenize dataset <<
@@ -33,25 +33,25 @@ DatasetDict({
 {'input_ids': [[101, 146, 12765, 146, 6586, 140, 19556, 19368, 13329, 118, 162, 21678, 2162, 17056, 1121, 1139, 1888, 2984, 1272, 1104, 1155, 1103, 6392, 1115, 4405, 1122, 1165, 1122, 1108, 1148, 1308, 1107, 2573, 119, 146, 1145, 1767, 1115, 1120, 1148, 1122, 1108, 7842, 1118, 158, 119, 156, 119, 10148, 1191, 1122, 1518, 1793, 1106, 3873, 1142, 1583, 117, 3335, 1217, 170, 5442, 1104, 2441, 1737, 107, 6241, 107, 146, 1541, 1125, 1106, 1267, 1142, 1111, 1991, 119, 133, 9304, 120, 135, 133, 9304, 120, 135, 1109, 4928, 1110, 8663, 1213, 170, 1685, 3619, 3362, 2377, 1417, 14960, 1150, 3349, 1106, 3858, 1917, 1131, 1169, 1164, 1297, 119, 1130, 2440, 1131, 3349, 1106, 2817, 1123, 2209, 1116, 1106, 1543, 1199, 3271, 1104, 4148, 1113, 1184, 1103, 1903, 156, 11547, 1162, 1354, 1164, 2218, 1741, 2492, 1216, 1112, 1103, 4357, 1414, 1105, 1886, 2492, 1107, 1103, 1244, 1311, 119, 1130, 1206, 4107, 8673, 1105, 6655, 10552, 3708, 2316, 1104, 8583, 1164, 1147, 11089, 1113, 4039, 117, 1131, 1144, 2673, 1114, 1123, 3362, 3218, 117, 22150, 117, 1105, 1597, 1441, 119, 133, 9304, 120, 135, 133, 9304, 120, 135, 1327, 8567, 1143, 1164, 146, 6586, 140, 19556, 19368, 13329, 118, 162, 21678, 2162, 17056, 1110, 1115, 1969, 1201, 2403, 117, 1142, 1108, 1737, 185, 8456, 9597, 119, 8762, 117, 1103, 2673, 1105, 183, 17294, 2340, 4429, 1132, 1374, 1105, 1677, 1206, 117, 1256, 1173, 1122, 112, 188, 1136, 2046, 1176, 1199, 10928, 1193, 1189, 185, 8456, 1186, 119, 1799, 1139, 1583, 2354, 1713, 1525, 1122, 19196, 117, 1107, 3958, 2673, 1105, 183, 17294, 2340, 1132, 170, 1558, 22088, 1107, 3619, 7678, 119, 2431, 1130, 14721, 1197, 27644, 117, 18271, 1147, 2590, 1106, 1363, 1385, 2298, 1287, 4100, 117, 1125, 2673, 4429, 1107, 1117, 2441, 119, 133, 9304, 120, 135, 133, 9304, 120, 135, 146, 1202, 3254, 2354, 1181, 1103, 18992, 1111, 1103, 1864, 1115, 1251, 2673, 2602, 1107, 1103, 1273, 1110, 2602, 1111, 6037, 4998, 1897, 1190, 1198, 1106, 4900, 1234, 1105, 1294, 1948, 1106, 1129, 2602, 1107, 185, 8456, 9597, 13090, 1107, 1738, 119, 146, 6586, 140, 19556, 19368, 13329, 118, 162, 21678, 2162, 17056, 1110, 170, 1363, 1273, 1111, 2256, 5277, 1106, 2025, 1103, 6092, 1105, 15866, 113, 1185, 23609, 1179, 3005, 114, 1104, 3619, 7678, 119, 1252, 1541, 117, 1142, 1273, 2144, 112, 189, 1138, 1277, 1104, 170, 4928, 119, 102], [101, 107, 146, 7277, 140, 8212, 2285, 131, 8278, 107, 1110, 170, 187, 26868, 2165, 1105, 3073, 5208, 3121, 2285, 23026, 8501, 119, 1135, 2144, 112, 189, 2187, 1184, 1141, 112, 188, 1741, 4696, 1132, 1272, 1142, 1273, 1169, 6374, 1129, 1678, 5536, 1113, 1251, 1634, 119, 1249, 1111, 1103, 3548, 1115, 22172, 2581, 183, 17294, 2340, 1110, 1126, 6973, 14056, 118, 1542, 117, 1115, 2762, 112, 189, 2276, 119, 146, 112, 1396, 1562, 155, 118, 6317, 2441, 1114, 2581, 183, 17294, 2340, 119, 4468, 1174, 117, 1152, 1178, 2906, 1199, 4535, 1158, 4696, 117, 1133, 1187, 1132, 1103, 155, 118, 6317, 2441, 1114, 23846, 191, 4654, 11509, 1105, 23841, 2624, 8074, 1465, 136, 1986, 12807, 117, 1272, 1152, 1274, 112, 189, 4056, 119, 1109, 1269, 2947, 1111, 1343, 11074, 5005, 6095, 2196, 131, 188, 1732, 9851, 1116, 12933, 1107, 1103, 10647, 1133, 1136, 170, 19393, 25758, 1107, 3617, 119, 1262, 1343, 3073, 5208, 3121, 2285, 12665, 5558, 1176, 1109, 2671, 21198, 117, 1107, 1134, 1195, 112, 1231, 5165, 1106, 1103, 1751, 1104, 5665, 144, 20797, 112, 188, 18767, 179, 10559, 15703, 117, 1133, 1136, 170, 8332, 1104, 5325, 5085, 1113, 9344, 22087, 5086, 20539, 119, 2577, 6675, 113, 1137, 22203, 114, 107, 2702, 118, 2530, 107, 1107, 5218, 1104, 183, 17294, 2340, 117, 1103, 10883, 184, 21238, 5613, 1431, 1321, 1154, 3300, 1141, 8362, 23140, 7874, 5382, 5119, 1126, 10024, 7257, 1348, 3719, 1206, 1441, 1105, 1535, 131, 1175, 1132, 1185, 176, 21462, 22159, 1113, 3934, 1165, 22704, 2691, 17899, 117, 1105, 1103, 1269, 2834, 1129, 1163, 1111, 170, 1299, 119, 1130, 1864, 117, 1128, 2412, 1281, 112, 189, 1267, 2130, 176, 21462, 22159, 1107, 1126, 1237, 1273, 1107, 1625, 1603, 1104, 185, 8456, 1137, 14077, 16263, 1161, 119, 1188, 6351, 2702, 118, 2530, 1110, 1750, 170, 2702, 2530, 1190, 1126, 4120, 1193, 1260, 24956, 2912, 1106, 1435, 1106, 2538, 23656, 1114, 1103, 20751, 1104, 1535, 112, 188, 3470, 119, 102], [101, 1409, 1178, 1106, 3644, 1543, 1142, 2076, 1104, 1273, 1107, 1103, 2174, 119, 1188, 1273, 1110, 5426, 1112, 1126, 7886, 1133, 3301, 1185, 1884, 11549, 1642, 119, 133, 9304, 120, 135, 133, 9304, 120, 135, 1448, 1547, 1631, 191, 25074, 8163, 1111, 2807, 24438, 5082, 1122, 1272, 1122, 13193, 1113, 1177, 1242, 146, 12347, 9565, 9159, 15681, 2492, 1133, 1122, 1674, 1177, 1443, 1251, 6187, 10449, 1895, 17941, 119, 1109, 15403, 2502, 1283, 1114, 1185, 1207, 22168, 113, 4895, 1141, 2502, 1146, 1114, 1141, 1229, 1141, 112, 188, 1713, 20004, 1116, 117, 1112, 1122, 1209, 1107, 8997, 22368, 1202, 1219, 1142, 27092, 1273, 114, 119, 133, 9304, 120, 135, 133, 9304, 120, 135, 1448, 1547, 1618, 4511, 1141, 112, 188, 1159, 3846, 1149, 170, 2487, 1120, 170, 2780, 2898, 119, 133, 9304, 120, 135, 133, 9304, 120, 135, 102], [101, 1188, 1273, 1108, 1930, 3768, 1118, 1875, 2881, 112, 188, 7085, 1116, 10182, 2836, 117, 175, 2744, 25685, 1179, 1105, 146, 8869, 1128, 1106, 1267, 1115, 1273, 1939, 119, 133, 9304, 120, 135, 133, 9304, 120, 135, 1109, 1273, 1144, 1160, 2012, 3050, 1105, 1343, 1132, 117, 113, 122, 114, 1103, 13142, 3176, 113, 123, 114, 1103, 7757, 117, 5576, 6420, 24941, 18733, 1363, 117, 6307, 119, 10342, 1121, 1115, 117, 1184, 9778, 1143, 1211, 1110, 1103, 12401, 5118, 1104, 27466, 23824, 5800, 119, 14960, 151, 13276, 1144, 1106, 1129, 1211, 17090, 3647, 1107, 1103, 1362, 119, 1153, 4096, 1177, 4736, 1105, 1114, 1155, 1103, 183, 17294, 2340, 1107, 1142, 1273, 117, 119, 119, 119, 1122, 112, 188, 8362, 19934, 19366, 3946, 119, 3291, 8223, 10832, 1106, 1875, 2881, 112, 188, 1273, 117, 8066, 1785, 1144, 1151, 2125, 1114, 4736, 1785, 119, 4914, 1280, 1315, 1677, 1113, 1142, 2548, 117, 146, 1156, 1474, 1115, 3226, 1121, 1103, 3719, 1107, 16326, 1206, 1103, 1497, 1105, 1103, 3619, 2808, 119, 133, 9304, 120, 135, 133, 9304, 120, 135, 138, 2523, 1104, 1157, 1159, 117, 1105, 1282, 119, 123, 120, 1275, 119, 102], [101, 2048, 117, 1711, 119, 119, 119, 1170, 4510, 1164, 1142, 9944, 1273, 1111, 15276, 6451, 9561, 1201, 1155, 146, 1169, 1341, 1104, 1110, 1115, 1385, 15607, 2499, 1461, 119, 119, 133, 9304, 120, 135, 133, 9304, 120, 135, 107, 2181, 1115, 1155, 1175, 1110, 136, 136, 107, 119, 119, 119, 146, 1108, 1198, 1126, 1346, 13964, 1165, 1142, 23235, 3489, 1855, 1103, 158, 119, 156, 119, 146, 1108, 1315, 1685, 1106, 1243, 1107, 1103, 5184, 113, 1780, 146, 1225, 5494, 1106, 14647, 1154, 107, 15938, 8555, 107, 114, 119, 1599, 170, 11954, 1120, 170, 1469, 1273, 3480, 1129, 21666, 118, 4428, 146, 1180, 1267, 1142, 1273, 117, 2589, 1208, 146, 1108, 1112, 1385, 1112, 1139, 2153, 1127, 1165, 1152, 188, 1732, 1513, 10438, 1106, 1267, 1122, 106, 106, 133, 9304, 120, 135, 133, 9304, 120, 135, 1109, 21748, 2162, 3663, 2255, 1142, 1273, 1108, 1136, 10021, 1106, 1103, 12631, 5387, 1116, 1104, 1159, 1108, 1272, 1104, 1103, 184, 4832, 2093, 15092, 1692, 14514, 1118, 1157, 158, 119, 156, 119, 1836, 119, 26574, 23955, 24805, 1708, 1104, 1234, 24117, 1174, 1106, 1142, 188, 6105, 4188, 117, 2422, 1152, 1127, 1280, 1106, 1267, 170, 2673, 1273, 119, 119, 119, 3743, 117, 1152, 1400, 7424, 1104, 1601, 17210, 1104, 176, 27831, 1183, 117, 1231, 16091, 27199, 156, 11547, 1279, 117, 1113, 118, 2472, 7397, 1107, 171, 1931, 6001, 8796, 1116, 117, 1112, 4729, 1162, 1741, 3073, 23826, 1988, 119, 119, 119, 1105, 7216, 2165, 1150, 118, 16903, 27210, 2673, 4429, 1114, 21718, 14720, 117, 4554, 5681, 119, 133, 9304, 120, 135, 133, 9304, 120, 135, 6651, 15802, 117, 9371, 176, 12797, 117, 3432, 24690, 119, 119, 3451, 1142, 1645, 1108, 117, 188, 8167, 1174, 1122, 117, 6790, 1122, 117, 1173, 4333, 1103, 15359, 1107, 170, 1730, 2884, 106, 133, 9304, 120, 135, 133, 9304, 120, 135, 13995, 12890, 4638, 3052, 1253, 16720, 1162, 1106, 1525, 2860, 1107, 1157, 12533, 23563, 8953, 1741, 188, 3186, 7635, 1116, 119, 119, 1252, 1191, 1122, 3920, 112, 189, 1111, 1103, 18125, 10083, 117, 1122, 1156, 1138, 1151, 5794, 117, 1173, 6278, 119, 133, 9304, 120, 135, 133, 9304, 120, 135, 3743, 117, 1103, 107, 146, 7277, 139, 27339, 117, 139, 27339, 107, 187, 7889, 15644, 4611, 1641, 1108, 4892, 12401, 1193, 1111, 1201, 1112, 170, 189, 17030, 6840, 1111, 185, 8456, 1186, 2441, 113, 146, 1821, 140, 8212, 2285, 117, 2001, 22622, 118, 1111, 6463, 2441, 117, 146, 7277, 140, 8212, 2285, 117, 2117, 118, 1111, 171, 22731, 1643, 2858, 12633, 2441, 117, 3576, 119, 119, 114, 1105, 1451, 1995, 1201, 1137, 1177, 1103, 1645, 9440, 1121, 1103, 2044, 117, 1106, 1129, 6497, 1118, 170, 1207, 3964, 1104, 13054, 1468, 1150, 1328, 1106, 1267, 1115, 107, 9468, 18313, 2673, 1273, 107, 1115, 107, 8011, 2200, 1103, 1273, 2380, 107, 119, 119, 119, 133, 9304, 120, 135, 133, 9304, 120, 135, 15821, 10654, 117, 3644, 1176, 1103, 13824, 119, 119, 2926, 1191, 1128, 150, 13329, 1942, 1267, 1122, 118, 9795, 1103, 1888, 1105, 2698, 1977, 1106, 1103, 107, 7320, 107, 2192, 117, 1198, 1106, 1243, 1122, 1166, 1114, 102]], 'token_type_ids': [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]], 'attention_mask': [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]}
 
 101 [CLS]
+2048 Oh
+117 ,
+1711 brother
+119 .
+119 .
+119 .
+1170 after
+4510 hearing
+1164 about
+1142 this
+9944 ridiculous
+1273 film
+1111 for
+15276 um
+6451 ##pt
+9561 ##een
+1201 years
+1155 all
 146 I
-12765 rented
-146 I
-6586 AM
-140 C
-19556 ##UR
-19368 ##IO
-13329 ##US
-118 -
-162 Y
-21678 ##EL
-2162 ##L
-17056 ##OW
-1121 from
-1139 my
-1888 video
-2984 store
-1272 because
-1104 of
 ** tokenized datasets
 DatasetDict({
     train: Dataset({
@@ -75,25 +75,25 @@ DatasetDict({
 >> metric <<
 
 ** fake labels
-[1 0 0 0 0 0 0 1 1 0 1 0 0 1 0 0 1 1 0 1 0 1 0 1 0 1 0 1 1 1 0 1 0 0 0 0 1
- 0 1 0 0 1 1 1 0 0 0 0 1 1 0 1 1 0 1 0 1 0 1 0 0 1 1 1]
+[0 1 0 0 0 0 1 0 0 1 1 1 1 0 0 0 1 0 0 1 0 0 1 1 0 1 0 1 0 1 0 1 0 0 1 0 0
+ 0 1 1 1 0 0 0 0 0 0 1 0 0 1 1 1 1 1 0 1 0 0 0 0 1 1 0]
 
 ** fake preds
-[0 0 0 0 0 1 1 1 0 0 0 0 0 0 1 0 0 0 0 1 1 0 1 1 0 1 0 1 1 0 1 1 1 0 0 1 0
- 0 1 0 1 1 0 0 1 1 0 1 1 1 1 0 1 0 0 0 1 1 1 1 1 0 0 0]
+[1 1 1 1 1 0 0 0 0 0 1 1 1 0 1 0 1 0 0 1 1 1 1 0 1 0 0 0 0 1 1 0 1 0 1 1 0
+ 1 0 0 0 0 0 0 0 1 0 1 1 1 0 0 0 0 0 1 1 1 0 0 1 0 1 0]
 
 ** example `('accuracy',)` metric calculation
-{'accuracy': 0.5}
+{'accuracy': 0.484375}
 
 
 >> finetune <<
 
-{'eval_loss': 0.5131011605262756, 'eval_accuracy': 0.822, 'eval_runtime': 3.9272, 'eval_samples_per_second': 127.317, 'eval_steps_per_second': 8.148, 'epoch': 1.0}
-{'eval_loss': 0.33989080786705017, 'eval_accuracy': 0.876, 'eval_runtime': 3.906, 'eval_samples_per_second': 128.008, 'eval_steps_per_second': 8.193, 'epoch': 2.0}
-{'eval_loss': 0.35432183742523193, 'eval_accuracy': 0.886, 'eval_runtime': 3.9824, 'eval_samples_per_second': 125.552, 'eval_steps_per_second': 8.035, 'epoch': 3.0}
-{'eval_loss': 0.41070353984832764, 'eval_accuracy': 0.886, 'eval_runtime': 4.0911, 'eval_samples_per_second': 122.216, 'eval_steps_per_second': 7.822, 'epoch': 4.0}
-{'eval_loss': 0.453290194272995, 'eval_accuracy': 0.884, 'eval_runtime': 4.1374, 'eval_samples_per_second': 120.85, 'eval_steps_per_second': 7.734, 'epoch': 5.0}
-{'train_runtime': 84.1648, 'train_samples_per_second': 29.704, 'train_steps_per_second': 1.901, 'train_loss': 0.24467620849609376, 'epoch': 5.0}
+{'eval_loss': 0.6681882739067078, 'eval_accuracy': 0.598, 'eval_runtime': 3.9044, 'eval_samples_per_second': 128.059, 'eval_steps_per_second': 8.196, 'epoch': 1.0}
+{'eval_loss': 0.4759805202484131, 'eval_accuracy': 0.79, 'eval_runtime': 3.9246, 'eval_samples_per_second': 127.4, 'eval_steps_per_second': 8.154, 'epoch': 2.0}
+{'eval_loss': 0.37968766689300537, 'eval_accuracy': 0.82, 'eval_runtime': 3.9231, 'eval_samples_per_second': 127.449, 'eval_steps_per_second': 8.157, 'epoch': 3.0}
+{'eval_loss': 0.32770800590515137, 'eval_accuracy': 0.874, 'eval_runtime': 4.0975, 'eval_samples_per_second': 122.025, 'eval_steps_per_second': 7.81, 'epoch': 4.0}
+{'eval_loss': 0.3426656723022461, 'eval_accuracy': 0.868, 'eval_runtime': 4.1393, 'eval_samples_per_second': 120.794, 'eval_steps_per_second': 7.731, 'epoch': 5.0}
+{'train_runtime': 83.8559, 'train_samples_per_second': 29.813, 'train_steps_per_second': 1.908, 'train_loss': 0.3595400094985962, 'epoch': 5.0}
 
 >> predict <<
 
@@ -105,7 +105,7 @@ DatasetDict({
     5 After a very long time Marathi cinema ha 1 1 
     6 This is a really sad, and touching movie 1 1 
     7 Don't pay any attention to the rave revi 0 0 
-    8 Porn legend Gregory Dark directs this ch 0 0 
+    8 Porn legend Gregory Dark directs this ch 0 1 *
     9 This was a great movie. Something not on 1 1 
    10 If you're a fan of Turkish and Middle Ea 1 1 
    11 OK, it was a "risky" move to rent this f 0 0 
@@ -118,13 +118,13 @@ DatasetDict({
    18 Definitely a movie for people who ask on 1 1 
    19 If Hollywood had the wellbeing of the au 1 1 
    20 I was expecting a lot more of this film  0 0 
-   21 Coming from Kiarostami, this art-house v 0 1 *
-   22 In the early 00's, production companies  0 0 
+   21 Coming from Kiarostami, this art-house v 0 0 
+   22 In the early 00's, production companies  0 1 *
    23 I was so happy to learn that Hari Om wil 1 1 
    24 The gates of Hell opened up and spit out 0 0 
    25 "In Love and War" is a simple feel-good  1 1 
    26 Not much to say other than plenty of Wir 0 0 
-   27 It could be easy to complain about the q 1 1 
+   27 It could be easy to complain about the q 1 0 *
    28 I have always loved old movies but this  1 1 
    29 I absolutely loved this movie. Great, re 1 1 
    30 Intended as light entertainment, this fi 0 1 *
@@ -136,7 +136,7 @@ DatasetDict({
    36 Lovely music. Beautiful photography, som 0 1 *
    37 As everyone knows, nobody can play Scarl 0 0 
    38 A very sensitive topic--15 y/o girl aban 0 0 
-   39 This is about some vampires (who can run 0 0 
+   39 This is about some vampires (who can run 0 1 *
    40 This film is bad. It's filled with glari 0 0 
    41 This movie is so bad that it actually ge 0 0 
    42 Well, where to start describing this cel 0 0 
@@ -152,7 +152,7 @@ DatasetDict({
    52 This series takes a classic story and ma 0 0 
    53 There's a good running bit about the pri 1 1 
    54 I especially liked the ending of this mo 1 1 
-   55 I remember seeing this film in the mid 8 1 0 *
+   55 I remember seeing this film in the mid 8 1 1 
    56 I wasn't able to last ten minutes on the 0 0 
    57 At first I didn't think that the perform 1 1 
    58 I'd like to point out these excellent po 1 1 
@@ -171,8 +171,8 @@ DatasetDict({
    71 I am a regular reader of Kathy Reichs' T 0 0 
    72 I saw this movie on the strength of the  0 0 
    73 This movie is an amazing comedy.. the sc 1 1 
-   74 I saw this movie, and I do like horror m 0 1 *
-   75 A truly masterful piece of filmmaking. I 0 0 
+   74 I saw this movie, and I do like horror m 0 0 
+   75 A truly masterful piece of filmmaking. I 0 1 *
    76 This is going to be my first review on I 0 0 
    77 As far as I know this was my first exper 1 1 
    78 All I can do is echo the sentiment alrea 0 0 
@@ -187,7 +187,7 @@ DatasetDict({
    87 Heart of Darkness was terrible. The nove 0 0 
    88 i was having a horrid day but this movie 1 0 *
    89 "Two Hands" is an entertaining, funny st 1 1 
-   90 Just watched this today on TCM, where th 0 1 *
+   90 Just watched this today on TCM, where th 0 0 
    91 Mr Baseball was a fun video rental with  1 1 
    92 "Opposing Force [1986]" wasn't as good a 0 0 
    93 Crackerjack is another classic Aussie fi 1 1 
@@ -200,25 +200,25 @@ DatasetDict({
   100 I wish I would have read more reviews an 0 0 
   101 Today You Die was the 4th Seagal movie i 0 0 
   102 Stop me if you hard this one before, som 0 0 
-  103 Great cult flick for MST-3K types: Richa 1 0 *
+  103 Great cult flick for MST-3K types: Richa 1 1 
   104 I have fond memories of watching this wh 1 0 *
   105 I turned this off within the first five  0 0 
   106 Family guy. When the show first aired, i 0 0 
-  107 This movie defines the word "confused".  0 1 *
+  107 This movie defines the word "confused".  0 0 
   108 This is, without a doubt, the most hilar 0 1 *
   109 Well, it is standard Hollywood schmaltz  0 1 *
   110 Rickman is sexy and good, but the "stran 1 0 *
   111 It was probably watching this TV movie t 1 1 
-  112 I saw this fine flick shortly leaving co 1 1 
+  112 I saw this fine flick shortly leaving co 1 0 *
   113 Every year there's one can't-miss much-a 1 1 
-  114 Billed as a romantic comedy set against  0 0 
+  114 Billed as a romantic comedy set against  0 1 *
   115 This interesting film noir features thre 1 1 
   116 Wow. When I went to this film at the Tor 1 1 
   117 * Some spoilers *<br /><br />This movie  0 0 
   118 Deepa Mehta's "Fire" is groundbreaking,  1 1 
   119 Bears about as much resemblance to Dean  1 0 *
   120 To be fair, it has been several years si 0 0 
-  121 I have read each and every one of Barone 0 0 
+  121 I have read each and every one of Barone 0 1 *
   122 This film was a Mexican made horror film 0 0 
   123 Found this movie in a rental store. Neve 1 1 
   124 Johnny Crawford is great in this movie o 1 1 
@@ -230,10 +230,10 @@ DatasetDict({
   130 A woman in love with her husband (he's s 0 0 
   131 Is this supposed to be serious? I hope n 0 0 
   132 This should be re-named "Everybody Loves 0 0 
-  133 I was at the premier of the movie last n 1 1 
+  133 I was at the premier of the movie last n 1 0 *
   134 "Lights of New York" originally started  1 0 *
   135 Heath Ledgers acting in this film really 1 1 
-  136 I have read several reviews that ask the 0 1 *
+  136 I have read several reviews that ask the 0 0 
   137 Let me break down this film for you...<b 0 0 
   138 This film is brilliant it has cute littl 1 1 
   139 Don't listen to what the critics have al 1 1 
@@ -241,14 +241,14 @@ DatasetDict({
   141 UK-born Australian helmer Alex Frayne ca 1 1 
   142 Before seeing this film, I suggest the v 1 1 
   143 Get Smart should be titled Get Stupid. T 0 0 
-  144 This is a cute little French silent come 1 1 
+  144 This is a cute little French silent come 1 0 *
   145 First off, I just want to say that this  0 0 
   146 "Tenchi Muyo In Love 2" is the third Ten 0 0 
-  147 "Black Dragons" is a second feature WWII 0 1 *
+  147 "Black Dragons" is a second feature WWII 0 0 
   148 Wagon Master is a very unique film among 1 1 
   149 In this film Gary Oldman plays a defense 0 0 
   150 Was this supposed to be funny? This is o 0 0 
-  151 It's a shame Barry Humphries infamous Si 0 0 
+  151 It's a shame Barry Humphries infamous Si 0 1 *
   152 I really hoped for the best with this on 0 0 
   153 I would say to the foreign people who ha 1 1 
   154 This movie was absolutely one of the wor 0 0 
@@ -326,7 +326,7 @@ DatasetDict({
   226 As you know "The Greatest Game Ever Play 1 1 
   227 This movie is simply awesome. It is so h 1 1 
   228 Billy Wilder created a somewhat conventi 1 1 
-  229 I am sitting here watching the film, Tan 0 1 *
+  229 I am sitting here watching the film, Tan 0 0 
   230 "Cleo's Second Husband" is an amateurish 0 0 
   231 A movie about a French girl who gets rap 0 0 
   232 first off, i'm amazed to see that this f 0 0 
@@ -367,7 +367,7 @@ DatasetDict({
   267 Drifting around on bootlegs, sometimes t 0 0 
   268 The chaser's war on everything is a week 1 1 
   269 About five years ago, my friend and I we 0 0 
-  270 algernon4's comment that Ms Paget's "ult 1 1 
+  270 algernon4's comment that Ms Paget's "ult 1 0 *
   271 The most vivid portrait of small-town od 1 1 
   272 Zipperface is the kind of experience one 0 0 
   273 I disagree with the imdb.com synopsis th 1 1 
@@ -382,7 +382,7 @@ DatasetDict({
   282 To be fair, I couldn't bear to watch thi 0 0 
   283 The Beat was an exciting movie about a c 1 1 
   284 After reading many good things about it  0 0 
-  285 One of the many backwoods horror's that  1 0 *
+  285 One of the many backwoods horror's that  1 1 
   286 Edge Vs. Michaels-Boring in general (lov 0 0 
   287 I was actually satisfied when i played t 1 1 
   288 This is a new Barbie movie. The graphics 1 1 
@@ -394,7 +394,7 @@ DatasetDict({
   294 I found this early talkie difficult to w 0 0 
   295 When I was engaged, my fiance and I woul 1 1 
   296 Although copies of this movie are hard t 1 1 
-  297 Ha ha. - oh no - what to say about this  0 0 
+  297 Ha ha. - oh no - what to say about this  0 1 *
   298 A blind person could have shot this movi 0 0 
   299 Daft potboilers don't come much dafter t 0 1 *
   300 This film was so well-paced that I don't 1 1 
@@ -421,7 +421,7 @@ DatasetDict({
   321 I saw this film at a special screening.  1 1 
   322 I really should have learned more about  0 0 
   323 I'm not picky with movies, oh I've seen  0 0 
-  324 I have seen both the MST3K version and t 0 1 *
+  324 I have seen both the MST3K version and t 0 0 
   325 First off, I absolutely loved this movie 1 1 
   326 OK, what to say about Actium Maximus...< 0 0 
   327 The Texas Revolution of 1835 to 1836, in 0 0 
@@ -448,12 +448,12 @@ DatasetDict({
   348 This is an absolutely horrid excuse for  0 0 
   349 What are Forest Whitaker and Clifton Col 0 0 
   350 I admit to being in awe of the Sea and h 1 1 
-  351 For awhile I was hooked on shows like Gh 0 0 
+  351 For awhile I was hooked on shows like Gh 0 1 *
   352 I watched this movie at the first showin 1 1 
   353 This is a good family movie with a few l 1 1 
   354 I love movies in this genre. Beautiful g 0 0 
   355 Death Camp Opera: Right Here, Right Now! 1 1 
-  356 This movie has everything typical horror 1 1 
+  356 This movie has everything typical horror 1 0 *
   357 The real surprise of this effortlessly l 0 0 
   358 Well, I'm a huge fan and follower of Eli 0 0 
   359 "Hollywood Cavalcade" is a mildly entert 1 1 
@@ -473,11 +473,11 @@ DatasetDict({
   373 Ill-conceived sequel(..the absurd idea o 0 0 
   374 First, This movie was made in 1978. So t 0 0 
   375 this is a really great series. i love th 1 1 
-  376 Okay, sure, this film will never win an  0 1 *
+  376 Okay, sure, this film will never win an  0 0 
   377 This film would like to be the kind of s 0 0 
   378 This relic from before the days of the P 1 1 
   379 Man this movie is awesome especially the 1 1 
-  380 Well, the movie did turn out a lot bette 1 1 
+  380 Well, the movie did turn out a lot bette 1 0 *
   381 "Hit and Run" is a shattering story star 1 1 
   382 I bought this DVD from Walmart for cheap 1 1 
   383 This was a fantastically written screenp 1 1 
@@ -497,7 +497,7 @@ DatasetDict({
   397 I watch a lot of movies - DVD, features, 1 1 
   398 A very great movie.<br /><br />A big lov 1 1 
   399 What a great movie!! It's a touching sto 1 1 
-  400 If you want to really terrify people, ch 1 1 
+  400 If you want to really terrify people, ch 1 0 *
   401 I was at Wrestlemania VI in Toronto as a 0 0 
   402 I am probably a little too old for this  1 1 
   403 Fred Astaire is reteamed with Rita Haywo 0 0 
@@ -528,13 +528,13 @@ DatasetDict({
   428 This one started excellently. The photog 1 0 *
   429 'Oppenheimer' with Sam Waterston in the  1 1 
   430 Oh noes one of these attack of the Japan 0 0 
-  431 For a teenager who has never read Austen 0 1 *
+  431 For a teenager who has never read Austen 0 0 
   432 "Dolemite" is the touching story of Dole 0 0 
   433 Bedrooms and Hallways gives its audience 1 1 
   434 The story starts out with a soldier bein 1 1 
   435 i enjoyed this film immensely, due to pu 1 1 
   436 Let me state this right from the start.  0 0 
-  437 Tycoon will never be listed as one of Jo 0 0 
+  437 Tycoon will never be listed as one of Jo 0 1 *
   438 A very well directed version of Eric Bog 1 1 
   439 I'm astonished how a filmmaker notorious 1 0 *
   440 Everything about "Choose Connor" was top 1 1 
@@ -562,14 +562,14 @@ DatasetDict({
   462 A plane carrying employees of a large bi 0 0 
   463 Its the best movie I have seen in 2000,  1 1 
   464 Buddy Manucci(Roy Scheider, solid in a c 1 1 
-  465 A tough life gets tougher when the three 1 1 
+  465 A tough life gets tougher when the three 1 0 *
   466 I went to this film full of hope. With s 0 0 
   467 This TV show is possibly the most pathet 0 0 
   468 This movie can't decide what it is -- a  0 0 
   469 No matter how you feel about Michael Jac 1 1 
   470 These writers are trying to re-create th 0 0 
   471 By the time this movie came out in 1996, 0 0 
-  472 _The Wild Life_ has an obvious resemblan 1 1 
+  472 _The Wild Life_ has an obvious resemblan 1 0 *
   473 I've got as much testosterone as the nex 0 0 
   474 What a dire film. I cannot believe that  0 0 
   475 To start out with, the script is immitat 0 0 
@@ -585,7 +585,7 @@ DatasetDict({
   485 I have just watched this movie on DVD la 0 0 
   486 I appear to be in the minority, but I th 0 0 
   487 When this show first aired I will admit  0 0 
-  488 This had the promise of being an interes 0 0 
+  488 This had the promise of being an interes 0 1 *
   489 by Dane Youssef<br /><br />I was kind of 0 0 
   490 I don't know how expensive was the creat 0 0 
   491 The problem with the film is quite simpl 1 1 
@@ -598,11 +598,11 @@ DatasetDict({
   498 Gritty drama? Emotionally powerful? Blah 0 0 
   499 The CinemaScope color cinematography of  0 1 *
 ** .
-0.884
+0.868
 
 
 >> eval <<
 
 ** RESULT
-{'eval_loss': 0.453290194272995, 'eval_accuracy': 0.884, 'eval_runtime': 4.0972, 'eval_samples_per_second': 122.036, 'eval_steps_per_second': 7.81, 'epoch': 5.0}
+{'eval_loss': 0.3426656723022461, 'eval_accuracy': 0.868, 'eval_runtime': 4.1061, 'eval_samples_per_second': 121.771, 'eval_steps_per_second': 7.793, 'epoch': 5.0}
 

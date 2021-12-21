@@ -17,8 +17,8 @@ DatasetDict({
     })
 })
 
-** raw/train/0
-{'id': '0', 'tokens': ['EU', 'rejects', 'German', 'call', 'to', 'boycott', 'British', 'lamb', '.'], 'pos_tags': [22, 42, 16, 21, 35, 37, 16, 21, 7], 'chunk_tags': [11, 21, 11, 12, 21, 22, 11, 12, 0], 'ner_tags': [3, 0, 7, 0, 0, 0, 7, 0, 0]}
+** raw/train/4
+{'id': '4', 'tokens': ['Germany', "'s", 'representative', 'to', 'the', 'European', 'Union', "'s", 'veterinary', 'committee', 'Werner', 'Zwingmann', 'said', 'on', 'Wednesday', 'consumers', 'should', 'buy', 'sheepmeat', 'from', 'countries', 'other', 'than', 'Britain', 'until', 'the', 'scientific', 'advice', 'was', 'clearer', '.'], 'pos_tags': [22, 27, 21, 35, 12, 22, 22, 27, 16, 21, 22, 22, 38, 15, 22, 24, 20, 37, 21, 15, 24, 16, 15, 22, 15, 12, 16, 21, 38, 17, 7], 'chunk_tags': [11, 11, 12, 13, 11, 12, 12, 11, 12, 12, 12, 12, 21, 13, 11, 12, 21, 22, 11, 13, 11, 1, 13, 11, 17, 11, 12, 12, 21, 1, 0], 'ner_tags': [5, 0, 0, 0, 0, 3, 4, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0]}
 
 ** raw/train/features/ner_tags
 Sequence(feature=ClassLabel(num_classes=9, names=['O', 'B-PER', 'I-PER', 'B-ORG', 'I-ORG', 'B-LOC', 'I-LOC', 'B-MISC', 'I-MISC'], names_file=None, id=None), length=-1, id=None)
@@ -37,7 +37,7 @@ Sequence(feature=ClassLabel(num_classes=9, names=['O', 'B-PER', 'I-PER', 'B-ORG'
 ['[CLS]', 'germany', "'", 's', 'representative', 'to', 'the', 'european', 'union', "'", 's', 'veterinary', 'committee', 'werner', 'z', '##wing', '##mann', 'said', 'on', 'wednesday', 'consumers', 'should', 'buy', 'sheep', '##me', '##at', 'from', 'countries', 'other', 'than', 'britain', 'until', 'the', 'scientific', 'advice', 'was', 'clearer', '.', '[SEP]']
 
 
->> align labels <<
+>> tokenize dataset / align labels <<
 
 ** labels
 [5, 0, 0, 0, 0, 3, 4, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0]
@@ -54,6 +54,26 @@ Sequence(feature=ClassLabel(num_classes=9, names=['O', 'B-PER', 'I-PER', 'B-ORG'
 ** tokenized
 {'input_ids': [[101, 7327, 19164, 2446, 2655, 2000, 17757, 2329, 12559, 1012, 102], [101, 2848, 13934, 102], [101, 9371, 2727, 1011, 5511, 1011, 2570, 102], [101, 1996, 2647, 3222, 2056, 2006, 9432, 2009, 18335, 2007, 2446, 6040, 2000, 10390, 2000, 18454, 2078, 2329, 12559, 2127, 6529, 5646, 3251, 5506, 11190, 4295, 2064, 2022, 11860, 2000, 8351, 1012, 102], [101, 2762, 1005, 1055, 4387, 2000, 1996, 2647, 2586, 1005, 1055, 15651, 2837, 14121, 1062, 9328, 5804, 2056, 2006, 9317, 10390, 2323, 4965, 8351, 4168, 4017, 2013, 3032, 2060, 2084, 3725, 2127, 1996, 4045, 6040, 2001, 24509, 1012, 102]], 'attention_mask': [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]], 'labels': [[-100, 3, 0, 7, 0, 0, 0, 7, 0, 0, -100], [-100, 1, 2, -100], [-100, 5, 0, 0, 0, 0, 0, -100], [-100, 0, 3, 4, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -100], [-100, 5, 0, 0, 0, 0, 0, 3, 4, 0, 0, 0, 0, 1, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, -100]]}
 
+101 [CLS]
+2762 germany
+1005 '
+1055 s
+4387 representative
+2000 to
+1996 the
+2647 european
+2586 union
+1005 '
+1055 s
+15651 veterinary
+2837 committee
+14121 werner
+1062 z
+9328 ##wing
+5804 ##mann
+2056 said
+2006 on
+9317 wednesday
 ** tokenized datasets
 DatasetDict({
     train: Dataset({
@@ -91,22 +111,22 @@ DatasetDict({
 
 >> finetune <<
 
-{'eval_loss': 0.1549311876296997, 'eval_precision': 0.764439166576703, 'eval_recall': 0.7921467725696386, 'eval_f1': 0.7780463685309306, 'eval_accuracy': 0.9567254992295106, 'eval_runtime': 3.1467, 'eval_samples_per_second': 1032.826, 'eval_steps_per_second': 8.263, 'epoch': 1.0}
-{'eval_loss': 0.08630432933568954, 'eval_precision': 0.8692633177823587, 'eval_recall': 0.896297124958049, 'eval_f1': 0.8825732540207095, 'eval_accuracy': 0.9754078828220567, 'eval_runtime': 3.2129, 'eval_samples_per_second': 1011.56, 'eval_steps_per_second': 8.092, 'epoch': 2.0}
-{'eval_loss': 0.07179789245128632, 'eval_precision': 0.895468476357268, 'eval_recall': 0.9152030428459559, 'eval_f1': 0.9052282157676348, 'eval_accuracy': 0.9790458639808093, 'eval_runtime': 3.2271, 'eval_samples_per_second': 1007.112, 'eval_steps_per_second': 8.057, 'epoch': 3.0}
-{'eval_loss': 0.06890600919723511, 'eval_precision': 0.9009933413382818, 'eval_recall': 0.9233695044188388, 'eval_f1': 0.9120441988950276, 'eval_accuracy': 0.9800149331977696, 'eval_runtime': 3.3543, 'eval_samples_per_second': 968.915, 'eval_steps_per_second': 7.751, 'epoch': 4.0}
-{'loss': 0.1745, 'learning_rate': 1.8181818181818183e-06, 'epoch': 4.55}
-{'eval_loss': 0.06735536456108093, 'eval_precision': 0.9059482001755926, 'eval_recall': 0.9234813737554536, 'eval_f1': 0.9146307683784832, 'eval_accuracy': 0.9806821611832176, 'eval_runtime': 3.2044, 'eval_samples_per_second': 1014.242, 'eval_steps_per_second': 8.114, 'epoch': 5.0}
-{'train_runtime': 133.6134, 'train_samples_per_second': 525.434, 'train_steps_per_second': 4.116, 'train_loss': 0.16311179247769442, 'epoch': 5.0}
+{'eval_loss': 0.14508627355098724, 'eval_precision': 0.7899040558220671, 'eval_recall': 0.8104933437744715, 'eval_f1': 0.8000662580752028, 'eval_accuracy': 0.9604587986718985, 'eval_runtime': 3.1661, 'eval_samples_per_second': 1026.51, 'eval_steps_per_second': 8.212, 'epoch': 1.0}
+{'eval_loss': 0.08507780730724335, 'eval_precision': 0.8763581051716645, 'eval_recall': 0.90233806913525, 'eval_f1': 0.8891583530838341, 'eval_accuracy': 0.9763610656584111, 'eval_runtime': 3.234, 'eval_samples_per_second': 1004.949, 'eval_steps_per_second': 8.04, 'epoch': 2.0}
+{'eval_loss': 0.07181277871131897, 'eval_precision': 0.8973404837474007, 'eval_recall': 0.9172166909050229, 'eval_f1': 0.9071697278158886, 'eval_accuracy': 0.9790776367420211, 'eval_runtime': 3.2347, 'eval_samples_per_second': 1004.726, 'eval_steps_per_second': 8.038, 'epoch': 3.0}
+{'eval_loss': 0.06957673281431198, 'eval_precision': 0.9010496391865296, 'eval_recall': 0.9219152030428459, 'eval_f1': 0.9113630080176942, 'eval_accuracy': 0.9795542281601982, 'eval_runtime': 3.2765, 'eval_samples_per_second': 991.911, 'eval_steps_per_second': 7.935, 'epoch': 4.0}
+{'loss': 0.1678, 'learning_rate': 1.8181818181818183e-06, 'epoch': 4.55}
+{'eval_loss': 0.06817884743213654, 'eval_precision': 0.9085010447597053, 'eval_recall': 0.9241525897751426, 'eval_f1': 0.916259982253771, 'eval_accuracy': 0.9806821611832176, 'eval_runtime': 3.2278, 'eval_samples_per_second': 1006.893, 'eval_steps_per_second': 8.055, 'epoch': 5.0}
+{'train_runtime': 135.9739, 'train_samples_per_second': 516.312, 'train_steps_per_second': 4.045, 'train_loss': 0.15693028970198197, 'epoch': 5.0}
 
 >> predict <<
 
 ** prediction results
-{'LOC': {'precision': 0.9348473566641846, 'recall': 0.9591291061879297, 'f1': 0.9468325791855203, 'number': 2618}, 'MISC': {'precision': 0.7591582229150429, 'recall': 0.7912266450040617, 'f1': 0.7748607796340493, 'number': 1231}, 'ORG': {'precision': 0.8621673003802282, 'recall': 0.882295719844358, 'f1': 0.8721153846153846, 'number': 2056}, 'PER': {'precision': 0.9726883843369529, 'recall': 0.974291364535267, 'f1': 0.9734892145562325, 'number': 3034}, 'overall_precision': 0.9059482001755926, 'overall_recall': 0.9234813737554536, 'overall_f1': 0.9146307683784832, 'overall_accuracy': 0.9806821611832176}
+{'LOC': {'precision': 0.926459719142646, 'recall': 0.9576012223071046, 'f1': 0.9417731029301277, 'number': 2618}, 'MISC': {'precision': 0.7781350482315113, 'recall': 0.7863525588952072, 'f1': 0.7822222222222222, 'number': 1231}, 'ORG': {'precision': 0.8751200768491835, 'recall': 0.8861867704280155, 'f1': 0.8806186563557274, 'number': 2056}, 'PER': {'precision': 0.9683110094740282, 'recall': 0.976928147659855, 'f1': 0.9726004922067268, 'number': 3034}, 'overall_precision': 0.9085010447597053, 'overall_recall': 0.9241525897751426, 'overall_f1': 0.916259982253771, 'overall_accuracy': 0.9806821611832176}
 
 
 >> eval <<
 
 ** RESULT
-{'eval_loss': 0.06735536456108093, 'eval_precision': 0.9059482001755926, 'eval_recall': 0.9234813737554536, 'eval_f1': 0.9146307683784832, 'eval_accuracy': 0.9806821611832176, 'eval_runtime': 3.161, 'eval_samples_per_second': 1028.171, 'eval_steps_per_second': 8.225, 'epoch': 5.0}
+{'eval_loss': 0.06817884743213654, 'eval_precision': 0.9085010447597053, 'eval_recall': 0.9241525897751426, 'eval_f1': 0.916259982253771, 'eval_accuracy': 0.9806821611832176, 'eval_runtime': 3.1707, 'eval_samples_per_second': 1025.0, 'eval_steps_per_second': 8.2, 'epoch': 5.0}
 
