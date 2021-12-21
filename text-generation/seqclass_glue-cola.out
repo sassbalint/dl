@@ -74,25 +74,25 @@ DatasetDict({
 >> metric <<
 
 ** fake labels
-[0 0 0 0 0 0 0 1 1 0 0 1 0 1 0 1 0 0 0 0 1 1 1 0 1 0 0 1 1 0 0 1 0 1 0 1 0
- 1 1 0 1 0 1 0 0 1 0 0 0 1 1 1 1 1 0 0 1 0 0 1 1 0 1 0]
+[0 0 0 0 1 0 0 1 0 1 0 0 0 1 1 1 1 1 0 1 1 1 0 0 1 0 0 0 1 1 1 0 0 0 0 0 0
+ 0 0 0 1 0 1 1 0 0 1 1 1 0 1 0 1 0 0 1 1 0 0 0 0 1 0 0]
 
 ** fake preds
-[0 0 0 1 1 0 1 1 1 0 1 0 1 1 0 1 0 1 0 1 0 0 0 0 1 0 0 1 0 1 1 0 1 1 0 1 1
- 1 0 0 1 1 0 1 0 0 1 1 0 1 1 1 0 1 1 0 0 1 1 0 0 1 1 0]
+[0 0 0 0 1 0 0 0 1 1 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 0 1 0 1 1 0 1 1 0
+ 1 0 0 1 1 1 0 0 1 0 0 0 0 0 1 1 1 1 0 1 0 1 0 0 0 1 1]
 
 ** example `('glue', 'cola')` metric calculation
-{'matthews_correlation': 0.007889684472185849}
+{'matthews_correlation': -0.14060420405767388}
 
 
 >> finetune <<
 
-{'eval_loss': 0.5171593427658081, 'eval_matthews_correlation': 0.3768849092974155, 'eval_runtime': 1.2015, 'eval_samples_per_second': 868.059, 'eval_steps_per_second': 7.49, 'epoch': 1.0}
-{'eval_loss': 0.4805269241333008, 'eval_matthews_correlation': 0.45286217246735105, 'eval_runtime': 1.1811, 'eval_samples_per_second': 883.054, 'eval_steps_per_second': 7.62, 'epoch': 2.0}
-{'eval_loss': 0.503508985042572, 'eval_matthews_correlation': 0.4700719675330965, 'eval_runtime': 1.144, 'eval_samples_per_second': 911.717, 'eval_steps_per_second': 7.867, 'epoch': 3.0}
-{'eval_loss': 0.5429630279541016, 'eval_matthews_correlation': 0.48848785650378773, 'eval_runtime': 1.2534, 'eval_samples_per_second': 832.169, 'eval_steps_per_second': 7.181, 'epoch': 4.0}
-{'eval_loss': 0.5427433252334595, 'eval_matthews_correlation': 0.4821946236605807, 'eval_runtime': 1.2231, 'eval_samples_per_second': 852.726, 'eval_steps_per_second': 7.358, 'epoch': 5.0}
-{'train_runtime': 139.2468, 'train_samples_per_second': 307.045, 'train_steps_per_second': 2.406, 'train_loss': 0.38196579662721547, 'epoch': 5.0}
+{'eval_loss': 0.5194393992424011, 'eval_matthews_correlation': 0.4033324209850535, 'eval_runtime': 0.484, 'eval_samples_per_second': 2154.984, 'eval_steps_per_second': 18.595, 'epoch': 1.0}
+{'eval_loss': 0.47268882393836975, 'eval_matthews_correlation': 0.4618671668713098, 'eval_runtime': 0.485, 'eval_samples_per_second': 2150.31, 'eval_steps_per_second': 18.555, 'epoch': 2.0}
+{'eval_loss': 0.5025046467781067, 'eval_matthews_correlation': 0.4816794142882336, 'eval_runtime': 0.485, 'eval_samples_per_second': 2150.65, 'eval_steps_per_second': 18.558, 'epoch': 3.0}
+{'eval_loss': 0.5314330458641052, 'eval_matthews_correlation': 0.4952437657124396, 'eval_runtime': 0.482, 'eval_samples_per_second': 2164.099, 'eval_steps_per_second': 18.674, 'epoch': 4.0}
+{'eval_loss': 0.5320519208908081, 'eval_matthews_correlation': 0.489796507532839, 'eval_runtime': 0.4846, 'eval_samples_per_second': 2152.103, 'eval_steps_per_second': 18.57, 'epoch': 5.0}
+{'train_runtime': 55.4274, 'train_samples_per_second': 771.369, 'train_steps_per_second': 6.044, 'train_loss': 0.383504884634445, 'epoch': 5.0}
 
 >> predict <<
 
@@ -102,7 +102,7 @@ DatasetDict({
     3 If you had eaten more, you would want le 1 1 
     4 As you eat the most, you want the least. 0 1 *
     5 The more you would want, the less you wo 0 1 *
-    6 I demand that the more John eat, the mor 0 1 *
+    6 I demand that the more John eat, the mor 0 0 
     7 Mary listens to the Grateful Dead, she g 1 1 
     8 The angrier Mary got, the more she looke 1 1 
     9 The higher the stakes, the lower his exp 1 1 
@@ -130,7 +130,7 @@ DatasetDict({
    31 The tub leaked water.                    1 1 
    32 What the water did to the bottle was fil 0 1 *
    33 What the water did to the whole bottle w 0 1 *
-   34 The tank leaked the fluid free.          1 1 
+   34 The tank leaked the fluid free.          1 0 *
    35 John lay the ball in the box.            1 1 
    36 John owns the book.                      1 1 
    37 We persuaded Mary to leave and Sue to st 1 1 
@@ -279,7 +279,7 @@ DatasetDict({
   180 Frances hid the presents in the drawer.  1 1 
   181 The needle poked the cloth.              1 1 
   182 Carrie touched that cat.                 1 1 
-  183 Herman whipped the sugar and the cream.  0 1 *
+  183 Herman whipped the sugar and the cream.  0 0 
   184 Linda taped the picture to the wall.     1 1 
   185 Linda taped the picture onto the wall.   1 1 
   186 The child and her mother clung together. 1 1 
@@ -288,9 +288,9 @@ DatasetDict({
   189 The jeweller scribbled the contract with 0 1 *
   190 The gardener grew that acorn into an oak 1 0 *
   191 I shaped a loaf.                         0 0 
-  192 The children amused.                     0 1 *
+  192 The children amused.                     0 0 
   193 Susan whispered the news.                1 1 
-  194 Susan whispered at Rachel.               1 1 
+  194 Susan whispered at Rachel.               1 0 *
   195 Ellen said that melons were selling well 1 1 
   196 Ellen said about the present conditions. 0 1 *
   197 Ellen warned Helen against skating on th 1 1 
@@ -298,7 +298,7 @@ DatasetDict({
   199 Cynthia chewed.                          0 1 *
   200 Paul laughed at Mary.                    1 1 
   201 Linda winked her lip.                    0 1 *
-  202 My heart is pounding me.                 0 0 
+  202 My heart is pounding me.                 0 1 *
   203 Sharon fainted from hunger.              1 1 
   204 The witch poisoned the children.         1 1 
   205 A grandfather clock ticked in the hallwa 1 1 
@@ -366,7 +366,7 @@ DatasetDict({
   267 The boy in the doorway waved to his fath 1 1 
   268 That dog is so ferocious, it even tried  1 1 
   269 He washed yourself.                      0 0 
-  270 John is easy to please Kim.              0 0 
+  270 John is easy to please Kim.              0 1 *
   271 There seemed to be intelligent.          0 0 
   272 John tried to please Stephen.            1 1 
   273 We believed John to be a fountain in the 0 0 
@@ -467,7 +467,7 @@ DatasetDict({
   368 If he were a rich man, he'd buy a diamon 1 1 
   369 John is likely to leave.                 1 1 
   370 The manager laughed.                     1 1 
-  371 Was sunk.                                0 1 *
+  371 Was sunk.                                0 0 
   372 Who did you think kissed the gorilla?    1 1 
   373 Have you seen my model airplane collecti 1 1 
   374 It seems that Lucy was mugged.           1 1 
@@ -535,7 +535,7 @@ DatasetDict({
   436 Put a picture of Bill on your desk befor 0 0 
   437 Picture of Bill, this girl in the red co 0 0 
   438 Ann bought a first edition of Richard II 1 1 
-  439 John became deadly afraid of flying.     1 1 
+  439 John became deadly afraid of flying.     1 0 *
   440 What John promised is to be gentle.      1 1 
   441 Henri wants to buy which books about coo 1 1 
   442 I will fix the computer for Carol.       1 1 
@@ -569,10 +569,10 @@ DatasetDict({
   470 John convinced Bill that Mary should sle 1 1 
   471 I saw Bill while you did so Mary.        0 0 
   472 What Mary did Bill was give a book.      0 0 
-  473 The bears sniffed                        1 1 
+  473 The bears sniffed                        1 0 *
   474 to steal talismans from witches is dange 1 1 
   475 Anson demonized                          0 1 *
-  476 You kicked yourselves                    1 0 *
+  476 You kicked yourselves                    1 1 
   477 The book that I said that I'd never read 1 1 
   478 Anson demonized up the Khyber            0 0 
   479 It is not true that I might be going to  1 1 
@@ -587,7 +587,7 @@ DatasetDict({
   488 There is a programme about Euripides on  1 1 
   489 Medea denied poisoning the phoenix.      1 1 
   490 The elixir was hidden in a hole in the g 1 1 
-  491 Extremely frantically, Anson danced at T 1 1 
+  491 Extremely frantically, Anson danced at T 1 0 *
   492 What did you ask who Medea gave?         0 1 *
   493 It's Anson that I like                   1 1 
   494 Medea tried the nurse to poison her chil 0 0 
@@ -620,7 +620,7 @@ DatasetDict({
   521 The monkey is ate the banana             0 0 
   522 I would like to could swim               1 0 *
   523 I kicked myself                          1 1 
-  524 The bookcase ran                         0 1 *
+  524 The bookcase ran                         0 0 
   525 I shaved myself.                         1 0 *
   526 Anson became a muscle bound.             1 1 
   527 Somebody just left - guess who.          1 1 
@@ -703,7 +703,7 @@ DatasetDict({
   604 I think Agnes said that Bill would speak 1 0 *
   605 Agnes wondered how John could eat but it 0 1 *
   606 Tony sent Mo a picture that he painted,  0 1 *
-  607 She's been dancing but we don't know wit 1 0 *
+  607 She's been dancing but we don't know wit 1 1 
   608 Who did they see someone?                0 0 
   609 It was believed by everybody that Mary w 1 1 
   610 That professor is feared by all students 1 1 
@@ -717,7 +717,7 @@ DatasetDict({
   618 John was spoken by Mary to.              0 0 
   619 The book was seen by Mary.               1 0 *
   620 John was seen the book.                  0 0 
-  621 The book was written.                    1 0 *
+  621 The book was written.                    1 1 
   622 John was spoke by Mary to.               0 0 
   623 The table was wiped clean by John.       1 1 
   624 The table was wiped by John clean.       0 0 
@@ -741,7 +741,7 @@ DatasetDict({
   642 Vera sent a baby alligator to Max and a  1 1 
   643 Either Sam plays the bassoon or Jekyll t 1 1 
   644 Sam doesn't play bassoon, nor Medusa obo 1 1 
-  645 Bill ate the peaches, but Harry the grap 0 1 *
+  645 Bill ate the peaches, but Harry the grap 0 0 
   646 I no more could have stolen that steak t 1 1 
   647 Bill ate more peaches than Harry did gra 1 1 
   648 Bill ate the peaches and Harry did the g 0 1 *
@@ -751,7 +751,7 @@ DatasetDict({
   652 Bob tried to wash himself, and Mary to r 1 0 *
   653 Harry told Sue that Albania is a lovely  1 1 
   654 Harry told Sue that Albania is a lovely  1 0 *
-  655 Max seemed to be trying to begin to love 1 1 
+  655 Max seemed to be trying to begin to love 1 0 *
   656 Max seemed to be trying to force Ted to  1 0 *
   657 Max seemed to be trying to force Ted to  0 1 *
   658 Arizona elected Goldwater Senator, and M 0 1 *
@@ -806,7 +806,7 @@ DatasetDict({
   707 I wonder in whom them to place their tru 0 0 
   708 I wonder whom us to trust.               0 0 
   709 I wonder who for us to trust.            0 0 
-  710 I wonder who to place my trust in.       1 1 
+  710 I wonder who to place my trust in.       1 0 *
   711 I know the people that voted in the elec 1 1 
   712 I threw away a book that Sandy thought w 1 1 
   713 I thought that you were sick.            1 1 
@@ -837,7 +837,7 @@ DatasetDict({
   738 We like ourselves.                       1 1 
   739 Nobody likes us.                         1 1 
   740 Leslie likes ourselves.                  0 0 
-  741 Ourselves like ourselves.                0 1 *
+  741 Ourselves like ourselves.                0 0 
   742 She voted for herself.                   1 1 
   743 We gave us presents.                     0 1 *
   744 We gave ourselves presents.              1 1 
@@ -877,14 +877,14 @@ DatasetDict({
   778 Lights go out at ten. There will be no t 1 1 
   779 They found the book on the atom.         1 0 *
   780 Which experts testified against defendan 1 1 
-  781 List all experts for the defendant who r 1 1 
+  781 List all experts for the defendant who r 1 0 *
   782 List associates of each defendant who sp 1 0 *
   783 They lost themselves' books.             0 0 
   784 Some sentences go on and on and on.      1 1 
   785 Sentences some go on and on and on and o 0 1 *
   786 That surprised me.                       1 1 
   787 I noticed the.                           0 0 
-  788 They were interested in his.             1 1 
+  788 They were interested in his.             1 0 *
   789 This is my favorite.                     1 1 
   790 A large dog chased a small cat.          1 1 
   791 Some people yell at noisy dogs in my nei 1 1 
@@ -940,8 +940,8 @@ DatasetDict({
   841 The children are fond that they have ice 0 0 
   842 A magazine appeared on the newsstands.   1 1 
   843 A magazine about crime appeared on the n 1 1 
-  844 Newsweek appeared on the newsstands.     1 1 
-  845 Newsweek about crime appeared on the new 0 1 *
+  844 Newsweek appeared on the newsstands.     1 0 *
+  845 Newsweek about crime appeared on the new 0 0 
   846 The report that crime was declining surp 1 1 
   847 The book surprised many people.          1 1 
   848 The book that crime was declining surpri 0 0 
@@ -1044,7 +1044,7 @@ DatasetDict({
   945 That the Cardinal won the game gave Sand 1 1 
   946 It gave Sandy a thrill that the Cardinal 1 1 
   947 That Sandy had lied suggested.           0 0 
-  948 It loved Sandy.                          0 1 *
+  948 It loved Sandy.                          0 0 
   949 Cohen proved the independence of the con 1 1 
   950 Cohen proved that the continuum hypothes 1 1 
   951 We forgot our invitations.               1 1 
@@ -1062,7 +1062,7 @@ DatasetDict({
   963 I presented John with it dead.           0 0 
   964 Of whom are you thinking?                1 1 
   965 John became rich.                        1 1 
-  966 I gave John gold apples.                 1 0 *
+  966 I gave John gold apples.                 1 1 
   967 how silly is Bill considered?            1 1 
   968 how mad was Bill made?                   1 1 
   969 John is sick.                            1 1 
@@ -1075,18 +1075,18 @@ DatasetDict({
   976 John promised Bill to leave.             1 1 
   977 John tried to leave.                     1 1 
   978 To leave would be a pleasure.            1 1 
-  979 John was struck by Bill as pompous.      0 1 *
+  979 John was struck by Bill as pompous.      0 0 
   980 John was promised by Bill to leave.      0 1 *
   981 They make good cooks.                    1 1 
   982 there is nothing to do.                  1 1 
   983 John has something for Bill to do.       1 1 
   984 I am counting on Bill to incriminate him 1 1 
-  985 On whom are you counting to incriminate  1 1 
+  985 On whom are you counting to incriminate  1 0 *
   986 I am counting on Bill to get there on ti 1 1 
   987 I would prefer to leave.                 1 1 
   988 I would hate for John to leave.          1 1 
   989 I would prefer for John to leave.        1 1 
-  990 It was hated for John to leave.          0 1 *
+  990 It was hated for John to leave.          0 0 
   991 John decided for Bill to get the prize.  0 0 
   992 John decided Bill to get the prize.      0 0 
   993 to die is no fun.                        1 1 
@@ -1103,7 +1103,7 @@ DatasetDict({
  1004 John left us orders to follow Pete.      1 1 
  1005 John left orders not to be disturbed.    1 1 
  1006 That he is here is clear.                1 1 
- 1007 It is a problem that he is here.         1 1 
+ 1007 It is a problem that he is here.         1 0 *
  1008 It bothers me that he is here.           1 1 
  1009 John regretted it that Bill had a good t 1 0 *
  1010 John believes it that Bill is here.      0 0 
@@ -1121,7 +1121,7 @@ DatasetDict({
  1022 It was believed to be illegal by them to 0 1 *
  1023 John grudgingly accepted judgments of hi 1 1 
  1024 It was to John that I gave the book.     1 1 
- 1025 I bought it to read.                     1 0 *
+ 1025 I bought it to read.                     1 1 
  1026 I bought it to give to Pete.             1 1 
  1027 I gave it to Pete to take to the fair.   1 1 
  1028 I gave Pete the book to impress.         0 1 *
@@ -1140,11 +1140,11 @@ DatasetDict({
  1041 John arranged for himself to get the pri 1 1 
  1042 John talked to Bill about himself.       1 0 *
 ** .
-0.7929050814956855
+0.7948226270373921
 
 
 >> eval <<
 
 ** RESULT
-{'eval_loss': 0.5427433252334595, 'eval_matthews_correlation': 0.4821946236605807, 'eval_runtime': 1.1665, 'eval_samples_per_second': 894.101, 'eval_steps_per_second': 7.715, 'epoch': 5.0}
+{'eval_loss': 0.5320519208908081, 'eval_matthews_correlation': 0.489796507532839, 'eval_runtime': 0.4839, 'eval_samples_per_second': 2155.276, 'eval_steps_per_second': 18.598, 'epoch': 5.0}
 

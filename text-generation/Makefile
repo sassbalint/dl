@@ -5,9 +5,9 @@ all:
 tokclass:
 	clear ; time python tokclass.py > tokclass.out
 
-seqclass:
-	clear ; time python seqclass.py > seqclass.out
+seqclass_glue-cola:
+	clear ; time python seqclass.py glue-cola > seqclass_glue-cola.out
 
-training_seqclass:
-	clear ; time python training_seqclass.py > training_seqclass.out
+seqclass_imdb:
+	clear ; time python seqclass.py imdb > seqclass_imdb.out
 

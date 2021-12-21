@@ -75,25 +75,25 @@ DatasetDict({
 >> metric <<
 
 ** fake labels
-[1 0 0 0 1 1 0 1 0 1 1 0 0 0 1 0 0 1 0 1 1 0 1 1 1 1 0 0 0 0 0 1 0 1 0 0 1
- 1 0 0 0 0 0 1 0 1 0 0 0 0 0 1 1 0 1 0 0 0 0 0 1 1 0 1]
+[1 0 0 0 0 0 0 1 1 0 1 0 0 1 0 0 1 1 0 1 0 1 0 1 0 1 0 1 1 1 0 1 0 0 0 0 1
+ 0 1 0 0 1 1 1 0 0 0 0 1 1 0 1 1 0 1 0 1 0 1 0 0 1 1 1]
 
 ** fake preds
-[0 0 1 1 0 0 1 0 0 1 1 1 1 1 1 0 1 0 1 1 1 1 1 0 1 1 1 1 0 1 0 0 0 1 1 1 1
- 0 0 0 0 1 0 1 1 1 1 0 0 1 1 0 0 1 0 1 1 1 1 1 0 1 0 0]
+[0 0 0 0 0 1 1 1 0 0 0 0 0 0 1 0 0 0 0 1 1 0 1 1 0 1 0 1 1 0 1 1 1 0 0 1 0
+ 0 1 0 1 1 0 0 1 1 0 1 1 1 1 0 1 0 0 0 1 1 1 1 1 0 0 0]
 
 ** example `('accuracy',)` metric calculation
-{'accuracy': 0.40625}
+{'accuracy': 0.5}
 
 
 >> finetune <<
 
-{'eval_loss': 0.6865829825401306, 'eval_accuracy': 0.494, 'eval_runtime': 3.9341, 'eval_samples_per_second': 127.094, 'eval_steps_per_second': 8.134, 'epoch': 1.0}
-{'eval_loss': 0.6170761585235596, 'eval_accuracy': 0.728, 'eval_runtime': 3.9665, 'eval_samples_per_second': 126.055, 'eval_steps_per_second': 8.068, 'epoch': 2.0}
-{'eval_loss': 0.4535527229309082, 'eval_accuracy': 0.806, 'eval_runtime': 4.0687, 'eval_samples_per_second': 122.89, 'eval_steps_per_second': 7.865, 'epoch': 3.0}
-{'eval_loss': 0.38018345832824707, 'eval_accuracy': 0.848, 'eval_runtime': 4.1231, 'eval_samples_per_second': 121.267, 'eval_steps_per_second': 7.761, 'epoch': 4.0}
-{'eval_loss': 0.3700438439846039, 'eval_accuracy': 0.846, 'eval_runtime': 4.1414, 'eval_samples_per_second': 120.731, 'eval_steps_per_second': 7.727, 'epoch': 5.0}
-{'train_runtime': 85.0631, 'train_samples_per_second': 29.39, 'train_steps_per_second': 1.881, 'train_loss': 0.4632271289825439, 'epoch': 5.0}
+{'eval_loss': 0.5131011605262756, 'eval_accuracy': 0.822, 'eval_runtime': 3.9272, 'eval_samples_per_second': 127.317, 'eval_steps_per_second': 8.148, 'epoch': 1.0}
+{'eval_loss': 0.33989080786705017, 'eval_accuracy': 0.876, 'eval_runtime': 3.906, 'eval_samples_per_second': 128.008, 'eval_steps_per_second': 8.193, 'epoch': 2.0}
+{'eval_loss': 0.35432183742523193, 'eval_accuracy': 0.886, 'eval_runtime': 3.9824, 'eval_samples_per_second': 125.552, 'eval_steps_per_second': 8.035, 'epoch': 3.0}
+{'eval_loss': 0.41070353984832764, 'eval_accuracy': 0.886, 'eval_runtime': 4.0911, 'eval_samples_per_second': 122.216, 'eval_steps_per_second': 7.822, 'epoch': 4.0}
+{'eval_loss': 0.453290194272995, 'eval_accuracy': 0.884, 'eval_runtime': 4.1374, 'eval_samples_per_second': 120.85, 'eval_steps_per_second': 7.734, 'epoch': 5.0}
+{'train_runtime': 84.1648, 'train_samples_per_second': 29.704, 'train_steps_per_second': 1.901, 'train_loss': 0.24467620849609376, 'epoch': 5.0}
 
 >> predict <<
 
@@ -134,7 +134,7 @@ DatasetDict({
    34 "An astronaut (Michael Emmet) dies while 0 1 *
    35 I recently rented this video after seein 1 1 
    36 Lovely music. Beautiful photography, som 0 1 *
-   37 As everyone knows, nobody can play Scarl 0 1 *
+   37 As everyone knows, nobody can play Scarl 0 0 
    38 A very sensitive topic--15 y/o girl aban 0 0 
    39 This is about some vampires (who can run 0 0 
    40 This film is bad. It's filled with glari 0 0 
@@ -152,7 +152,7 @@ DatasetDict({
    52 This series takes a classic story and ma 0 0 
    53 There's a good running bit about the pri 1 1 
    54 I especially liked the ending of this mo 1 1 
-   55 I remember seeing this film in the mid 8 1 1 
+   55 I remember seeing this film in the mid 8 1 0 *
    56 I wasn't able to last ten minutes on the 0 0 
    57 At first I didn't think that the perform 1 1 
    58 I'd like to point out these excellent po 1 1 
@@ -179,7 +179,7 @@ DatasetDict({
    79 First, the positives: an excellent job a 1 0 *
    80 Now and again, a film comes around purel 0 0 
    81 What an awesome mini-series. The origina 1 1 
-   82 It has a bit of that indie queer edge th 0 0 
+   82 It has a bit of that indie queer edge th 0 1 *
    83 I watched Pola X because Scott Walker co 1 1 
    84 You can tell that this is the first offe 1 1 
    85 This film was incredible! Looked high bu 1 1 
@@ -191,10 +191,10 @@ DatasetDict({
    91 Mr Baseball was a fun video rental with  1 1 
    92 "Opposing Force [1986]" wasn't as good a 0 0 
    93 Crackerjack is another classic Aussie fi 1 1 
-   94 Clearly this film was made for a newer g 0 0 
+   94 Clearly this film was made for a newer g 0 1 *
    95 I've seen some terrible book-to-film ada 0 0 
    96 I see that C. Thomas Howell has appeared 0 0 
-   97 Wow! What a movie if you want to blow yo 0 1 *
+   97 Wow! What a movie if you want to blow yo 0 0 
    98 There are few films that deal with thing 1 0 *
    99 One of the best! As being a fan of the c 1 1 
   100 I wish I would have read more reviews an 0 0 
@@ -206,24 +206,24 @@ DatasetDict({
   106 Family guy. When the show first aired, i 0 0 
   107 This movie defines the word "confused".  0 1 *
   108 This is, without a doubt, the most hilar 0 1 *
-  109 Well, it is standard Hollywood schmaltz  0 0 
+  109 Well, it is standard Hollywood schmaltz  0 1 *
   110 Rickman is sexy and good, but the "stran 1 0 *
   111 It was probably watching this TV movie t 1 1 
-  112 I saw this fine flick shortly leaving co 1 0 *
+  112 I saw this fine flick shortly leaving co 1 1 
   113 Every year there's one can't-miss much-a 1 1 
-  114 Billed as a romantic comedy set against  0 1 *
-  115 This interesting film noir features thre 1 0 *
+  114 Billed as a romantic comedy set against  0 0 
+  115 This interesting film noir features thre 1 1 
   116 Wow. When I went to this film at the Tor 1 1 
   117 * Some spoilers *<br /><br />This movie  0 0 
   118 Deepa Mehta's "Fire" is groundbreaking,  1 1 
   119 Bears about as much resemblance to Dean  1 0 *
   120 To be fair, it has been several years si 0 0 
-  121 I have read each and every one of Barone 0 1 *
+  121 I have read each and every one of Barone 0 0 
   122 This film was a Mexican made horror film 0 0 
   123 Found this movie in a rental store. Neve 1 1 
   124 Johnny Crawford is great in this movie o 1 1 
   125 OK...ths film (like Segal's last few fil 1 1 
-  126 imagine if you took the Christ myth, mix 0 0 
+  126 imagine if you took the Christ myth, mix 0 1 *
   127 Finally! Third time lucky. This film has 1 1 
   128 This is not a good movie. It is a tried  0 0 
   129 Jessica Bohl plays Daphne, the sexually  1 1 
@@ -264,7 +264,7 @@ DatasetDict({
   164 I haven't laughed so much in a theater i 0 0 
   165 There is a serious scene in this movie.  1 0 *
   166 Everyone knows that Lindburgh succeeded  1 1 
-  167 The director seems like a good, solid ma 0 1 *
+  167 The director seems like a good, solid ma 0 0 
   168 I waited a long time to finally see what 0 0 
   169 Don't get me wrong, I love the TV series 0 0 
   170 I saw this movie with my mother, and I l 1 1 
@@ -272,8 +272,8 @@ DatasetDict({
   172 OK I watched this movie. Someone needs t 0 0 
   173 Gordon Scott made some good Tarzan movie 0 0 
   174 This movie was playing on Lifetime Movie 0 0 
-  175 If you have ever wanted to know more abo 0 1 *
-  176 The episode begins with scenes of a dead 1 0 *
+  175 If you have ever wanted to know more abo 0 0 
+  176 The episode begins with scenes of a dead 1 1 
   177 For all of us American Deneuve fans, thi 1 1 
   178 I have seen many many movies and this ju 1 1 
   179 How is bear´s paw, elephant´s trunk or m 1 1 
@@ -295,9 +295,9 @@ DatasetDict({
   195 This was a very funny, fast paced movie. 1 1 
   196 Imagine if you will an alternative unive 0 0 
   197 My favourite police series of all time t 1 1 
-  198 Tumbling Doll of Flesh (aka Niku daruma  1 0 *
+  198 Tumbling Doll of Flesh (aka Niku daruma  1 1 
   199 Though this film doesn't stand out parti 1 1 
-  200 I don't understand why this movie has su 1 0 *
+  200 I don't understand why this movie has su 1 1 
   201 There is not much to add to what others  0 0 
   202 All I can say about this movie, is it is 0 0 
   203 The Grudge 2...Let's see. Don't get me w 0 0 
@@ -316,7 +316,7 @@ DatasetDict({
   216 Screening as part of a series of funny s 1 1 
   217 This is one of those movies that you jus 1 1 
   218 Well, Anne is way way too old. Wentworth 0 0 
-  219 I got this movie out a week after the de 1 0 *
+  219 I got this movie out a week after the de 1 1 
   220 Without saying how it ended, it is suffi 0 1 *
   221 After watching this movie, I have nothin 0 0 
   222 An Italian/American co-production co-sta 0 0 
@@ -328,7 +328,7 @@ DatasetDict({
   228 Billy Wilder created a somewhat conventi 1 1 
   229 I am sitting here watching the film, Tan 0 1 *
   230 "Cleo's Second Husband" is an amateurish 0 0 
-  231 A movie about a French girl who gets rap 0 1 *
+  231 A movie about a French girl who gets rap 0 0 
   232 first off, i'm amazed to see that this f 0 0 
   233 This was easily one of the weirder of th 1 0 *
   234 What a great show! A very underrated dra 1 1 
@@ -367,7 +367,7 @@ DatasetDict({
   267 Drifting around on bootlegs, sometimes t 0 0 
   268 The chaser's war on everything is a week 1 1 
   269 About five years ago, my friend and I we 0 0 
-  270 algernon4's comment that Ms Paget's "ult 1 0 *
+  270 algernon4's comment that Ms Paget's "ult 1 1 
   271 The most vivid portrait of small-town od 1 1 
   272 Zipperface is the kind of experience one 0 0 
   273 I disagree with the imdb.com synopsis th 1 1 
@@ -384,7 +384,7 @@ DatasetDict({
   284 After reading many good things about it  0 0 
   285 One of the many backwoods horror's that  1 0 *
   286 Edge Vs. Michaels-Boring in general (lov 0 0 
-  287 I was actually satisfied when i played t 1 0 *
+  287 I was actually satisfied when i played t 1 1 
   288 This is a new Barbie movie. The graphics 1 1 
   289 I'm afraid I did not like this adaptatio 0 1 *
   290 Few people realize it, but there was wor 1 1 
@@ -406,7 +406,7 @@ DatasetDict({
   306 An intense thriller about a mute movie m 1 1 
   307 Oliver Stone, always ready to make polit 1 1 
   308 This is a known fact, Mr. Seagal cannot  0 0 
-  309 OK...i have seen just about everything.. 1 0 *
+  309 OK...i have seen just about everything.. 1 1 
   310 I finally got a chance to settle in and  1 0 *
   311 I always wanted to see ELECTRA GLIDE IN  0 0 
   312 Just what is the point of this film? It  0 0 
@@ -419,7 +419,7 @@ DatasetDict({
   319 too bad this movie isn't. While "Nemesis 0 0 
   320 This movie was included in the Six Wives 0 0 
   321 I saw this film at a special screening.  1 1 
-  322 I really should have learned more about  0 1 *
+  322 I really should have learned more about  0 0 
   323 I'm not picky with movies, oh I've seen  0 0 
   324 I have seen both the MST3K version and t 0 1 *
   325 First off, I absolutely loved this movie 1 1 
@@ -459,7 +459,7 @@ DatasetDict({
   359 "Hollywood Cavalcade" is a mildly entert 1 1 
   360 After a good start, it turned out to be  0 0 
   361 'Nuff said. An undercover cop from the s 0 1 *
-  362 Before I begin, a "little" correction: I 0 1 *
+  362 Before I begin, a "little" correction: I 0 0 
   363 This is perhaps the most ridiculous crap 0 0 
   364 Here's a spoof that's guaranteed to ente 0 1 *
   365 This solid black and white slapstick com 1 1 
@@ -473,11 +473,11 @@ DatasetDict({
   373 Ill-conceived sequel(..the absurd idea o 0 0 
   374 First, This movie was made in 1978. So t 0 0 
   375 this is a really great series. i love th 1 1 
-  376 Okay, sure, this film will never win an  0 0 
+  376 Okay, sure, this film will never win an  0 1 *
   377 This film would like to be the kind of s 0 0 
   378 This relic from before the days of the P 1 1 
   379 Man this movie is awesome especially the 1 1 
-  380 Well, the movie did turn out a lot bette 1 0 *
+  380 Well, the movie did turn out a lot bette 1 1 
   381 "Hit and Run" is a shattering story star 1 1 
   382 I bought this DVD from Walmart for cheap 1 1 
   383 This was a fantastically written screenp 1 1 
@@ -497,10 +497,10 @@ DatasetDict({
   397 I watch a lot of movies - DVD, features, 1 1 
   398 A very great movie.<br /><br />A big lov 1 1 
   399 What a great movie!! It's a touching sto 1 1 
-  400 If you want to really terrify people, ch 1 0 *
+  400 If you want to really terrify people, ch 1 1 
   401 I was at Wrestlemania VI in Toronto as a 0 0 
   402 I am probably a little too old for this  1 1 
-  403 Fred Astaire is reteamed with Rita Haywo 0 1 *
+  403 Fred Astaire is reteamed with Rita Haywo 0 0 
   404 I thought this was a really great movie  1 1 
   405 This movie was horrible, and it doesn't  0 0 
   406 Latter Days for me was a very moving fil 1 1 
@@ -512,7 +512,7 @@ DatasetDict({
   412 I've seen just about all of the Coen bro 1 1 
   413 I should have realized that any two-vide 0 0 
   414 When I saw this film at a festival years 1 1 
-  415 I saw this film when it came out. Let me 0 0 
+  415 I saw this film when it came out. Let me 0 1 *
   416 I think my summary says it all. This MTV 0 0 
   417 This movie surprised me. The box is misl 1 1 
   418 Eddy Murphy and Robert De Niro should be 0 1 *
@@ -520,7 +520,7 @@ DatasetDict({
   420 Kokoda was inspired by events on the Kok 0 0 
   421 This is an absolutely true and faithful  1 1 
   422 I watched this film on the advice of a f 0 0 
-  423 Now I remember what the 'indie' filmmake 0 1 *
+  423 Now I remember what the 'indie' filmmake 0 0 
   424 Someone once defined what is the definit 1 1 
   425 I have seen a number of horror movies to 1 1 
   426 As someone who used to spend hours drivi 1 1 
@@ -538,7 +538,7 @@ DatasetDict({
   438 A very well directed version of Eric Bog 1 1 
   439 I'm astonished how a filmmaker notorious 1 0 *
   440 Everything about "Choose Connor" was top 1 1 
-  441 This is a awful re-make of a very good m 0 1 *
+  441 This is a awful re-make of a very good m 0 0 
   442 I found this movie to be preachy and unr 0 0 
   443 Director Jay Craven's adaptation of Howa 1 1 
   444 I bought this video on a throw-out table 0 0 
@@ -557,8 +557,8 @@ DatasetDict({
   457 GREAT MOVIE! Chucky is by far the funnie 1 1 
   458 This is one of t.v.'s greatest mini-seri 1 1 
   459 Like most, I rented this after I heard t 0 0 
-  460 If you are looking for the feel-good hit 0 1 *
-  461 A VERY un-Tom and Jerry short. Jerry nar 0 1 *
+  460 If you are looking for the feel-good hit 0 0 
+  461 A VERY un-Tom and Jerry short. Jerry nar 0 0 
   462 A plane carrying employees of a large bi 0 0 
   463 Its the best movie I have seen in 2000,  1 1 
   464 Buddy Manucci(Roy Scheider, solid in a c 1 1 
@@ -569,7 +569,7 @@ DatasetDict({
   469 No matter how you feel about Michael Jac 1 1 
   470 These writers are trying to re-create th 0 0 
   471 By the time this movie came out in 1996, 0 0 
-  472 _The Wild Life_ has an obvious resemblan 1 0 *
+  472 _The Wild Life_ has an obvious resemblan 1 1 
   473 I've got as much testosterone as the nex 0 0 
   474 What a dire film. I cannot believe that  0 0 
   475 To start out with, the script is immitat 0 0 
@@ -598,11 +598,11 @@ DatasetDict({
   498 Gritty drama? Emotionally powerful? Blah 0 0 
   499 The CinemaScope color cinematography of  0 1 *
 ** .
-0.846
+0.884
 
 
 >> eval <<
 
 ** RESULT
-{'eval_loss': 0.3700438439846039, 'eval_accuracy': 0.846, 'eval_runtime': 4.1214, 'eval_samples_per_second': 121.317, 'eval_steps_per_second': 7.764, 'epoch': 5.0}
+{'eval_loss': 0.453290194272995, 'eval_accuracy': 0.884, 'eval_runtime': 4.0972, 'eval_samples_per_second': 122.036, 'eval_steps_per_second': 7.81, 'epoch': 5.0}
 

@@ -4,22 +4,50 @@ Finetune for text classification.
 
 from datasets import load_dataset, load_metric
 from transformers import AutoTokenizer, TrainingArguments, Trainer
-from transformers import AutoModelForSequenceClassification
 import numpy as np
 
-# https://colab.research.google.com/github/huggingface/notebooks/blob/master/examples/text_classification.ipynb
-MODEL = "distilbert-base-uncased"
-TASK = ("glue", "cola") # GLUE's CoLA task = grammatical or not?
-# keys: 'idx', 'label', 'sentence'
-DATACOLUMN = "sentence"
-# new keys after tok: 'attention_mask', 'input_ids'
-TRAIN = "train"
-EVAL = "validation"
-METRIC = TASK
-SAVE_DIR = f'{MODEL.split("/")[-1]}-finetuned-{"-".join(TASK)}'
+import sys
 
-DATASET_SIZE = 0 # 0 means all data
-BATCH_SIZE = 32 # based on gpustat -cupF
+if not(len(sys.argv) >= 2 and sys.argv[1] in {'glue-cola', 'imdb'}):
+    print("Command line param should be `glue-cola` or `imdb`")
+    exit(1)
+
+if sys.argv[1] == 'glue-cola':
+
+    # https://colab.research.google.com/github/huggingface/notebooks/blob/master/examples/text_classification.ipynb
+    from transformers import AutoModelForSequenceClassification
+
+    MODEL = "distilbert-base-uncased"
+    TASK = ("glue", "cola") # GLUE's CoLA task = grammatical or not?
+    # keys: 'idx', 'label', 'sentence'
+    DATACOLUMN = "sentence"
+    # new keys after tok: 'attention_mask', 'input_ids'
+    TRAIN = "train"
+    EVAL = "validation"
+    METRIC = TASK
+    SAVE_DIR = f'{MODEL}-finetuned-{"-".join(TASK)}'
+
+    DATASET_SIZE = 0 # 0 means all data
+    BATCH_SIZE = 32 # based on gpustat -cupF
+
+elif sys.argv[1] == 'imdb':
+
+    # https://huggingface.co/docs/transformers/training / COLAB notebook
+    from transformers import AutoModelForSequenceClassification
+
+    MODEL = "bert-base-cased"
+    TASK = ("imdb",) # sentiment on movie reviews
+    # keys: 'text', 'label'
+    DATACOLUMN = "text"
+    # new keys after tok: 'attention_mask', 'input_ids', 'token_type_ids'
+    TRAIN = "train"
+    EVAL = "test"
+    METRIC = ("accuracy",)
+    SAVE_DIR = "test-trainer"
+
+    DATASET_SIZE = 500 # 0 means all data
+    BATCH_SIZE = 4 # based on gpustat -cupF
+
 
 def section(s): print(f'\n>> {s} <<\n')
 def msg(msg, obj, inline=False):
