@@ -111,22 +111,1054 @@ DatasetDict({
 
 >> finetune <<
 
-{'eval_loss': 0.14508627355098724, 'eval_precision': 0.7899040558220671, 'eval_recall': 0.8104933437744715, 'eval_f1': 0.8000662580752028, 'eval_accuracy': 0.9604587986718985, 'eval_runtime': 3.1661, 'eval_samples_per_second': 1026.51, 'eval_steps_per_second': 8.212, 'epoch': 1.0}
-{'eval_loss': 0.08507780730724335, 'eval_precision': 0.8763581051716645, 'eval_recall': 0.90233806913525, 'eval_f1': 0.8891583530838341, 'eval_accuracy': 0.9763610656584111, 'eval_runtime': 3.234, 'eval_samples_per_second': 1004.949, 'eval_steps_per_second': 8.04, 'epoch': 2.0}
-{'eval_loss': 0.07181277871131897, 'eval_precision': 0.8973404837474007, 'eval_recall': 0.9172166909050229, 'eval_f1': 0.9071697278158886, 'eval_accuracy': 0.9790776367420211, 'eval_runtime': 3.2347, 'eval_samples_per_second': 1004.726, 'eval_steps_per_second': 8.038, 'epoch': 3.0}
-{'eval_loss': 0.06957673281431198, 'eval_precision': 0.9010496391865296, 'eval_recall': 0.9219152030428459, 'eval_f1': 0.9113630080176942, 'eval_accuracy': 0.9795542281601982, 'eval_runtime': 3.2765, 'eval_samples_per_second': 991.911, 'eval_steps_per_second': 7.935, 'epoch': 4.0}
-{'loss': 0.1678, 'learning_rate': 1.8181818181818183e-06, 'epoch': 4.55}
-{'eval_loss': 0.06817884743213654, 'eval_precision': 0.9085010447597053, 'eval_recall': 0.9241525897751426, 'eval_f1': 0.916259982253771, 'eval_accuracy': 0.9806821611832176, 'eval_runtime': 3.2278, 'eval_samples_per_second': 1006.893, 'eval_steps_per_second': 8.055, 'epoch': 5.0}
-{'train_runtime': 135.9739, 'train_samples_per_second': 516.312, 'train_steps_per_second': 4.045, 'train_loss': 0.15693028970198197, 'epoch': 5.0}
+{'eval_loss': 0.2980772852897644, 'eval_precision': 0.5781328007988018, 'eval_recall': 0.6477234589998881, 'eval_f1': 0.6109528331750554, 'eval_accuracy': 0.9247621014504266, 'eval_runtime': 2.8961, 'eval_samples_per_second': 1122.199, 'eval_steps_per_second': 4.489, 'epoch': 1.0}
+{'eval_loss': 0.1353749930858612, 'eval_precision': 0.7841377125356426, 'eval_recall': 0.8306298243651415, 'eval_f1': 0.8067144719687093, 'eval_accuracy': 0.9631753697555085, 'eval_runtime': 2.9358, 'eval_samples_per_second': 1107.034, 'eval_steps_per_second': 4.428, 'epoch': 2.0}
+{'eval_loss': 0.09870126843452454, 'eval_precision': 0.8408411614005123, 'eval_recall': 0.8811947645150464, 'eval_f1': 0.8605451466652099, 'eval_accuracy': 0.9720399701336044, 'eval_runtime': 3.0112, 'eval_samples_per_second': 1079.319, 'eval_steps_per_second': 4.317, 'epoch': 3.0}
+{'eval_loss': 0.08679927885532379, 'eval_precision': 0.8710025929127053, 'eval_recall': 0.9018905917887907, 'eval_f1': 0.8861775212970596, 'eval_accuracy': 0.9757891559565984, 'eval_runtime': 2.9664, 'eval_samples_per_second': 1095.61, 'eval_steps_per_second': 4.382, 'epoch': 4.0}
+{'eval_loss': 0.08394823968410492, 'eval_precision': 0.8766825879287885, 'eval_recall': 0.9034567625013984, 'eval_f1': 0.8898683268139497, 'eval_accuracy': 0.9764404975614406, 'eval_runtime': 2.9905, 'eval_samples_per_second': 1086.791, 'eval_steps_per_second': 4.347, 'epoch': 5.0}
+{'train_runtime': 100.3454, 'train_samples_per_second': 699.633, 'train_steps_per_second': 2.741, 'train_loss': 0.25843494762073865, 'epoch': 5.0}
 
 >> predict <<
 
 ** prediction results
-{'LOC': {'precision': 0.926459719142646, 'recall': 0.9576012223071046, 'f1': 0.9417731029301277, 'number': 2618}, 'MISC': {'precision': 0.7781350482315113, 'recall': 0.7863525588952072, 'f1': 0.7822222222222222, 'number': 1231}, 'ORG': {'precision': 0.8751200768491835, 'recall': 0.8861867704280155, 'f1': 0.8806186563557274, 'number': 2056}, 'PER': {'precision': 0.9683110094740282, 'recall': 0.976928147659855, 'f1': 0.9726004922067268, 'number': 3034}, 'overall_precision': 0.9085010447597053, 'overall_recall': 0.9241525897751426, 'overall_f1': 0.916259982253771, 'overall_accuracy': 0.9806821611832176}
+{'LOC': {'precision': 0.9017531044558071, 'recall': 0.9430863254392666, 'f1': 0.9219566840926064, 'number': 2618}, 'MISC': {'precision': 0.7225806451612903, 'recall': 0.7278635255889521, 'f1': 0.7252124645892349, 'number': 1231}, 'ORG': {'precision': 0.8120713305898491, 'recall': 0.8638132295719845, 'f1': 0.8371435305208579, 'number': 2056}, 'PER': {'precision': 0.9632425336396455, 'recall': 0.9673698088332234, 'f1': 0.9653017595790165, 'number': 3034}, 'overall_precision': 0.8766825879287885, 'overall_recall': 0.9034567625013984, 'overall_f1': 0.8898683268139497, 'overall_accuracy': 0.9764404975614406}
+
+0
+[('cricket', 0, 0), ('-', 0, 0), ('leicestershire', 3, 3), ('take', 0, 0), ('over', 0, 0), ('at', 0, 0), ('top', 0, 0), ('after', 0, 0), ('innings', 0, 0), ('victory', 0, 0), ('.', 0, 0)]
+cricket              0 0 
+-                    0 0 
+leicestershire       3 3 
+take                 0 0 
+over                 0 0 
+at                   0 0 
+top                  0 0 
+after                0 0 
+innings              0 0 
+victory              0 0 
+.                    0 0 
+
+1
+[('london', 5, 5), ('1996', 0, 0), ('-', 0, 0), ('08', 0, 0), ('-', 0, 0), ('30', 0, 0)]
+london               5 5 
+1996                 0 0 
+-                    0 0 
+08                   0 0 
+-                    0 0 
+30                   0 0 
+
+2
+[('west', 7, 7), ('indian', 8, 7), ('all', 0, 0), ('-', 0, 0), ('round', 0, 0), ('##er', 0, 0), ('phil', 1, 1), ('simmons', 2, 2), ('took', 0, 0), ('four', 0, 0), ('for', 0, 0), ('38', 0, 0), ('on', 0, 0), ('friday', 0, 0), ('as', 0, 0), ('leicestershire', 3, 3), ('beat', 0, 0), ('somerset', 3, 3), ('by', 0, 0), ('an', 0, 0), ('innings', 0, 0), ('and', 0, 0), ('39', 0, 0), ('runs', 0, 0), ('in', 0, 0), ('two', 0, 0), ('days', 0, 0), ('to', 0, 0), ('take', 0, 0), ('over', 0, 0), ('at', 0, 0), ('the', 0, 0), ('head', 0, 0), ('of', 0, 0), ('the', 0, 0), ('county', 0, 0), ('championship', 0, 0), ('.', 0, 0)]
+west                 7 7 
+indian               8 7 *
+all                  0 0 
+-                    0 0 
+round                0 0 
+##er                 0 0 
+phil                 1 1 
+simmons              2 2 
+took                 0 0 
+four                 0 0 
+for                  0 0 
+38                   0 0 
+on                   0 0 
+friday               0 0 
+as                   0 0 
+leicestershire       3 3 
+beat                 0 0 
+somerset             3 3 
+by                   0 0 
+an                   0 0 
+innings              0 0 
+and                  0 0 
+39                   0 0 
+runs                 0 0 
+in                   0 0 
+two                  0 0 
+days                 0 0 
+to                   0 0 
+take                 0 0 
+over                 0 0 
+at                   0 0 
+the                  0 0 
+head                 0 0 
+of                   0 0 
+the                  0 0 
+county               0 0 
+championship         0 0 
+.                    0 0 
+
+3
+[('their', 0, 0), ('stay', 0, 0), ('on', 0, 0), ('top', 0, 0), (',', 0, 0), ('though', 0, 0), (',', 0, 0), ('may', 0, 0), ('be', 0, 0), ('short', 0, 0), ('-', 0, 0), ('lived', 0, 0), ('as', 0, 0), ('title', 0, 0), ('rivals', 0, 0), ('essex', 3, 3), (',', 0, 0), ('derbyshire', 3, 3), ('and', 0, 0), ('surrey', 3, 3), ('all', 0, 0), ('closed', 0, 0), ('in', 0, 0), ('on', 0, 0), ('victory', 0, 0), ('while', 0, 0), ('kent', 3, 3), ('made', 0, 0), ('up', 0, 0), ('for', 0, 0), ('lost', 0, 0), ('time', 0, 0), ('in', 0, 0), ('their', 0, 0), ('rain', 0, 0), ('-', 0, 0), ('affected', 0, 0), ('match', 0, 0), ('against', 0, 0), ('nottinghamshire', 3, 3), ('.', 0, 0)]
+their                0 0 
+stay                 0 0 
+on                   0 0 
+top                  0 0 
+,                    0 0 
+though               0 0 
+,                    0 0 
+may                  0 0 
+be                   0 0 
+short                0 0 
+-                    0 0 
+lived                0 0 
+as                   0 0 
+title                0 0 
+rivals               0 0 
+essex                3 3 
+,                    0 0 
+derbyshire           3 3 
+and                  0 0 
+surrey               3 3 
+all                  0 0 
+closed               0 0 
+in                   0 0 
+on                   0 0 
+victory              0 0 
+while                0 0 
+kent                 3 3 
+made                 0 0 
+up                   0 0 
+for                  0 0 
+lost                 0 0 
+time                 0 0 
+in                   0 0 
+their                0 0 
+rain                 0 0 
+-                    0 0 
+affected             0 0 
+match                0 0 
+against              0 0 
+nottinghamshire      3 3 
+.                    0 0 
+
+4
+[('after', 0, 0), ('bowling', 0, 0), ('somerset', 3, 3), ('out', 0, 0), ('for', 0, 0), ('83', 0, 0), ('on', 0, 0), ('the', 0, 0), ('opening', 0, 0), ('morning', 0, 0), ('at', 0, 0), ('grace', 5, 5), ('road', 6, 6), (',', 0, 0), ('leicestershire', 3, 3), ('extended', 0, 0), ('their', 0, 0), ('first', 0, 0), ('innings', 0, 0), ('by', 0, 0), ('94', 0, 0), ('runs', 0, 0), ('before', 0, 0), ('being', 0, 0), ('bowled', 0, 0), ('out', 0, 0), ('for', 0, 0), ('296', 0, 0), ('with', 0, 0), ('england', 5, 5), ('disc', 0, 0), ('##ard', 0, 0), ('andy', 1, 1), ('cad', 2, 2), ('##dick', 2, 2), ('taking', 0, 0), ('three', 0, 0), ('for', 0, 0), ('83', 0, 0), ('.', 0, 0)]
+after                0 0 
+bowling              0 0 
+somerset             3 3 
+out                  0 0 
+for                  0 0 
+83                   0 0 
+on                   0 0 
+the                  0 0 
+opening              0 0 
+morning              0 0 
+at                   0 0 
+grace                5 5 
+road                 6 6 
+,                    0 0 
+leicestershire       3 3 
+extended             0 0 
+their                0 0 
+first                0 0 
+innings              0 0 
+by                   0 0 
+94                   0 0 
+runs                 0 0 
+before               0 0 
+being                0 0 
+bowled               0 0 
+out                  0 0 
+for                  0 0 
+296                  0 0 
+with                 0 0 
+england              5 5 
+disc                 0 0 
+##ard                0 0 
+andy                 1 1 
+cad                  2 2 
+##dick               2 2 
+taking               0 0 
+three                0 0 
+for                  0 0 
+83                   0 0 
+.                    0 0 
+
+5
+[('trailing', 0, 0), ('by', 0, 0), ('213', 0, 0), (',', 0, 0), ('somerset', 3, 3), ('got', 0, 0), ('a', 0, 0), ('solid', 0, 0), ('start', 0, 0), ('to', 0, 0), ('their', 0, 0), ('second', 0, 0), ('innings', 0, 0), ('before', 0, 0), ('simmons', 1, 1), ('stepped', 0, 0), ('in', 0, 0), ('to', 0, 0), ('bundle', 0, 0), ('them', 0, 0), ('out', 0, 0), ('for', 0, 0), ('174', 0, 0), ('.', 0, 0)]
+trailing             0 0 
+by                   0 0 
+213                  0 0 
+,                    0 0 
+somerset             3 3 
+got                  0 0 
+a                    0 0 
+solid                0 0 
+start                0 0 
+to                   0 0 
+their                0 0 
+second               0 0 
+innings              0 0 
+before               0 0 
+simmons              1 1 
+stepped              0 0 
+in                   0 0 
+to                   0 0 
+bundle               0 0 
+them                 0 0 
+out                  0 0 
+for                  0 0 
+174                  0 0 
+.                    0 0 
+
+6
+[('essex', 3, 3), (',', 0, 0), ('however', 0, 0), (',', 0, 0), ('look', 0, 0), ('certain', 0, 0), ('to', 0, 0), ('regain', 0, 0), ('their', 0, 0), ('top', 0, 0), ('spot', 0, 0), ('after', 0, 0), ('nasser', 1, 1), ('hussain', 2, 2), ('and', 0, 0), ('peter', 1, 1), ('such', 2, 2), ('gave', 0, 0), ('them', 0, 0), ('a', 0, 0), ('firm', 0, 0), ('grip', 0, 0), ('on', 0, 0), ('their', 0, 0), ('match', 0, 0), ('against', 0, 0), ('yorkshire', 3, 3), ('at', 0, 0), ('heading', 5, 5), ('##ley', 5, 5), ('.', 0, 0)]
+essex                3 3 
+,                    0 0 
+however              0 0 
+,                    0 0 
+look                 0 0 
+certain              0 0 
+to                   0 0 
+regain               0 0 
+their                0 0 
+top                  0 0 
+spot                 0 0 
+after                0 0 
+nasser               1 1 
+hussain              2 2 
+and                  0 0 
+peter                1 1 
+such                 2 2 
+gave                 0 0 
+them                 0 0 
+a                    0 0 
+firm                 0 0 
+grip                 0 0 
+on                   0 0 
+their                0 0 
+match                0 0 
+against              0 0 
+yorkshire            3 3 
+at                   0 0 
+heading              5 5 
+##ley                5 5 
+.                    0 0 
+
+7
+[('hussain', 1, 1), (',', 0, 0), ('considered', 0, 0), ('surplus', 0, 0), ('to', 0, 0), ('england', 5, 5), ("'", 0, 0), ('s', 0, 0), ('one', 0, 0), ('-', 0, 0), ('day', 0, 0), ('requirements', 0, 0), (',', 0, 0), ('struck', 0, 0), ('158', 0, 0), (',', 0, 0), ('his', 0, 0), ('first', 0, 0), ('championship', 0, 0), ('century', 0, 0), ('of', 0, 0), ('the', 0, 0), ('season', 0, 0), (',', 0, 0), ('as', 0, 0), ('essex', 3, 3), ('reached', 0, 0), ('37', 0, 0), ('##2', 0, 0), ('and', 0, 0), ('took', 0, 0), ('a', 0, 0), ('first', 0, 0), ('innings', 0, 0), ('lead', 0, 0), ('of', 0, 0), ('82', 0, 0), ('.', 0, 0)]
+hussain              1 1 
+,                    0 0 
+considered           0 0 
+surplus              0 0 
+to                   0 0 
+england              5 5 
+'                    0 0 
+s                    0 0 
+one                  0 0 
+-                    0 0 
+day                  0 0 
+requirements         0 0 
+,                    0 0 
+struck               0 0 
+158                  0 0 
+,                    0 0 
+his                  0 0 
+first                0 0 
+championship         0 0 
+century              0 0 
+of                   0 0 
+the                  0 0 
+season               0 0 
+,                    0 0 
+as                   0 0 
+essex                3 3 
+reached              0 0 
+37                   0 0 
+##2                  0 0 
+and                  0 0 
+took                 0 0 
+a                    0 0 
+first                0 0 
+innings              0 0 
+lead                 0 0 
+of                   0 0 
+82                   0 0 
+.                    0 0 
+
+8
+[('by', 0, 0), ('the', 0, 0), ('close', 0, 0), ('yorkshire', 3, 3), ('had', 0, 0), ('turned', 0, 0), ('that', 0, 0), ('into', 0, 0), ('a', 0, 0), ('37', 0, 0), ('-', 0, 0), ('run', 0, 0), ('advantage', 0, 0), ('but', 0, 0), ('off', 0, 0), ('-', 0, 0), ('spin', 0, 0), ('##ner', 0, 0), ('such', 1, 1), ('had', 0, 0), ('sc', 0, 0), ('##ut', 0, 0), ('##tled', 0, 0), ('their', 0, 0), ('hopes', 0, 0), (',', 0, 0), ('taking', 0, 0), ('four', 0, 0), ('for', 0, 0), ('24', 0, 0), ('in', 0, 0), ('48', 0, 0), ('balls', 0, 0), ('and', 0, 0), ('leaving', 0, 0), ('them', 0, 0), ('hanging', 0, 0), ('on', 0, 0), ('119', 0, 0), ('for', 0, 0), ('five', 0, 0), ('and', 0, 0), ('praying', 0, 0), ('for', 0, 0), ('rain', 0, 0), ('.', 0, 0)]
+by                   0 0 
+the                  0 0 
+close                0 0 
+yorkshire            3 3 
+had                  0 0 
+turned               0 0 
+that                 0 0 
+into                 0 0 
+a                    0 0 
+37                   0 0 
+-                    0 0 
+run                  0 0 
+advantage            0 0 
+but                  0 0 
+off                  0 0 
+-                    0 0 
+spin                 0 0 
+##ner                0 0 
+such                 1 1 
+had                  0 0 
+sc                   0 0 
+##ut                 0 0 
+##tled               0 0 
+their                0 0 
+hopes                0 0 
+,                    0 0 
+taking               0 0 
+four                 0 0 
+for                  0 0 
+24                   0 0 
+in                   0 0 
+48                   0 0 
+balls                0 0 
+and                  0 0 
+leaving              0 0 
+them                 0 0 
+hanging              0 0 
+on                   0 0 
+119                  0 0 
+for                  0 0 
+five                 0 0 
+and                  0 0 
+praying              0 0 
+for                  0 0 
+rain                 0 0 
+.                    0 0 
+
+9
+[('at', 0, 0), ('the', 0, 5), ('oval', 5, 3), (',', 0, 0), ('surrey', 3, 3), ('captain', 0, 0), ('chris', 1, 1), ('lewis', 2, 2), (',', 0, 0), ('another', 0, 0), ('man', 0, 0), ('dumped', 0, 0), ('by', 0, 0), ('england', 5, 5), (',', 0, 0), ('continued', 0, 0), ('to', 0, 0), ('silence', 0, 0), ('his', 0, 0), ('critics', 0, 0), ('as', 0, 0), ('he', 0, 0), ('followed', 0, 0), ('his', 0, 0), ('four', 0, 0), ('for', 0, 0), ('45', 0, 0), ('on', 0, 0), ('thursday', 0, 0), ('with', 0, 0), ('80', 0, 0), ('not', 0, 0), ('out', 0, 0), ('on', 0, 0), ('friday', 0, 0), ('in', 0, 0), ('the', 0, 0), ('match', 0, 0), ('against', 0, 0), ('warwickshire', 3, 3), ('.', 0, 0)]
+at                   0 0 
+the                  0 5 *
+oval                 5 3 *
+,                    0 0 
+surrey               3 3 
+captain              0 0 
+chris                1 1 
+lewis                2 2 
+,                    0 0 
+another              0 0 
+man                  0 0 
+dumped               0 0 
+by                   0 0 
+england              5 5 
+,                    0 0 
+continued            0 0 
+to                   0 0 
+silence              0 0 
+his                  0 0 
+critics              0 0 
+as                   0 0 
+he                   0 0 
+followed             0 0 
+his                  0 0 
+four                 0 0 
+for                  0 0 
+45                   0 0 
+on                   0 0 
+thursday             0 0 
+with                 0 0 
+80                   0 0 
+not                  0 0 
+out                  0 0 
+on                   0 0 
+friday               0 0 
+in                   0 0 
+the                  0 0 
+match                0 0 
+against              0 0 
+warwickshire         3 3 
+.                    0 0 
+
+10
+[('he', 0, 0), ('was', 0, 0), ('well', 0, 0), ('backed', 0, 0), ('by', 0, 0), ('england', 5, 5), ('hopeful', 0, 0), ('mark', 1, 1), ('butcher', 2, 2), ('who', 0, 0), ('made', 0, 0), ('70', 0, 0), ('as', 0, 0), ('surrey', 3, 3), ('closed', 0, 0), ('on', 0, 0), ('42', 0, 0), ('##9', 0, 0), ('for', 0, 0), ('seven', 0, 0), (',', 0, 0), ('a', 0, 0), ('lead', 0, 0), ('of', 0, 0), ('234', 0, 0), ('.', 0, 0)]
+he                   0 0 
+was                  0 0 
+well                 0 0 
+backed               0 0 
+by                   0 0 
+england              5 5 
+hopeful              0 0 
+mark                 1 1 
+butcher              2 2 
+who                  0 0 
+made                 0 0 
+70                   0 0 
+as                   0 0 
+surrey               3 3 
+closed               0 0 
+on                   0 0 
+42                   0 0 
+##9                  0 0 
+for                  0 0 
+seven                0 0 
+,                    0 0 
+a                    0 0 
+lead                 0 0 
+of                   0 0 
+234                  0 0 
+.                    0 0 
+
+11
+[('derbyshire', 3, 3), ('kept', 0, 0), ('up', 0, 0), ('the', 0, 0), ('hunt', 0, 0), ('for', 0, 0), ('their', 0, 0), ('first', 0, 0), ('championship', 0, 0), ('title', 0, 0), ('since', 0, 0), ('1936', 0, 0), ('by', 0, 0), ('reducing', 0, 0), ('worcestershire', 3, 3), ('to', 0, 0), ('133', 0, 0), ('for', 0, 0), ('five', 0, 0), ('in', 0, 0), ('their', 0, 0), ('second', 0, 0), ('innings', 0, 0), (',', 0, 0), ('still', 0, 0), ('100', 0, 0), ('runs', 0, 0), ('away', 0, 0), ('from', 0, 0), ('avoiding', 0, 0), ('an', 0, 0), ('innings', 0, 0), ('defeat', 0, 0), ('.', 0, 0)]
+derbyshire           3 3 
+kept                 0 0 
+up                   0 0 
+the                  0 0 
+hunt                 0 0 
+for                  0 0 
+their                0 0 
+first                0 0 
+championship         0 0 
+title                0 0 
+since                0 0 
+1936                 0 0 
+by                   0 0 
+reducing             0 0 
+worcestershire       3 3 
+to                   0 0 
+133                  0 0 
+for                  0 0 
+five                 0 0 
+in                   0 0 
+their                0 0 
+second               0 0 
+innings              0 0 
+,                    0 0 
+still                0 0 
+100                  0 0 
+runs                 0 0 
+away                 0 0 
+from                 0 0 
+avoiding             0 0 
+an                   0 0 
+innings              0 0 
+defeat               0 0 
+.                    0 0 
+
+12
+[('australian', 7, 7), ('tom', 1, 1), ('moody', 2, 2), ('took', 0, 0), ('six', 0, 0), ('for', 0, 0), ('82', 0, 0), ('but', 0, 0), ('chris', 1, 1), ('adams', 2, 2), (',', 0, 0), ('123', 0, 0), (',', 0, 0), ('and', 0, 0), ('tim', 1, 1), ('o', 2, 2), ("'", 2, 2), ('gorman', 2, 2), (',', 0, 0), ('109', 0, 0), (',', 0, 0), ('took', 0, 0), ('derbyshire', 3, 3), ('to', 0, 0), ('47', 0, 0), ('##1', 0, 0), ('and', 0, 0), ('a', 0, 0), ('first', 0, 0), ('innings', 0, 0), ('lead', 0, 0), ('of', 0, 0), ('233', 0, 0), ('.', 0, 0)]
+australian           7 7 
+tom                  1 1 
+moody                2 2 
+took                 0 0 
+six                  0 0 
+for                  0 0 
+82                   0 0 
+but                  0 0 
+chris                1 1 
+adams                2 2 
+,                    0 0 
+123                  0 0 
+,                    0 0 
+and                  0 0 
+tim                  1 1 
+o                    2 2 
+'                    2 2 
+gorman               2 2 
+,                    0 0 
+109                  0 0 
+,                    0 0 
+took                 0 0 
+derbyshire           3 3 
+to                   0 0 
+47                   0 0 
+##1                  0 0 
+and                  0 0 
+a                    0 0 
+first                0 0 
+innings              0 0 
+lead                 0 0 
+of                   0 0 
+233                  0 0 
+.                    0 0 
+
+13
+[('after', 0, 0), ('the', 0, 0), ('frustration', 0, 0), ('of', 0, 0), ('seeing', 0, 0), ('the', 0, 0), ('opening', 0, 0), ('day', 0, 0), ('of', 0, 0), ('their', 0, 0), ('match', 0, 0), ('badly', 0, 0), ('affected', 0, 0), ('by', 0, 0), ('the', 0, 0), ('weather', 0, 0), (',', 0, 0), ('kent', 3, 3), ('stepped', 0, 0), ('up', 0, 0), ('a', 0, 0), ('gear', 0, 0), ('to', 0, 0), ('dismiss', 0, 0), ('nottinghamshire', 3, 3), ('for', 0, 0), ('214', 0, 0), ('.', 0, 0)]
+after                0 0 
+the                  0 0 
+frustration          0 0 
+of                   0 0 
+seeing               0 0 
+the                  0 0 
+opening              0 0 
+day                  0 0 
+of                   0 0 
+their                0 0 
+match                0 0 
+badly                0 0 
+affected             0 0 
+by                   0 0 
+the                  0 0 
+weather              0 0 
+,                    0 0 
+kent                 3 3 
+stepped              0 0 
+up                   0 0 
+a                    0 0 
+gear                 0 0 
+to                   0 0 
+dismiss              0 0 
+nottinghamshire      3 3 
+for                  0 0 
+214                  0 0 
+.                    0 0 
+
+14
+[('they', 0, 0), ('were', 0, 0), ('held', 0, 0), ('up', 0, 0), ('by', 0, 0), ('a', 0, 0), ('grit', 0, 0), ('##ty', 0, 0), ('84', 0, 0), ('from', 0, 0), ('paul', 1, 1), ('johnson', 2, 2), ('but', 0, 0), ('ex', 7, 0), ('-', 7, 0), ('england', 7, 5), ('fast', 0, 0), ('bowler', 0, 0), ('martin', 1, 1), ('mcc', 2, 2), ('##ag', 2, 2), ('##ue', 2, 2), ('took', 0, 0), ('four', 0, 0), ('for', 0, 0), ('55', 0, 0), ('.', 0, 0)]
+they                 0 0 
+were                 0 0 
+held                 0 0 
+up                   0 0 
+by                   0 0 
+a                    0 0 
+grit                 0 0 
+##ty                 0 0 
+84                   0 0 
+from                 0 0 
+paul                 1 1 
+johnson              2 2 
+but                  0 0 
+ex                   7 0 *
+-                    7 0 *
+england              7 5 *
+fast                 0 0 
+bowler               0 0 
+martin               1 1 
+mcc                  2 2 
+##ag                 2 2 
+##ue                 2 2 
+took                 0 0 
+four                 0 0 
+for                  0 0 
+55                   0 0 
+.                    0 0 
+
+15
+[('by', 0, 0), ('stump', 0, 0), ('##s', 0, 0), ('kent', 3, 3), ('had', 0, 0), ('reached', 0, 0), ('108', 0, 0), ('for', 0, 0), ('three', 0, 0), ('.', 0, 0)]
+by                   0 0 
+stump                0 0 
+##s                  0 0 
+kent                 3 3 
+had                  0 0 
+reached              0 0 
+108                  0 0 
+for                  0 0 
+three                0 0 
+.                    0 0 
+
+16
+[('cricket', 0, 0), ('-', 0, 0), ('english', 7, 7), ('county', 8, 8), ('championship', 8, 8), ('scores', 0, 0), ('.', 0, 0)]
+cricket              0 0 
+-                    0 0 
+english              7 7 
+county               8 8 
+championship         8 8 
+scores               0 0 
+.                    0 0 
+
+17
+[('london', 5, 5), ('1996', 0, 0), ('-', 0, 0), ('08', 0, 0), ('-', 0, 0), ('30', 0, 0)]
+london               5 5 
+1996                 0 0 
+-                    0 0 
+08                   0 0 
+-                    0 0 
+30                   0 0 
+
+18
+[('result', 0, 0), ('and', 0, 0), ('close', 0, 0), ('of', 0, 0), ('play', 0, 0), ('scores', 0, 0), ('in', 0, 0), ('english', 7, 7), ('county', 0, 8), ('championship', 0, 8), ('matches', 0, 0), ('on', 0, 0), ('friday', 0, 0), (':', 0, 0)]
+result               0 0 
+and                  0 0 
+close                0 0 
+of                   0 0 
+play                 0 0 
+scores               0 0 
+in                   0 0 
+english              7 7 
+county               0 8 *
+championship         0 8 *
+matches              0 0 
+on                   0 0 
+friday               0 0 
+:                    0 0 
+
+19
+[('leicester', 5, 5), (':', 0, 0), ('leicestershire', 3, 3), ('beat', 0, 0), ('somerset', 3, 3), ('by', 0, 0), ('an', 0, 0), ('innings', 0, 0), ('and', 0, 0), ('39', 0, 0), ('runs', 0, 0), ('.', 0, 0)]
+leicester            5 5 
+:                    0 0 
+leicestershire       3 3 
+beat                 0 0 
+somerset             3 3 
+by                   0 0 
+an                   0 0 
+innings              0 0 
+and                  0 0 
+39                   0 0 
+runs                 0 0 
+.                    0 0 
+
+20
+[('somerset', 3, 3), ('83', 0, 0), ('and', 0, 0), ('174', 0, 0), ('(', 0, 0), ('p', 1, 1), ('.', 1, 1), ('simmons', 2, 2), ('4', 0, 0), ('-', 0, 0), ('38', 0, 0), (')', 0, 0), (',', 0, 0), ('leicestershire', 3, 3), ('296', 0, 0), ('.', 0, 0)]
+somerset             3 3 
+83                   0 0 
+and                  0 0 
+174                  0 0 
+(                    0 0 
+p                    1 1 
+.                    1 1 
+simmons              2 2 
+4                    0 0 
+-                    0 0 
+38                   0 0 
+)                    0 0 
+,                    0 0 
+leicestershire       3 3 
+296                  0 0 
+.                    0 0 
+
+21
+[('leicestershire', 3, 3), ('22', 0, 0), ('points', 0, 0), (',', 0, 0), ('somerset', 3, 3), ('4', 0, 0), ('.', 0, 0)]
+leicestershire       3 3 
+22                   0 0 
+points               0 0 
+,                    0 0 
+somerset             3 3 
+4                    0 0 
+.                    0 0 
+
+22
+[('chester', 5, 5), ('-', 5, 5), ('le', 5, 5), ('-', 5, 5), ('street', 5, 4), (':', 0, 0), ('glamorgan', 3, 3), ('259', 0, 0), ('and', 0, 0), ('207', 0, 0), ('(', 0, 0), ('a', 1, 1), ('.', 1, 1), ('dale', 2, 2), ('69', 0, 0), (',', 0, 0), ('h', 1, 1), ('.', 1, 1), ('morris', 2, 2), ('69', 0, 0), (';', 0, 0), ('d', 1, 1), ('.', 1, 1), ('b', 2, 2), ('##len', 2, 2), ('##kir', 2, 2), ('##on', 2, 2), ('4', 0, 0), ('-', 0, 0), ('43', 0, 0), (')', 0, 0), (',', 0, 0), ('durham', 3, 3), ('114', 0, 0), ('(', 0, 0), ('s', 1, 1), ('.', 1, 1), ('wat', 2, 2), ('##kin', 2, 2), ('4', 0, 0), ('-', 0, 0), ('28', 0, 0), (')', 0, 0), ('and', 0, 0), ('81', 0, 0), ('-', 0, 0), ('3', 0, 0), ('.', 0, 0)]
+chester              5 5 
+-                    5 5 
+le                   5 5 
+-                    5 5 
+street               5 4 *
+:                    0 0 
+glamorgan            3 3 
+259                  0 0 
+and                  0 0 
+207                  0 0 
+(                    0 0 
+a                    1 1 
+.                    1 1 
+dale                 2 2 
+69                   0 0 
+,                    0 0 
+h                    1 1 
+.                    1 1 
+morris               2 2 
+69                   0 0 
+;                    0 0 
+d                    1 1 
+.                    1 1 
+b                    2 2 
+##len                2 2 
+##kir                2 2 
+##on                 2 2 
+4                    0 0 
+-                    0 0 
+43                   0 0 
+)                    0 0 
+,                    0 0 
+durham               3 3 
+114                  0 0 
+(                    0 0 
+s                    1 1 
+.                    1 1 
+wat                  2 2 
+##kin                2 2 
+4                    0 0 
+-                    0 0 
+28                   0 0 
+)                    0 0 
+and                  0 0 
+81                   0 0 
+-                    0 0 
+3                    0 0 
+.                    0 0 
+
+23
+[('tun', 5, 3), ('##bridge', 5, 5), ('wells', 6, 5), (':', 0, 0), ('nottinghamshire', 3, 3), ('214', 0, 0), ('(', 0, 0), ('p', 1, 1), ('.', 1, 1), ('johnson', 2, 2), ('84', 0, 0), (';', 0, 0), ('m', 1, 1), ('.', 1, 1), ('mcc', 2, 2), ('##ag', 2, 2), ('##ue', 2, 2), ('4', 0, 0), ('-', 0, 0), ('55', 0, 0), (')', 0, 0), (',', 0, 0), ('kent', 3, 3), ('108', 0, 0), ('-', 0, 0), ('3', 0, 0), ('.', 0, 0)]
+tun                  5 3 *
+##bridge             5 5 
+wells                6 5 *
+:                    0 0 
+nottinghamshire      3 3 
+214                  0 0 
+(                    0 0 
+p                    1 1 
+.                    1 1 
+johnson              2 2 
+84                   0 0 
+;                    0 0 
+m                    1 1 
+.                    1 1 
+mcc                  2 2 
+##ag                 2 2 
+##ue                 2 2 
+4                    0 0 
+-                    0 0 
+55                   0 0 
+)                    0 0 
+,                    0 0 
+kent                 3 3 
+108                  0 0 
+-                    0 0 
+3                    0 0 
+.                    0 0 
+
+24
+[('london', 5, 5), ('(', 0, 0), ('the', 5, 3), ('oval', 6, 4), (')', 0, 0), (':', 0, 0), ('warwickshire', 3, 3), ('195', 0, 0), (',', 0, 0), ('surrey', 3, 3), ('42', 0, 0), ('##9', 0, 0), ('-', 0, 0), ('7', 0, 0), ('(', 0, 0), ('c', 1, 1), ('.', 1, 1), ('lewis', 2, 2), ('80', 0, 0), ('not', 0, 0), ('out', 0, 0), (',', 0, 0), ('m', 1, 1), ('.', 1, 1), ('butcher', 2, 2), ('70', 0, 0), (',', 0, 0), ('g', 1, 1), ('.', 1, 1), ('ke', 2, 2), ('##rse', 2, 2), ('##y', 2, 2), ('63', 0, 0), (',', 0, 0), ('j', 1, 1), ('.', 1, 1), ('rat', 2, 2), ('##cliffe', 2, 2), ('63', 0, 0), (',', 0, 0), ('d', 1, 1), ('.', 1, 1), ('bi', 2, 2), ('##ck', 2, 2), ('##nell', 2, 2), ('55', 0, 0), (')', 0, 0), ('.', 0, 0)]
+london               5 5 
+(                    0 0 
+the                  5 3 *
+oval                 6 4 *
+)                    0 0 
+:                    0 0 
+warwickshire         3 3 
+195                  0 0 
+,                    0 0 
+surrey               3 3 
+42                   0 0 
+##9                  0 0 
+-                    0 0 
+7                    0 0 
+(                    0 0 
+c                    1 1 
+.                    1 1 
+lewis                2 2 
+80                   0 0 
+not                  0 0 
+out                  0 0 
+,                    0 0 
+m                    1 1 
+.                    1 1 
+butcher              2 2 
+70                   0 0 
+,                    0 0 
+g                    1 1 
+.                    1 1 
+ke                   2 2 
+##rse                2 2 
+##y                  2 2 
+63                   0 0 
+,                    0 0 
+j                    1 1 
+.                    1 1 
+rat                  2 2 
+##cliffe             2 2 
+63                   0 0 
+,                    0 0 
+d                    1 1 
+.                    1 1 
+bi                   2 2 
+##ck                 2 2 
+##nell               2 2 
+55                   0 0 
+)                    0 0 
+.                    0 0 
+
+25
+[('hove', 5, 5), (':', 0, 0), ('sussex', 3, 3), ('36', 0, 0), ('##3', 0, 0), ('(', 0, 0), ('w', 1, 1), ('.', 1, 1), ('at', 2, 2), ('##hey', 2, 2), ('111', 0, 0), (',', 0, 0), ('v', 1, 1), ('.', 1, 1), ('drake', 2, 2), ('##s', 2, 2), ('52', 0, 0), (';', 0, 0), ('i', 1, 1), ('.', 1, 1), ('austin', 2, 2), ('4', 0, 0), ('-', 0, 0), ('37', 0, 0), (')', 0, 0), (',', 0, 0), ('lancashire', 3, 3), ('197', 0, 0), ('-', 0, 0), ('8', 0, 0), ('(', 0, 0), ('w', 1, 1), ('.', 1, 1), ('he', 2, 2), ('##gg', 2, 2), ('54', 0, 0), (')', 0, 0)]
+hove                 5 5 
+:                    0 0 
+sussex               3 3 
+36                   0 0 
+##3                  0 0 
+(                    0 0 
+w                    1 1 
+.                    1 1 
+at                   2 2 
+##hey                2 2 
+111                  0 0 
+,                    0 0 
+v                    1 1 
+.                    1 1 
+drake                2 2 
+##s                  2 2 
+52                   0 0 
+;                    0 0 
+i                    1 1 
+.                    1 1 
+austin               2 2 
+4                    0 0 
+-                    0 0 
+37                   0 0 
+)                    0 0 
+,                    0 0 
+lancashire           3 3 
+197                  0 0 
+-                    0 0 
+8                    0 0 
+(                    0 0 
+w                    1 1 
+.                    1 1 
+he                   2 2 
+##gg                 2 2 
+54                   0 0 
+)                    0 0 
+
+26
+[('portsmouth', 5, 5), (':', 0, 0), ('middlesex', 3, 3), ('199', 0, 0), ('and', 0, 0), ('42', 0, 0), ('##6', 0, 0), ('(', 0, 0), ('j', 1, 1), ('.', 1, 1), ('poole', 2, 2), ('##y', 2, 2), ('111', 0, 0), (',', 0, 0), ('m', 1, 1), ('.', 1, 1), ('ramp', 2, 2), ('##rak', 2, 2), ('##ash', 2, 2), ('108', 0, 0), (',', 0, 0), ('m', 1, 1), ('.', 1, 1), ('ga', 2, 2), ('##tting', 2, 2), ('83', 0, 0), (')', 0, 0), (',', 0, 0), ('hampshire', 3, 3), ('232', 0, 0), ('and', 0, 0), ('109', 0, 0), ('-', 0, 0), ('5', 0, 0), ('.', 0, 0)]
+portsmouth           5 5 
+:                    0 0 
+middlesex            3 3 
+199                  0 0 
+and                  0 0 
+42                   0 0 
+##6                  0 0 
+(                    0 0 
+j                    1 1 
+.                    1 1 
+poole                2 2 
+##y                  2 2 
+111                  0 0 
+,                    0 0 
+m                    1 1 
+.                    1 1 
+ramp                 2 2 
+##rak                2 2 
+##ash                2 2 
+108                  0 0 
+,                    0 0 
+m                    1 1 
+.                    1 1 
+ga                   2 2 
+##tting              2 2 
+83                   0 0 
+)                    0 0 
+,                    0 0 
+hampshire            3 3 
+232                  0 0 
+and                  0 0 
+109                  0 0 
+-                    0 0 
+5                    0 0 
+.                    0 0 
+
+27
+[('chesterfield', 5, 3), (':', 0, 0), ('worcestershire', 3, 3), ('238', 0, 0), ('and', 0, 0), ('133', 0, 0), ('-', 0, 0), ('5', 0, 0), (',', 0, 0), ('derbyshire', 3, 3), ('47', 0, 0), ('##1', 0, 0), ('(', 0, 0), ('j', 1, 1), ('.', 1, 1), ('adams', 2, 2), ('123', 0, 0), (',', 0, 0), ('t', 1, 1), ('.', 1, 1), ('o', 1, 2), ("'", 1, 2), ('gorman', 1, 2), ('109', 0, 0), ('not', 0, 0), ('out', 0, 0), (',', 0, 0), ('k', 1, 1), ('.', 1, 1), ('barnett', 2, 2), ('87', 0, 0), (';', 0, 0), ('t', 1, 1), ('.', 1, 1), ('moody', 2, 2), ('6', 0, 0), ('-', 0, 0), ('82', 0, 0), (')', 0, 0)]
+chesterfield         5 3 *
+:                    0 0 
+worcestershire       3 3 
+238                  0 0 
+and                  0 0 
+133                  0 0 
+-                    0 0 
+5                    0 0 
+,                    0 0 
+derbyshire           3 3 
+47                   0 0 
+##1                  0 0 
+(                    0 0 
+j                    1 1 
+.                    1 1 
+adams                2 2 
+123                  0 0 
+,                    0 0 
+t                    1 1 
+.                    1 1 
+o                    1 2 *
+'                    1 2 *
+gorman               1 2 *
+109                  0 0 
+not                  0 0 
+out                  0 0 
+,                    0 0 
+k                    1 1 
+.                    1 1 
+barnett              2 2 
+87                   0 0 
+;                    0 0 
+t                    1 1 
+.                    1 1 
+moody                2 2 
+6                    0 0 
+-                    0 0 
+82                   0 0 
+)                    0 0 
+
+28
+[('bristol', 5, 5), (':', 0, 0), ('gloucestershire', 3, 3), ('183', 0, 0), ('and', 0, 0), ('185', 0, 0), ('-', 0, 0), ('6', 0, 0), ('(', 0, 0), ('j', 1, 1), ('.', 1, 1), ('russell', 2, 2), ('56', 0, 0), ('not', 0, 0), ('out', 0, 0), (')', 0, 0), (',', 0, 0), ('northamptonshire', 3, 3), ('190', 0, 0), ('(', 0, 0), ('k', 1, 1), ('.', 1, 1), ('curran', 2, 2), ('52', 0, 0), (';', 0, 0), ('a', 1, 1), ('.', 1, 1), ('smith', 2, 2), ('5', 0, 0), ('-', 0, 0), ('68', 0, 0), (')', 0, 0), ('.', 0, 0)]
+bristol              5 5 
+:                    0 0 
+gloucestershire      3 3 
+183                  0 0 
+and                  0 0 
+185                  0 0 
+-                    0 0 
+6                    0 0 
+(                    0 0 
+j                    1 1 
+.                    1 1 
+russell              2 2 
+56                   0 0 
+not                  0 0 
+out                  0 0 
+)                    0 0 
+,                    0 0 
+northamptonshire     3 3 
+190                  0 0 
+(                    0 0 
+k                    1 1 
+.                    1 1 
+curran               2 2 
+52                   0 0 
+;                    0 0 
+a                    1 1 
+.                    1 1 
+smith                2 2 
+5                    0 0 
+-                    0 0 
+68                   0 0 
+)                    0 0 
+.                    0 0 
+
+29
+[('cricket', 0, 0), ('-', 0, 0), ('1997', 0, 0), ('ashes', 7, 0), ('int', 0, 0), ('##iner', 0, 0), ('##ary', 0, 0), ('.', 0, 0)]
+cricket              0 0 
+-                    0 0 
+1997                 0 0 
+ashes                7 0 *
+int                  0 0 
+##iner               0 0 
+##ary                0 0 
+.                    0 0 
+
+30
+[('london', 5, 5), ('1996', 0, 0), ('-', 0, 0), ('08', 0, 0), ('-', 0, 0), ('30', 0, 0)]
+london               5 5 
+1996                 0 0 
+-                    0 0 
+08                   0 0 
+-                    0 0 
+30                   0 0 
+
+31
+[('australia', 5, 5), ('will', 0, 0), ('defend', 0, 0), ('the', 0, 0), ('ashes', 7, 0), ('in', 0, 0)]
+australia            5 5 
+will                 0 0 
+defend               0 0 
+the                  0 0 
+ashes                7 0 *
+in                   0 0 
+
+32
+[('a', 0, 0), ('six', 0, 0), ('-', 0, 0), ('test', 0, 0), ('series', 0, 0), ('against', 0, 0), ('england', 5, 5), ('during', 0, 0), ('a', 0, 0), ('four', 0, 0), ('-', 0, 0), ('month', 0, 0), ('tour', 0, 0)]
+a                    0 0 
+six                  0 0 
+-                    0 0 
+test                 0 0 
+series               0 0 
+against              0 0 
+england              5 5 
+during               0 0 
+a                    0 0 
+four                 0 0 
+-                    0 0 
+month                0 0 
+tour                 0 0 
+
+33
+[('starting', 0, 0), ('on', 0, 0), ('may', 0, 0), ('13', 0, 0), ('next', 0, 0), ('year', 0, 0), (',', 0, 0), ('the', 0, 0), ('test', 3, 3), ('and', 4, 4), ('county', 4, 4), ('cricket', 4, 4), ('board', 4, 4)]
+starting             0 0 
+on                   0 0 
+may                  0 0 
+13                   0 0 
+next                 0 0 
+year                 0 0 
+,                    0 0 
+the                  0 0 
+test                 3 3 
+and                  4 4 
+county               4 4 
+cricket              4 4 
+board                4 4 
+
+34
+[('said', 0, 0), ('on', 0, 0), ('friday', 0, 0), ('.', 0, 0)]
+said                 0 0 
+on                   0 0 
+friday               0 0 
+.                    0 0 
+
+35
+[('australia', 5, 5), ('will', 0, 0), ('also', 0, 0), ('play', 0, 0), ('three', 0, 0), ('one', 0, 0), ('-', 0, 0), ('day', 0, 0), ('internationals', 0, 0), ('and', 0, 0)]
+australia            5 5 
+will                 0 0 
+also                 0 0 
+play                 0 0 
+three                0 0 
+one                  0 0 
+-                    0 0 
+day                  0 0 
+internationals       0 0 
+and                  0 0 
+
+36
+[('four', 0, 0), ('one', 0, 0), ('-', 0, 0), ('day', 0, 0), ('warm', 0, 0), ('-', 0, 0), ('up', 0, 0), ('matches', 0, 0), ('at', 0, 0), ('the', 0, 0), ('start', 0, 0), ('of', 0, 0), ('the', 0, 0), ('tour', 0, 0), ('.', 0, 0)]
+four                 0 0 
+one                  0 0 
+-                    0 0 
+day                  0 0 
+warm                 0 0 
+-                    0 0 
+up                   0 0 
+matches              0 0 
+at                   0 0 
+the                  0 0 
+start                0 0 
+of                   0 0 
+the                  0 0 
+tour                 0 0 
+.                    0 0 
+
+37
+[('the', 0, 0), ('tourists', 0, 0), ('will', 0, 0), ('play', 0, 0), ('nine', 0, 0), ('first', 0, 0), ('-', 0, 0), ('class', 0, 0), ('matches', 0, 0), ('against', 0, 0)]
+the                  0 0 
+tourists             0 0 
+will                 0 0 
+play                 0 0 
+nine                 0 0 
+first                0 0 
+-                    0 0 
+class                0 0 
+matches              0 0 
+against              0 0 
+
+38
+[('english', 7, 7), ('county', 0, 0), ('sides', 0, 0), ('and', 0, 0), ('another', 0, 0), ('against', 0, 0), ('british', 3, 7), ('universities', 4, 0), (',', 0, 0)]
+english              7 7 
+county               0 0 
+sides                0 0 
+and                  0 0 
+another              0 0 
+against              0 0 
+british              3 7 *
+universities         4 0 *
+,                    0 0 
+
+39
+[('as', 0, 0), ('well', 0, 0), ('as', 0, 0), ('one', 0, 0), ('-', 0, 0), ('day', 0, 0), ('matches', 0, 0), ('against', 0, 0), ('the', 0, 0), ('minor', 3, 0), ('counties', 4, 0), ('and', 0, 0)]
+as                   0 0 
+well                 0 0 
+as                   0 0 
+one                  0 0 
+-                    0 0 
+day                  0 0 
+matches              0 0 
+against              0 0 
+the                  0 0 
+minor                3 0 *
+counties             4 0 *
+and                  0 0 
+
+** percent of correct individual labels
+0.9747252747252747
 
 
 >> eval <<
 
 ** RESULT
-{'eval_loss': 0.06817884743213654, 'eval_precision': 0.9085010447597053, 'eval_recall': 0.9241525897751426, 'eval_f1': 0.916259982253771, 'eval_accuracy': 0.9806821611832176, 'eval_runtime': 3.1707, 'eval_samples_per_second': 1025.0, 'eval_steps_per_second': 8.2, 'epoch': 5.0}
+{'eval_loss': 0.08394823968410492, 'eval_precision': 0.8766825879287885, 'eval_recall': 0.9034567625013984, 'eval_f1': 0.8898683268139497, 'eval_accuracy': 0.9764404975614406, 'eval_runtime': 2.9425, 'eval_samples_per_second': 1104.484, 'eval_steps_per_second': 4.418, 'epoch': 5.0}
 

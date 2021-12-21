@@ -78,12 +78,15 @@
          +4] kipróbálni a tokclass, ahogy van -> fenti [0]
          +5] [./training_seqclass.py] és [./seqclass.py] teljesen egységes
          +6] [./training_seqclass.py] és [./seqclass.py] összeolvasztani 
-         [7] tokclass [cos]/[ref] terv:
+         +7] tokclass [cos]/[ref] terv:
            + formátuma legyen a seqclass-é <- ezen már ne változtassak! (!) XXX :)
            + tokclass: ne legyen 2x az IGNORED dolog kiszámolva!
-            _ITT_T [1]
-           - legyen a tokclass-ban is olyan szép bemutató a végén,
+           + legyen a tokclass-ban is olyan szép bemutató a végén,
               mint a seqclass-ban (!) XXX :)
+           ? azt hogy lehet elérni, hogy az IOB követelményeknek
+             megfeleljen a bejósolt annotáció,
+             = pl. hogy ne jöjjön O után I (???) XXX :)
+          _ITT_T [1]
          [8] kipróbálni a tokclass-t a saját adataimon -> fenti [1]
          [9] 2-3 elemből álló adatok ellenőrizni,
              hogy helyes a kiértékelés! (!) XXX :)

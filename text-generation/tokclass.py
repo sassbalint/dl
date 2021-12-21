@@ -21,7 +21,7 @@ METRIC = ("seqeval",)
 SAVE_DIR = f'{MODEL}-finetuned-{"-".join(TASK)}-{LABELCOLUMN}'
 
 DATASET_SIZE = 0 # 0 means all data
-BATCH_SIZE = 32 # based on gpustat -cupF
+BATCH_SIZE = 64 # based on gpustat -cupF
 
 EXAMPLE = 4 # index of example taken from data
 EXAMPLES = EXAMPLE + 1 # to define range 0..EXAMPLES
@@ -202,6 +202,28 @@ preds, labels, _ = trainer.predict(eval_dataset)
 eval_pred = (preds, labels)
 results = compute_metrics(eval_pred, full_result=True)
 msg('prediction results', results)
+
+ok = 0
+cnt = 0
+for i, (et, pp, pl) in enumerate(zip(eval_dataset["input_ids"][:40], preds[:40], labels[:40])):
+    et = tokenizer.convert_ids_to_tokens(et)
+    pred = logits2preds(pp)
+    print(i)
+    et_pl_pred = [x for x in list(zip(et, pl, pred)) if x[1] != IGNORED]
+    print(et_pl_pred)
+
+    for t, l, p in et_pl_pred:
+        cnt += 1
+        if l == p:
+            ok += 1
+            annot = ''
+        else:
+            annot = '*'
+        # a szöveg eleje, valós címke, jósolt címke, '*' ha nem stimmel
+        print(f'{t[:20]:<20} {l} {p} {annot}')
+    print()
+# hány jó az összesből = egyeznie kell az evaluate() eredményével
+msg('percent of correct individual labels', ok/cnt)
 
 section("eval")
 result = trainer.evaluate()
