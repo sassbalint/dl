@@ -5,6 +5,11 @@
    i lényeg: seq2seq szerű BERT-es generálós izét szeretnék 
      korpuszjavításra: ékezetesítésre, OCR-javításra...
      -- töredezettség-mentesítésre asszem kiváló a sima BERT!
+        = akkor elég a sima encoder (=BERT),
+          ha a dekódolást meg tudjuk oldani okosba!
+        = a töredezettség-mentesítés pontosan ilyen,
+          ha BERT-tel felismertük, hogy egy szóköz nem kell,
+          akkor a "dekódolás" annyi, hogy töröljük és csá! (!) :)
 
    !   _lehetséges irányok:_ 
      +0] seqclass pipa (= training_seqclass.py)
